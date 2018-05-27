@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>Swift代码规范--自用型 | Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+<meta name="keywords" content="swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Swift代码规范--自用型">
+<meta property="og:url" content="http://yoursite.com/2016/04/09/Swift代码规范-自用型/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2016-04-09T07:08:15.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Swift代码规范--自用型">
+<meta name="twitter:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-Swift代码规范-自用型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/Swift代码规范-自用型/" class="article-date">
+  	<time datetime="2016-04-09T06:22:45.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Swift代码规范--自用型
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><blockquote>
+<p>不多空行 不少空行</p>
+<p>下列情况应该总是使用一个空行：</p>
+<pre><code>1·两个方法之间
+2·两个类之间
+3·方法内的局部变量和方法的第一条语句之间
+4·块注释或单行注释之前
+5·一个方法内的两个逻辑段之间，用以提高可读性
+6·文件结尾
+7·import上方和下方
+8· ......
+</code></pre></blockquote>
+<pre><code>/*------import上方空一行------*/
+import UIKit
+import CoreBluetooth
+/*------import下方空一行------*/
+class ClassName: ParentClass {
+    /*------方法内部第一行空行------*/
+    var property: propertyType?
+    var property2: propertyType?
+    /*------方法与属性之间空一行------*/
+    func function() {
+
+    } 
+    /*------方法之间空一行------*/
+    func function2() {
+
+    } 
+    /*------方法内部最后一行空行------*/
+}
+/*------文件结尾空一行------*/
+class ClassName: ParentClass {
+
+    func function() {
+
+    } 
+
+}
+/*------文件结尾空一行------*/
+</code></pre><h2 id="冒号"><a href="#冒号" class="headerlink" title="冒号"></a>冒号</h2><blockquote>
+<p>冒号遵循靠左规则 (左侧无空格，右侧一个空格，不多空)</p>
+</blockquote>
+<pre><code>---------------定义类---------------
+class ClassName: ParentClass {
+
+}
+
+---------------定义字典---------------
+var dict = [String: String]()
+---------------定义属性---------------
+var property: String?
+---------------方法的参数---------------
+func function(param: String) {
+
+}
+</code></pre><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><blockquote>
+<p>下列情况应该总是使用一个空格：</p>
+<pre><code>1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
+2·逗号之后 (元组, 多参数 等等情况下)
+3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
+4.方法返回值
+5.冒号定义(遵循上面冒号)
+</code></pre></blockquote>
+<pre><code>class ClassName: ParentClass {
+
+}
+    class ClassName:[空格]ParentClass[空格]{
+
+    }
+
+// ==================================================
+
+func function() {
+
+}
+    func function()[空格]{
+
+    }
+
+// ==================================================
+for _ in {
+
+}
+    for _ in[空格]{
+
+    }
+// ==================================================
+if a == 5 {
+
+}
+
+    if a[空格]==[空格]5[空格]{
+
+    }
+
+// ==================================================
+
+func function(param: String, param2: Int) -&gt; Int {
+    for i in 0..&lt;10 {
+
+    }
+    if param == &quot;&quot; {
+
+    }
+    return 0
+}
+
+    func function(param:[空格]String,[空格]param2:[空格]Int)[空格]-&gt;[空格]Int[空格]{
+        for i in 0..&lt;10[空格]{
+
+        }
+        if param[空格]==[空格]&quot;&quot;[空格]{
+
+        }
+        return 0
+    }
+</code></pre><h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h2><blockquote>
+<p>按照层级缩进 不允许出现超出层级 </p>
+</blockquote>
+<pre><code>func function() {
+    if a == 1 {
+print(&quot;a == 1&quot;)    
+    }
+}
+
+上面的格式肯定是错的 必须按照层级来  闭包同样道理
+
+func function() {
+    if a == 1 {
+        print(&quot;a == 1&quot;)    
+    }
+}
+
+闭包的例子 看下面的代码就可以一眼看出闭包内部有第二个闭包
+
+dialog.setConformButton(NSLocalizedString(&quot;PUSH_CHECK&quot;, comment: &quot;&quot;), handler: { (dialog) -&gt; Void in
+    print(&quot;====第一个闭包====&quot;)
+
+    dialog?.dismiss({ () -&gt; Void in
+        print(&quot;====第二个闭包====&quot;)
+    })
+})
+</code></pre><hr>
+<p>其余的  慢慢补充</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/ios检测是否越狱/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ios检测是否越狱
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/04/09/ios中计算两个经纬度的距离/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ios中计算两个经纬度的距离</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="Swift代码规范-自用型" data-title="Swift代码规范--自用型" data-url="http://yoursite.com/2016/04/09/Swift代码规范-自用型/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"gejw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

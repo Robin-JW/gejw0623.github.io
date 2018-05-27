@@ -1,0 +1,544 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>swift-style-guide | Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="转自 https://github.com/Artwalk/swift-style-guide  ##原版 戳这里   哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）感激不尽~~~   如果没能及时更新，可能比较忙，或者比较懒 →_→可以 Email 或 翻译后，pull request  #Swift 编码规范  A guide to our Swift s">
+<meta name="keywords" content="ios,swift,osx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="swift-style-guide">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/swift-style-guide/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:description" content="转自 https://github.com/Artwalk/swift-style-guide  ##原版 戳这里   哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）感激不尽~~~   如果没能及时更新，可能比较忙，或者比较懒 →_→可以 Email 或 翻译后，pull request  #Swift 编码规范  A guide to our Swift s">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-01-30T09:30:50.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="swift-style-guide">
+<meta name="twitter:description" content="转自 https://github.com/Artwalk/swift-style-guide  ##原版 戳这里   哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）感激不尽~~~   如果没能及时更新，可能比较忙，或者比较懒 →_→可以 Email 或 翻译后，pull request  #Swift 编码规范  A guide to our Swift s">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-swift-style-guide" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/swift-style-guide/" class="article-date">
+  	<time datetime="2016-03-16T10:34:55.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      swift-style-guide
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="external">https://github.com/Artwalk/swift-style-guide</a></p>
+</blockquote>
+<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="external">原版</a> 戳这里  </p>
+<p>哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）<br>感激不尽~~~  </p>
+<p>如果没能及时更新，可能比较忙，或者比较懒 →_→<br>可以 <code>Email</code> 或 翻译后，<code>pull request</code></p>
+<hr>
+<p>#Swift 编码规范 </p>
+<p>A guide to our Swift style and conventions.</p>
+<p>This is an attempt to encourage patterns that accomplish the following goals (in<br>rough priority order):</p>
+<ol>
+<li>Increased rigor, and decreased likelihood of programmer error</li>
+<li>Increased clarity of intent</li>
+<li>Reduced verbosity</li>
+<li>Fewer debates about aesthetics</li>
+</ol>
+<p>If you have suggestions, please see our <a href="CONTRIBUTING.md">contribution guidelines</a>,<br>then open a pull request. :zap:</p>
+<p>本文尝试做到以下几点 （大概的先后顺序）：</p>
+<ol>
+<li>增进精确，减少程序员犯错的可能</li>
+<li>明确意图</li>
+<li>减少冗余</li>
+<li>少量关于美的讨论</li>
+</ol>
+<p>如果你有什么建议，请看我们的 <a href="CONTRIBUTING.md">贡献导引</a>，然后开个 <code>pull request</code>.  :zap:</p>
+<hr>
+<h4 id="Whitespace"><a href="#Whitespace" class="headerlink" title="Whitespace"></a>Whitespace</h4><ul>
+<li>Tabs, not spaces.</li>
+<li>End files with a newline.</li>
+<li>Make liberal use of vertical whitespace to divide code into logical chunks.</li>
+<li>Don’t leave trailing whitespace.<ul>
+<li>Not even leading indentation on blank lines.</li>
+</ul>
+</li>
+</ul>
+<h4 id="留空白"><a href="#留空白" class="headerlink" title="留空白"></a>留空白</h4><ul>
+<li>用 Tabs，而非 空格</li>
+<li>文件结束时留一空行</li>
+<li>用足够的空行把代码分割成合理的块</li>
+<li>不要在一行结尾留下空白<ul>
+<li>千万别在空行留下缩进</li>
+</ul>
+</li>
+</ul>
+<h4 id="Prefer-let-bindings-over-var-bindings-wherever-possible"><a href="#Prefer-let-bindings-over-var-bindings-wherever-possible" class="headerlink" title="Prefer let-bindings over var-bindings wherever possible"></a>Prefer <code>let</code>-bindings over <code>var</code>-bindings wherever possible</h4><h4 id="能用-let-尽量用-let-而不是-var"><a href="#能用-let-尽量用-let-而不是-var" class="headerlink" title="能用 let 尽量用 let 而不是 var"></a>能用 <code>let</code> 尽量用 <code>let</code> 而不是 <code>var</code></h4><p>Use <code>let foo = …</code> over <code>var foo = …</code> wherever possible (and when in doubt). Only use <code>var</code> if you absolutely have to (i.e. you <em>know</em> that the value might change, e.g. when using the <code>weak</code> storage modifier).</p>
+<p><em>Rationale:</em> The intent and meaning of both keywords is clear, but <em>let-by-default</em> results in safer and clearer code.</p>
+<p>尽可能的用 <code>let foo = ...</code> 而不是 <code>var foo = ...</code> （并且包括你疑惑的时候）。万不得已的时候，再用 <code>var</code> （就是说：你 <em>知道</em> 这个值会改变，比如：有 <code>weak</code> 修饰的存储变量）。</p>
+<p><em>理由：</em> 这俩关键字 无论意图还是意义 都很清楚了，但是 <em>let</em> 可以产生安全清晰的代码。</p>
+<p>A <code>let</code>-binding guarantees and <em>clearly signals to the programmer</em> that its value will never change. Subsequent code can thus make stronger assumptions about its usage.</p>
+<p>It becomes easier to reason about code. Had you used <code>var</code> while still making the assumption that the value never changed, you would have to manually check that.</p>
+<p>Accordingly, whenever you see a <code>var</code> identifier being used, assume that it will change and ask yourself why.</p>
+<p><code>let</code>-有保障 并且它的值的永远不会变对程序猿也是个 <em>清晰的标记</em>，对于它的用法，之后的代码可以做个强而有力的推断。</p>
+<p>猜测代码更容易了。不然一旦你用了 <code>var</code>，还要去推测值会不会变，这时候你就不得不人肉去检查。</p>
+<p>这样，无论何时你看到 <code>var</code>，就假设它会变，并问自己为啥。</p>
+<h4 id="Return-and-break-early"><a href="#Return-and-break-early" class="headerlink" title="Return and break early"></a>Return and break early</h4><h4 id="尽早地-Return-或者-break"><a href="#尽早地-Return-或者-break" class="headerlink" title="尽早地 Return 或者 break"></a>尽早地 <code>Return</code> 或者 <code>break</code></h4><p>When you have to meet certain criteria to continue execution, try to exit early. So, instead of this:  </p>
+<p>当你遇到某些操作需要通过条件判断去执行，应当尽早地退出判断条件：你不应该用下面这种写法</p>
+<pre><code>if n.isNumber {
+    // Use n here
+} else {
+    return
+}
+</code></pre><p>use this:</p>
+<pre><code>guard n.isNumber else {
+    return
+}
+// Use n here
+</code></pre><p>You can also do it with <code>if</code> statement, but using <code>guard</code> is prefered, because <code>guard</code> statement without <code>return</code>, <code>break</code> or <code>continue</code> produces a compile-time error, so exit is guaranteed.</p>
+<p>或者你也可以用 <code>if</code> 声明，但是我们推荐你使用 <code>guard</code></p>
+<p><em>理由：</em> 你一但声明 <code>guard</code> 编译器会强制要求你和 <code>return</code>, <code>break</code> 或者 <code>continue</code> 一起搭配使用，否则会产生一个编译时的错误。 </p>
+<h4 id="Avoid-Using-Force-Unwrapping-of-Optionals"><a href="#Avoid-Using-Force-Unwrapping-of-Optionals" class="headerlink" title="Avoid Using Force-Unwrapping of Optionals"></a>Avoid Using Force-Unwrapping of Optionals</h4><h4 id="避免对-可选类型-强解包"><a href="#避免对-可选类型-强解包" class="headerlink" title="避免对 可选类型 强解包"></a>避免对 可选类型 强解包</h4><p>If you have an identifier <code>foo</code> of type <code>FooType?</code> or <code>FooType!</code>, don’t force-unwrap it to get to the underlying value (<code>foo!</code>) if possible.</p>
+<p>如果你有个 <code>FooType?</code> 或 <code>FooType!</code> 的 <code>foo</code>，尽量不要强行展开它以得到基本类型（<code>foo!</code>）。</p>
+<p>Instead, prefer this:</p>
+<pre><code>if let foo = foo {
+    // Use unwrapped `foo` value in here
+} else {
+    // If appropriate, handle the case where the optional is nil
+}
+</code></pre><p>Alternatively, you might want to use Swift’s Optional Chaining in some of these cases, such as:</p>
+<p>或者使用可选链，比如：</p>
+<pre><code>// Call the function if `foo` is not nil. If `foo` is nil, ignore we ever tried to make the call
+foo?.callSomethingIfFooIsNotNil()
+</code></pre><p><em>Rationale:</em> Explicit <code>if let</code>-binding of optionals results in safer code. Force unwrapping is more prone to lead to runtime crashes.</p>
+<p><em>理由：</em> <code>if let</code> 绑定可选类型产生了更安全的代码，强行展开很可能导致运行时崩溃。</p>
+<h4 id="Avoid-Using-Implicitly-Unwrapped-Optionals"><a href="#Avoid-Using-Implicitly-Unwrapped-Optionals" class="headerlink" title="Avoid Using Implicitly Unwrapped Optionals"></a>Avoid Using Implicitly Unwrapped Optionals</h4><h4 id="避免毫无保留地展开可选类型"><a href="#避免毫无保留地展开可选类型" class="headerlink" title="避免毫无保留地展开可选类型"></a>避免毫无保留地展开可选类型</h4><p>Where possible, use <code>let foo: FooType?</code> instead of <code>let foo: FooType!</code> if <code>foo</code> may be nil (Note that in general, <code>?</code> can be used instead of <code>!</code>).</p>
+<p><em>Rationale:</em> Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.</p>
+<p>如果 foo 可能为 nil ，尽可能的用 <code>let foo: FooType?</code> 代替 <code>let foo: FooType!</code>（注意：一般情况下，<code>?</code>可以代替<code>!</code>）</p>
+<p><em>理由:</em> 明确的可选类型产生了更安全的代码。无保留地展开可选类型也会挂。</p>
+<h4 id="Prefer-implicit-getters-on-read-only-properties-and-subscripts"><a href="#Prefer-implicit-getters-on-read-only-properties-and-subscripts" class="headerlink" title="Prefer implicit getters on read-only properties and subscripts"></a>Prefer implicit getters on read-only properties and subscripts</h4><h4 id="对于只读属性的-properties-和-subscripts，选用隐式的-getters-方法"><a href="#对于只读属性的-properties-和-subscripts，选用隐式的-getters-方法" class="headerlink" title="对于只读属性的 properties 和 subscripts，选用隐式的 getters 方法"></a>对于只读属性的 <code>properties</code> 和 <code>subscripts</code>，选用隐式的 getters 方法</h4><p>When possible, omit the <code>get</code> keyword on read-only computed properties and<br>read-only subscripts.</p>
+<p>如果可以，省略只读属性的 <code>properties</code> 和 <code>subscripts</code> 的 <code>get</code> 关键字</p>
+<p>So, write these:</p>
+<pre><code>var myGreatProperty: Int {
+    return 4
+}
+
+subscript(index: Int) -&gt; T {
+    return objects[index]
+}
+</code></pre><p>… not these:</p>
+<pre><code>var myGreatProperty: Int {
+    get {
+        return 4
+    }
+}
+
+subscript(index: Int) -&gt; T {
+    get {
+        return objects[index]
+    }
+}
+</code></pre><p><em>Rationale:</em> The intent and meaning of the first version is clear, and results in less code.</p>
+<p><em>理由:</em> 第一个版本的代码意图已经很清楚了，并且用了更少的代码</p>
+<h4 id="Always-specify-access-control-explicitly-for-top-level-definitions"><a href="#Always-specify-access-control-explicitly-for-top-level-definitions" class="headerlink" title="Always specify access control explicitly for top-level definitions"></a>Always specify access control explicitly for top-level definitions</h4><h4 id="对于顶级定义，永远明确的列出权限控制"><a href="#对于顶级定义，永远明确的列出权限控制" class="headerlink" title="对于顶级定义，永远明确的列出权限控制"></a>对于顶级定义，永远明确的列出权限控制</h4><p>Top-level functions, types, and variables should always have explicit access control specifiers:</p>
+<p>顶级函数，类型和变量，永远应该有着详尽的权限控制说明符</p>
+<pre><code>public var whoopsGlobalState: Int
+internal struct TheFez {}
+private func doTheThings(things: [Thing]) {}
+</code></pre><p>However, definitions within those can leave access control implicit, where appropriate:</p>
+<p>当然，这样也是恰当的，因为用了隐式权限控制</p>
+<pre><code>internal struct TheFez {
+    var owner: Person = Joshaber()
+}
+</code></pre><p><em>Rationale:</em> It’s rarely appropriate for top-level definitions to be specifically <code>internal</code>, and being explicit ensures that careful thought goes into that decision. Within a definition, reusing the same access control specifier is just duplicative, and the default is usually reasonable.</p>
+<p><em>理由:</em> 顶级定义指定为 <code>internal</code>很少有恰当的，要明确的确保经过了仔细的判断。有了一个定义，重用同样的权限控制说明符就显得重复，所以默认的通常是合理的。</p>
+<h4 id="When-specifying-a-type-always-associate-the-colon-with-the-identifier"><a href="#When-specifying-a-type-always-associate-the-colon-with-the-identifier" class="headerlink" title="When specifying a type, always associate the colon with the identifier"></a>When specifying a type, always associate the colon with the identifier</h4><h4 id="当指定一个类型时，把-冒号和标识符-连在一起"><a href="#当指定一个类型时，把-冒号和标识符-连在一起" class="headerlink" title="当指定一个类型时，把 冒号和标识符 连在一起"></a>当指定一个类型时，把 冒号和标识符 连在一起</h4><p>When specifying the type of an identifier, always put the colon immediately<br>after the identifier, followed by a space and then the type name.</p>
+<p>当指定标示符的类型时，冒号要紧跟着标示符，然后空一格再写类型</p>
+<pre><code>class SmallBatchSustainableFairtrade: Coffee { ... }
+
+let timeToCoffee: NSTimeInterval = 2
+
+func makeCoffee(type: CoffeeType) -&gt; Coffee { ... }
+</code></pre><p><em>Rationale:</em> The type specifier is saying something about the <em>identifier</em> so<br>it should be positioned with it.</p>
+<p><em>理由:</em> 类型区分号是对于 <em>identifier</em> 来说的，所以要跟它连在一起。</p>
+<p>Also, when specifying the type of a dictionary, always put the colon immediately<br>after the key type, followed by a space and then the value type.</p>
+<h4 id="Only-explicitly-refer-to-self-when-required"><a href="#Only-explicitly-refer-to-self-when-required" class="headerlink" title="Only explicitly refer to self when required"></a>Only explicitly refer to <code>self</code> when required</h4><h4 id="需要时才写上-self"><a href="#需要时才写上-self" class="headerlink" title="需要时才写上 self"></a>需要时才写上 <code>self</code></h4><p>When accessing properties or methods on <code>self</code>, leave the reference to <code>self</code> implicit by default:</p>
+<p>当调用 <code>self</code> 的 <code>properties</code> 或 <code>methods</code> 时，<code>self</code> 用默认的隐式引用：</p>
+<pre><code>private class History {
+    var events: [Event]
+
+    func rewrite() {
+        events = []
+    }
+}
+</code></pre><p>Only include the explicit keyword when required by the language—for example, in a closure, or when parameter names conflict:</p>
+<p>必要的时候再加上<code>self</code>, 比如在闭包里，或者 参数名冲突了：</p>
+<pre><code>extension History {
+    init(events: [Event]) {
+        self.events = events
+    }
+
+    var whenVictorious: () -&gt; () {
+        return {
+            self.rewrite()
+        }
+    }
+}
+</code></pre><p><em>Rationale:</em> This makes the capturing semantics of <code>self</code> stand out more in closures, and avoids verbosity elsewhere.</p>
+<p><em>原因:</em> 在闭包里用<code>self</code>更加凸显它的语义，并且避免了别处的冗长</p>
+<h4 id="Prefer-structs-over-classes"><a href="#Prefer-structs-over-classes" class="headerlink" title="Prefer structs over classes"></a>Prefer structs over classes</h4><h4 id="首选-structs-而非-classes"><a href="#首选-structs-而非-classes" class="headerlink" title="首选 structs 而非 classes"></a>首选 <code>structs</code> 而非 <code>classes</code></h4><p>Unless you require functionality that can only be provided by a class (like identity or deinitializers), implement a struct instead.</p>
+<p>Note that inheritance is (by itself) usually <em>not</em> a good reason to use classes, because polymorphism can be provided by protocols, and implementation reuse can be provided through composition.</p>
+<p>For example, this class hierarchy:</p>
+<p>除非你需要 <code>class</code> 才能提供的功能（比如 <code>identity</code> 或 <code>deinitializers</code>），不然就用 <code>struct</code></p>
+<p>要注意到继承通常<strong>不</strong>是用 类 的好理由，因为 多态 可以通过 协议 实现，重用 可以通过 组合 实现。</p>
+<p>比如，这个类的分级</p>
+<pre><code>class Vehicle {
+    let numberOfWheels: Int
+
+    init(numberOfWheels: Int) {
+        self.numberOfWheels = numberOfWheels
+    }
+
+    func maximumTotalTirePressure(pressurePerWheel: Float) -&gt; Float {
+        return pressurePerWheel * Float(numberOfWheels)
+    }
+}
+
+class Bicycle: Vehicle {
+    init() {
+        super.init(numberOfWheels: 2)
+    }
+}
+
+class Car: Vehicle {
+    init() {
+        super.init(numberOfWheels: 4)
+    }
+}
+</code></pre><p>could be refactored into these definitions:</p>
+<p>可以重构成酱紫：</p>
+<pre><code>protocol Vehicle {
+    var numberOfWheels: Int { get }
+}
+
+func maximumTotalTirePressure(vehicle: Vehicle, pressurePerWheel: Float) -&gt; Float {
+    return pressurePerWheel * Float(vehicle.numberOfWheels)
+}
+
+struct Bicycle: Vehicle {
+    let numberOfWheels = 2
+}
+
+struct Car: Vehicle {
+    let numberOfWheels = 4
+}
+</code></pre><p><em>Rationale:</em> Value types are simpler, easier to reason about, and behave as expected with the <code>let</code> keyword.</p>
+<p><em>理由:</em> 值的类型更简单，容易辨别，并且通过<code>let</code>关键字可猜测行为。</p>
+<h4 id="Make-classes-final-by-default"><a href="#Make-classes-final-by-default" class="headerlink" title="Make classes final by default"></a>Make classes <code>final</code> by default</h4><h4 id="默认-classes-为-final"><a href="#默认-classes-为-final" class="headerlink" title="默认 classes 为 final"></a>默认 <code>classes</code> 为 <code>final</code></h4><p>Classes should start as <code>final</code>, and only be changed to allow subclassing if a valid need for inheritance has been identified. Even in that case, as many definitions as possible <em>within</em> the class should be <code>final</code> as well, following the same rules.</p>
+<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting <em>in</em> to inheritance hopefully means that more thought will be put into the decision.</p>
+<p><code>Classes</code> 应该作为基类，只能被子类已识别正当的继承（and only be changed to allow subclassing if a valid need for inheritance has been identified.）。即使这种例子，根据同样的规则，类中的定义也要尽可能的用 <code>final</code> 标注上</p>
+<p><em>理由:</em> 组合通常比继承更合适，而且不用 继承意味着考虑的更多（and opting in to inheritance hopefully means that more thought will be put into the decision.）。</p>
+<h4 id="Omit-type-parameters-where-possible"><a href="#Omit-type-parameters-where-possible" class="headerlink" title="Omit type parameters where possible"></a>Omit type parameters where possible</h4><h4 id="能不写类型参数的就别写了"><a href="#能不写类型参数的就别写了" class="headerlink" title="能不写类型参数的就别写了"></a>能不写类型参数的就别写了</h4><p>Methods of parameterized types can omit type parameters on the receiving type when they’re identical to the receiver’s. For example:</p>
+<p>参数化类型的方法可以省略接收者的类型参数，当他们对接收者来说一样时。比如：</p>
+<pre><code>struct Composite&lt;T&gt; {
+    …
+    func compose(other: Composite&lt;T&gt;) -&gt; Composite&lt;T&gt; {
+        return Composite&lt;T&gt;(self, other)
+    }
+}
+</code></pre><p>could be rendered as:</p>
+<pre><code>struct Composite&lt;T&gt; {
+    …
+    func compose(other: Composite) -&gt; Composite {
+        return Composite(self, other)
+    }
+}
+</code></pre><p><em>Rationale:</em> Omitting redundant type parameters clarifies the intent, and makes it obvious by contrast when the returned type takes different type parameters.</p>
+<p><em>理由:</em> 省略多余的类型参数让意图更清晰，并且通过对比，让返回值为不同的类型参数的情况也清楚了很多。</p>
+<h4 id="Use-whitespace-around-operator-definitions"><a href="#Use-whitespace-around-operator-definitions" class="headerlink" title="Use whitespace around operator definitions"></a>Use whitespace around operator definitions</h4><h4 id="操作定义符-两边留空格"><a href="#操作定义符-两边留空格" class="headerlink" title="操作定义符 两边留空格"></a>操作定义符 两边留空格</h4><p>Use whitespace around operators when defining them. Instead of:</p>
+<p>当定义操作定义符 时，两边留空格。不要酱紫：</p>
+<pre><code>func &lt;|(lhs: Int, rhs: Int) -&gt; Int
+func &lt;|&lt;&lt;A&gt;(lhs: A, rhs: A) -&gt; A
+</code></pre><p>write:</p>
+<pre><code>func &lt;| (lhs: Int, rhs: Int) -&gt; Int
+func &lt;|&lt; &lt;A&gt;(lhs: A, rhs: A) -&gt; A
+</code></pre><p><em>Rationale:</em> Operators consist of punctuation characters, which can make them difficult to read when immediately followed by the punctuation for a type or value parameter list. Adding whitespace separates the two more clearly.</p>
+<p><em>理由：</em> 操作符 由 标点字符组成，当立即连着 类型或者参数值，会让代码非常难读。加上空格分开他们就清晰了</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/03/21/开始使用React-Native/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          开始使用React Native
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/15/在OC与Swift混编时需要注意些神马/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在OC与Swift混编时需要注意些神马？</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="swift-style-guide" data-title="swift-style-guide" data-url="http://yoursite.com/2016/03/16/swift-style-guide/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"gejw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

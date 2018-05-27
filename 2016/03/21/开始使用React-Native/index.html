@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>开始使用React Native | Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="环境需求 OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。 推荐使用Homebrew 来安装Watchman和Flow 安装Node.js 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用brew install node安装即可，不必按照下面的nvm的安装步骤) 安装">
+<meta name="keywords" content="React-Native,React,js">
+<meta property="og:type" content="article">
+<meta property="og:title" content="开始使用React Native">
+<meta property="og:url" content="http://yoursite.com/2016/03/21/开始使用React-Native/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:description" content="环境需求 OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。 推荐使用Homebrew 来安装Watchman和Flow 安装Node.js 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用brew install node安装即可，不必按照下面的nvm的安装步骤) 安装">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-01-30T09:28:42.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="开始使用React Native">
+<meta name="twitter:description" content="环境需求 OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。 推荐使用Homebrew 来安装Watchman和Flow 安装Node.js 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用brew install node安装即可，不必按照下面的nvm的安装步骤) 安装">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-开始使用React-Native" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/21/开始使用React-Native/" class="article-date">
+  	<time datetime="2016-03-21T06:01:12.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      开始使用React Native
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h2><ol>
+<li>OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。</li>
+<li>推荐使用<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a> 来安装Watchman和Flow</li>
+<li>安装<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用<code>brew install node</code>安装即可，不必按照下面的nvm的安装步骤)<ul>
+<li>安装 <strong>nvm</strong>（安装向导在<a href="https://github.com/creationix/nvm#installation" target="_blank" rel="external">这里</a>）。然后运行<code>nvm install node &amp;&amp; nvm alias default node</code>，这将会默认安装最新版本的Node.js并且设置好命令行的环境变量，这样你可以输入<code>node</code>命令来启动Node.js环境。nvm使你可以同时安装多个版本的Node.js，并且在这些版本之间轻松切换。</li>
+<li>如果你从未接触过npm，推荐阅读<a href="https://docs.npmjs.com/" target="_blank" rel="external">npm的文档</a></li>
+</ul>
+</li>
+<li>在命令行中输入<code>brew install watchman</code>，我们推荐安装<a href="https://facebook.github.io/watchman/docs/install.html" target="_blank" rel="external">watchman</a>，否则你可能会遇到一个Node.js监视文件系统的BUG。</li>
+<li>如果你希望使用<a href="http://www.flowtype.org/" target="_blank" rel="external">flow</a>来为js代码加上类型检查，那么在命令行中输入<code>brew install flow</code>来安装flow。（译注：新手可以跳过这一步）</li>
+</ol>
+<p>我们推荐您定期运行<code>brew update &amp;&amp; brew upgrade</code>来保持上述几个程序为最新版本。</p>
+<h2 id="iOS开发环境准备"><a href="#iOS开发环境准备" class="headerlink" title="iOS开发环境准备"></a>iOS开发环境准备</h2><p>你需要安装<a href="https://developer.apple.com/xcode/downloads/" target="_blank" rel="external">Xcode</a> 7.0或者更高版本。你可以在App Store中找到并安装Xcode。</p>
+<p><em>译注：如果您选择从第三方网站/镜像下载Xcode，请务必从正规镜像网站下载验证文件Hash以防止类似XcodeGhost的安全风险发生，不要信任论坛、百度空间等分享渠道</em></p>
+<h2 id="Android开发环境准备"><a href="#Android开发环境准备" class="headerlink" title="Android开发环境准备"></a>Android开发环境准备</h2><p>要使React Native应用支持Android，首先需要安装Android SDK (如果你不想连接安卓设备，那么还需要一个安卓模拟器)。</p>
+<p><em>译注：</em> Windows用户可以参考<a href="http://bbs.reactnative.cn/topic/10" target="_blank" rel="external">这个帖子</a>来搭建环境。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><pre><code>$ npm install -g react-native-cli
+$ react-native init AwesomeProject
+</code></pre><p>译注：由于众所周知的网络原因，react-native命令行从npm官方源拖代码时会遇上麻烦。请将npm仓库源替换为国内镜像：  </p>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+npm config set disturl https://npm.taobao.org/dist
+</code></pre><p>另，执行init时切记不要在前面加上sudo（否则新项目的目录所有者会变为root而不是当前用户，导致一系列权限问题，请使用chown修复）。<br>本站论坛区提供了<a href="http://bbs.reactnative.cn/topic/11" target="_blank" rel="external">完整的绿色纯净新项目包</a>。完整打包全部iOS和Android的第三方依赖，只要环境配置正确，无需科学上网漫长等待，解压即可直接运行。</p>
+<p><strong>运行iOS应用</strong></p>
+<ul>
+<li><code>$ cd AwesomeProject</code></li>
+<li>用XCode打开<code>ios/AwesomeProject.xcodeproj</code>并点击Run按钮。</li>
+<li>使用你喜欢的文本编辑器打开<code>index.ios.js</code>并随便改上几行。</li>
+<li>在iOS Emulator中按下<code>⌘-R</code>就可以刷新APP并看到你的最新修改！</li>
+</ul>
+<p><strong>运行Android应用</strong></p>
+<ul>
+<li><code>$ cd AwesomeProject</code></li>
+<li><code>$ react-native run-android</code></li>
+<li>使用你喜欢的文本编辑器打开<code>index.android.js</code>并随便改上几行</li>
+<li>按Menu键（通常是F2，在Genymotion模拟器中是<code>⌘+M</code>）然后选择 <em>Reload JS</em> 就可以看到你的最新修改。</li>
+<li>在终端下运行<code>adb logcat *:S ReactNative:V ReactNativeJS:V</code>可以看到你的应用的日志。</li>
+</ul>
+<p>恭喜！现在你已经成功运行并修改了你的第一个React Native应用！</p>
+<p><em>如果你在以上过程中遇到了任何问题，可以看看论坛里总结的<a href="http://bbs.reactnative.cn/topic/130" target="_blank" rel="external">常见问题</a>。</em></p>
+<h2 id="为已有的React-Native工程添加Android支持"><a href="#为已有的React-Native工程添加Android支持" class="headerlink" title="为已有的React Native工程添加Android支持"></a>为已有的React Native工程添加Android支持</h2><p>如果你已经有了一个只有iOS版本的React Native工程，并且希望添加Android支持，你需要在你的工程目录下运行以下命令：</p>
+<ol>
+<li>打开<code>package.json</code>文件，在dependencies项中找到<code>react-native</code>，并将其后的版本号修改为<a href="https://www.npmjs.com/package/react-native" target="_blank" rel="external">最新版本</a>。</li>
+<li><code>$ npm install</code></li>
+<li><code>$ react-native android</code></li>
+</ol>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/ios中计算两个经纬度的距离/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          ios中计算两个经纬度的距离
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/16/swift-style-guide/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">swift-style-guide</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="开始使用React-Native" data-title="开始使用React Native" data-url="http://yoursite.com/2016/03/21/开始使用React-Native/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"gejw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

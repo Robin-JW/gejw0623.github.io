@@ -1,0 +1,1382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Robin灬桑">
+<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Robin灬桑">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-NSView上添加阴影" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/02/NSView上添加阴影/" class="article-date">
+  	<time datetime="2016-05-02T12:50:22.000Z" itemprop="datePublished">2016-05-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/02/NSView上添加阴影/">NSView上添加阴影</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在mac开发中 如何在NSView上添加阴影？   我们可以使用<strong>NSShadow</strong>类  so easy！</p>
+<pre><code>NSShadow *shadow = [[NSShadow alloc] init];
+//设置阴影为白色
+[shadow setShadowColor:[NSColor whiteColor]];
+//设置阴影为右下方
+[shadow setShadowOffset:NSMakeSize(1, 1)];
+//这一步不可少，设置NSView的任何与Layer有关的效果都需要
+[textField setWantsLayer:YES];
+//最后一步，完成
+[textField setShadow:shadow];
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cooca/">cooca</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-如何让你的Pod库同时支持多个设备" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/24/如何让你的Pod库同时支持多个设备/" class="article-date">
+  	<time datetime="2016-04-24T01:55:16.000Z" itemprop="datePublished">2016-04-24</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/24/如何让你的Pod库同时支持多个设备/">如何让你的Pod库同时支持多个设备</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="如何让你的Pod库同时支持多个设备"><a href="#如何让你的Pod库同时支持多个设备" class="headerlink" title="如何让你的Pod库同时支持多个设备"></a>如何让你的Pod库同时支持多个设备</h2><pre><code>Pod::Spec.new do |s|
+  s.name     = &apos;AFNetworking&apos;
+  s.version  = &apos;3.1.0&apos;
+  s.license  = &apos;MIT&apos;
+  s.summary  = &apos;A delightful iOS and OS X networking framework.&apos;
+  s.homepage = &apos;https://github.com/AFNetworking/AFNetworking&apos;
+  s.social_media_url = &apos;https://twitter.com/AFNetworking&apos;
+  s.authors  = { &apos;Mattt Thompson&apos; =&gt; &apos;m@mattt.me&apos; }
+  s.source   = { :git =&gt; &apos;https://github.com/AFNetworking/AFNetworking.git&apos;, :tag =&gt; s.version, :submodules =&gt; true }
+  s.requires_arc = true
+
+  s.public_header_files = &apos;AFNetworking/AFNetworking.h&apos;
+  s.source_files = &apos;AFNetworking/AFNetworking.h&apos;
+
+  s.ios.deployment_target = &apos;7.0&apos;
+  s.osx.deployment_target = &apos;10.9&apos;
+  s.watchos.deployment_target = &apos;2.0&apos;
+  s.tvos.deployment_target = &apos;9.0&apos;
+end
+</code></pre><p>参考AFNetworking</p>
+<p>只需要添加需要的 deployment_target 就可以<br>比如需要同时支持ios和osx时  只需要添加</p>
+<pre><code>s.ios.deployment_target = &apos;7.0&apos;
+s.osx.deployment_target = &apos;10.9&apos;
+</code></pre><p>即可</p>
+<p>同理  比如需要各自支持</p>
+<p>只需要这样写</p>
+<pre><code>s.ios.xx = &apos;&apos;
+s.ios.xxx = &apos;&apos;
+
+s.osx.xx = &apos;&apos;
+s.osx.xxx = &apos;&apos;
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tvos/">tvos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/watchos/">watchos</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-ios检测是否越狱" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/ios检测是否越狱/" class="article-date">
+  	<time datetime="2016-04-09T07:08:45.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/ios检测是否越狱/">ios检测是否越狱</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>var isJailbroken: Bool {
+    let pathList = [&quot;/Applications/Cydia.app&quot;,
+                   &quot;/Library/MobileSubstrate/MobileSubstrate.dylib&quot;,
+                   &quot;/bin/bash&quot;,
+                   &quot;/usr/sbin/sshd&quot;,  
+                   &quot;/etc/apt&quot;,
+                   &quot;/private/var/lib/apt/&quot;]
+    return pathList.filter({NSFileManager.defaultManager().fileExistsAtPath($0)}).count &gt; 0
+}
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/越狱/">越狱</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Swift代码规范-自用型" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/Swift代码规范-自用型/" class="article-date">
+  	<time datetime="2016-04-09T06:22:45.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/Swift代码规范-自用型/">Swift代码规范--自用型</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><blockquote>
+<p>不多空行 不少空行</p>
+<p>下列情况应该总是使用一个空行：</p>
+<pre><code>1·两个方法之间
+2·两个类之间
+3·方法内的局部变量和方法的第一条语句之间
+4·块注释或单行注释之前
+5·一个方法内的两个逻辑段之间，用以提高可读性
+6·文件结尾
+7·import上方和下方
+8· ......
+</code></pre></blockquote>
+<pre><code>/*------import上方空一行------*/
+import UIKit
+import CoreBluetooth
+/*------import下方空一行------*/
+class ClassName: ParentClass {
+    /*------方法内部第一行空行------*/
+    var property: propertyType?
+    var property2: propertyType?
+    /*------方法与属性之间空一行------*/
+    func function() {
+
+    } 
+    /*------方法之间空一行------*/
+    func function2() {
+
+    } 
+    /*------方法内部最后一行空行------*/
+}
+/*------文件结尾空一行------*/
+class ClassName: ParentClass {
+
+    func function() {
+
+    } 
+
+}
+/*------文件结尾空一行------*/
+</code></pre><h2 id="冒号"><a href="#冒号" class="headerlink" title="冒号"></a>冒号</h2><blockquote>
+<p>冒号遵循靠左规则 (左侧无空格，右侧一个空格，不多空)</p>
+</blockquote>
+<pre><code>---------------定义类---------------
+class ClassName: ParentClass {
+
+}
+
+---------------定义字典---------------
+var dict = [String: String]()
+---------------定义属性---------------
+var property: String?
+---------------方法的参数---------------
+func function(param: String) {
+
+}
+</code></pre><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><blockquote>
+<p>下列情况应该总是使用一个空格：</p>
+<pre><code>1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
+2·逗号之后 (元组, 多参数 等等情况下)
+3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
+4.方法返回值
+5.冒号定义(遵循上面冒号)
+</code></pre></blockquote>
+<pre><code>class ClassName: ParentClass {
+
+}
+    class ClassName:[空格]ParentClass[空格]{
+
+    }
+
+// ==================================================
+
+func function() {
+
+}
+    func function()[空格]{
+
+    }
+
+// ==================================================
+for _ in {
+
+}
+    for _ in[空格]{
+
+    }
+// ==================================================
+if a == 5 {
+
+}
+
+    if a[空格]==[空格]5[空格]{
+
+    }
+
+// ==================================================
+
+func function(param: String, param2: Int) -&gt; Int {
+    for i in 0..&lt;10 {
+
+    }
+    if param == &quot;&quot; {
+
+    }
+    return 0
+}
+
+    func function(param:[空格]String,[空格]param2:[空格]Int)[空格]-&gt;[空格]Int[空格]{
+        for i in 0..&lt;10[空格]{
+
+        }
+        if param[空格]==[空格]&quot;&quot;[空格]{
+
+        }
+        return 0
+    }
+</code></pre><h2 id="缩进"><a href="#缩进" class="headerlink" title="缩进"></a>缩进</h2><blockquote>
+<p>按照层级缩进 不允许出现超出层级 </p>
+</blockquote>
+<pre><code>func function() {
+    if a == 1 {
+print(&quot;a == 1&quot;)    
+    }
+}
+
+上面的格式肯定是错的 必须按照层级来  闭包同样道理
+
+func function() {
+    if a == 1 {
+        print(&quot;a == 1&quot;)    
+    }
+}
+
+闭包的例子 看下面的代码就可以一眼看出闭包内部有第二个闭包
+
+dialog.setConformButton(NSLocalizedString(&quot;PUSH_CHECK&quot;, comment: &quot;&quot;), handler: { (dialog) -&gt; Void in
+    print(&quot;====第一个闭包====&quot;)
+
+    dialog?.dismiss({ () -&gt; Void in
+        print(&quot;====第二个闭包====&quot;)
+    })
+})
+</code></pre><hr>
+<p>其余的  慢慢补充</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-ios中计算两个经纬度的距离" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/ios中计算两个经纬度的距离/" class="article-date">
+  	<time datetime="2016-04-09T06:16:20.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/ios中计算两个经纬度的距离/">ios中计算两个经纬度的距离</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>源码 -&gt; </p>
+</blockquote>
+<pre><code>extension CLLocationCoordinate2D {
+
+    /**
+     计算两个经纬度的距离 (使用ios自带算法)
+
+     - parameter coor: 第二个经纬度
+
+     - returns: 返回距离(m)
+     */
+    func distanceFromCoor(coor: CLLocationCoordinate2D) -&gt; Double {
+        let curLocation = CLLocation(latitude: latitude, longitude: longitude)
+        let otherLocation = CLLocation(latitude: coor.latitude, longitude: coor.longitude)
+        let distance = curLocation.distanceFromLocation(otherLocation)
+        return distance;
+    }
+
+    /**
+     计算两个经纬度的距离 (使用第三方算法)
+
+     - parameter coor: 第二个经纬度
+
+     - returns: 返回距离(m)
+     */
+    func distanceFromCoor2(coor: CLLocationCoordinate2D) -&gt; Double {
+        let PI: Double = 3.1415926
+        let er: Double = 6378137 // 6378700.0f;
+        //ave. radius = 6371.315 (someone said more accurate is 6366.707)
+        //equatorial radius = 6378.388
+        //nautical mile = 1.15078
+        var radlat1 = PI * latitude / 180.0
+        var radlat2 = PI * coor.latitude / 180.0
+        //now long.
+        var radlong1 = PI * longitude / 180.0
+        var radlong2 = PI*coor.longitude / 180.0
+        if( radlat1 &lt; 0 ) {
+            // south
+            radlat1 = PI / 2 + fabs(radlat1)
+        }
+        if( radlat1 &gt; 0 ) {
+            // north
+            radlat1 = PI / 2 - fabs(radlat1)
+        }
+        if( radlong1 &lt; 0 ) {
+            //west
+            radlong1 = PI * 2 - fabs(radlong1)
+        }
+        if( radlat2 &lt; 0 ) {
+            // south
+            radlat2 = PI / 2 + fabs(radlat2)
+        }
+        if( radlat2 &gt; 0 ) {
+            // north
+            radlat2 = PI / 2 - fabs(radlat2)
+        }
+        if( radlong2 &lt; 0 ) {
+            // west
+            radlong2 = PI * 2 - fabs(radlong2)
+        }
+        //spherical coordinates x=r*cos(ag)sin(at), y=r*sin(ag)*sin(at), z=r*cos(at)
+        //zero ag is up so reverse lat
+        let x1 = er * cos(radlong1) * sin(radlat1)
+        let y1 = er * sin(radlong1) * sin(radlat1)
+        let z1 = er * cos(radlat1)
+        let x2 = er * cos(radlong2) * sin(radlat2)
+        let y2 = er * sin(radlong2) * sin(radlat2)
+        let z2 = er * cos(radlat2)
+
+        let d = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2) + pow(z1 - z2, 2))
+        //side, side, side, law of cosines and arccos
+        let theta = acos((pow(er, 2) + pow(er, 2) - pow(d, 2)) / (2 * pow(er, 2)))
+        let dist  = theta * er
+        return dist
+    }
+
+}
+</code></pre><blockquote>
+<p>测试执行 -&gt; </p>
+</blockquote>
+<pre><code>let coor1 = CLLocationCoordinate2D(latitude: 31.4785977506, longitude: 120.3755036570)
+let coor2 = CLLocationCoordinate2D(latitude: 31.4788786668, longitude: 120.3791247841)
+
+print(&quot;\(coor1.distanceFromCoor(coor2))&quot;)
+print(&quot;\(coor1.distanceFromCoor2(coor2))&quot;)
+</code></pre><blockquote>
+<p>输出结果 -&gt; </p>
+</blockquote>
+<pre><code>&quot;345.50016065661\n&quot;
+&quot;345.198446957566\n&quot;
+</code></pre><p>实地测试   误差可以接受</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-开始使用React-Native" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/21/开始使用React-Native/" class="article-date">
+  	<time datetime="2016-03-21T06:01:12.000Z" itemprop="datePublished">2016-03-21</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/21/开始使用React-Native/">开始使用React Native</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h2><ol>
+<li>OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。</li>
+<li>推荐使用<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a> 来安装Watchman和Flow</li>
+<li>安装<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用<code>brew install node</code>安装即可，不必按照下面的nvm的安装步骤)<ul>
+<li>安装 <strong>nvm</strong>（安装向导在<a href="https://github.com/creationix/nvm#installation" target="_blank" rel="external">这里</a>）。然后运行<code>nvm install node &amp;&amp; nvm alias default node</code>，这将会默认安装最新版本的Node.js并且设置好命令行的环境变量，这样你可以输入<code>node</code>命令来启动Node.js环境。nvm使你可以同时安装多个版本的Node.js，并且在这些版本之间轻松切换。</li>
+<li>如果你从未接触过npm，推荐阅读<a href="https://docs.npmjs.com/" target="_blank" rel="external">npm的文档</a></li>
+</ul>
+</li>
+<li>在命令行中输入<code>brew install watchman</code>，我们推荐安装<a href="https://facebook.github.io/watchman/docs/install.html" target="_blank" rel="external">watchman</a>，否则你可能会遇到一个Node.js监视文件系统的BUG。</li>
+<li>如果你希望使用<a href="http://www.flowtype.org/" target="_blank" rel="external">flow</a>来为js代码加上类型检查，那么在命令行中输入<code>brew install flow</code>来安装flow。（译注：新手可以跳过这一步）</li>
+</ol>
+<p>我们推荐您定期运行<code>brew update &amp;&amp; brew upgrade</code>来保持上述几个程序为最新版本。</p>
+<h2 id="iOS开发环境准备"><a href="#iOS开发环境准备" class="headerlink" title="iOS开发环境准备"></a>iOS开发环境准备</h2><p>你需要安装<a href="https://developer.apple.com/xcode/downloads/" target="_blank" rel="external">Xcode</a> 7.0或者更高版本。你可以在App Store中找到并安装Xcode。</p>
+<p><em>译注：如果您选择从第三方网站/镜像下载Xcode，请务必从正规镜像网站下载验证文件Hash以防止类似XcodeGhost的安全风险发生，不要信任论坛、百度空间等分享渠道</em></p>
+<h2 id="Android开发环境准备"><a href="#Android开发环境准备" class="headerlink" title="Android开发环境准备"></a>Android开发环境准备</h2><p>要使React Native应用支持Android，首先需要安装Android SDK (如果你不想连接安卓设备，那么还需要一个安卓模拟器)。</p>
+<p><em>译注：</em> Windows用户可以参考<a href="http://bbs.reactnative.cn/topic/10" target="_blank" rel="external">这个帖子</a>来搭建环境。</p>
+<h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><pre><code>$ npm install -g react-native-cli
+$ react-native init AwesomeProject
+</code></pre><p>译注：由于众所周知的网络原因，react-native命令行从npm官方源拖代码时会遇上麻烦。请将npm仓库源替换为国内镜像：  </p>
+<pre><code>npm config set registry https://registry.npm.taobao.org
+npm config set disturl https://npm.taobao.org/dist
+</code></pre><p>另，执行init时切记不要在前面加上sudo（否则新项目的目录所有者会变为root而不是当前用户，导致一系列权限问题，请使用chown修复）。<br>本站论坛区提供了<a href="http://bbs.reactnative.cn/topic/11" target="_blank" rel="external">完整的绿色纯净新项目包</a>。完整打包全部iOS和Android的第三方依赖，只要环境配置正确，无需科学上网漫长等待，解压即可直接运行。</p>
+<p><strong>运行iOS应用</strong></p>
+<ul>
+<li><code>$ cd AwesomeProject</code></li>
+<li>用XCode打开<code>ios/AwesomeProject.xcodeproj</code>并点击Run按钮。</li>
+<li>使用你喜欢的文本编辑器打开<code>index.ios.js</code>并随便改上几行。</li>
+<li>在iOS Emulator中按下<code>⌘-R</code>就可以刷新APP并看到你的最新修改！</li>
+</ul>
+<p><strong>运行Android应用</strong></p>
+<ul>
+<li><code>$ cd AwesomeProject</code></li>
+<li><code>$ react-native run-android</code></li>
+<li>使用你喜欢的文本编辑器打开<code>index.android.js</code>并随便改上几行</li>
+<li>按Menu键（通常是F2，在Genymotion模拟器中是<code>⌘+M</code>）然后选择 <em>Reload JS</em> 就可以看到你的最新修改。</li>
+<li>在终端下运行<code>adb logcat *:S ReactNative:V ReactNativeJS:V</code>可以看到你的应用的日志。</li>
+</ul>
+<p>恭喜！现在你已经成功运行并修改了你的第一个React Native应用！</p>
+<p><em>如果你在以上过程中遇到了任何问题，可以看看论坛里总结的<a href="http://bbs.reactnative.cn/topic/130" target="_blank" rel="external">常见问题</a>。</em></p>
+<h2 id="为已有的React-Native工程添加Android支持"><a href="#为已有的React-Native工程添加Android支持" class="headerlink" title="为已有的React Native工程添加Android支持"></a>为已有的React Native工程添加Android支持</h2><p>如果你已经有了一个只有iOS版本的React Native工程，并且希望添加Android支持，你需要在你的工程目录下运行以下命令：</p>
+<ol>
+<li>打开<code>package.json</code>文件，在dependencies项中找到<code>react-native</code>，并将其后的版本号修改为<a href="https://www.npmjs.com/package/react-native" target="_blank" rel="external">最新版本</a>。</li>
+<li><code>$ npm install</code></li>
+<li><code>$ react-native android</code></li>
+</ol>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React/">React</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/React-Native/">React-Native</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/js/">js</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-swift-style-guide" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/16/swift-style-guide/" class="article-date">
+  	<time datetime="2016-03-16T10:34:55.000Z" itemprop="datePublished">2016-03-16</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/16/swift-style-guide/">swift-style-guide</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="external">https://github.com/Artwalk/swift-style-guide</a></p>
+</blockquote>
+<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="external">原版</a> 戳这里  </p>
+<p>哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）<br>感激不尽~~~  </p>
+<p>如果没能及时更新，可能比较忙，或者比较懒 →_→<br>可以 <code>Email</code> 或 翻译后，<code>pull request</code></p>
+<hr>
+<p>#Swift 编码规范 </p>
+<p>A guide to our Swift style and conventions.</p>
+<p>This is an attempt to encourage patterns that accomplish the following goals (in<br>rough priority order):</p>
+<ol>
+<li>Increased rigor, and decreased likelihood of programmer error</li>
+<li>Increased clarity of intent</li>
+<li>Reduced verbosity</li>
+<li>Fewer debates about aesthetics</li>
+</ol>
+<p>If you have suggestions, please see our <a href="CONTRIBUTING.md">contribution guidelines</a>,<br>then open a pull request. :zap:</p>
+<p>本文尝试做到以下几点 （大概的先后顺序）：</p>
+<ol>
+<li>增进精确，减少程序员犯错的可能</li>
+<li>明确意图</li>
+<li>减少冗余</li>
+<li>少量关于美的讨论</li>
+</ol>
+<p>如果你有什么建议，请看我们的 <a href="CONTRIBUTING.md">贡献导引</a>，然后开个 <code>pull request</code>.  :zap:</p>
+<hr>
+<h4 id="Whitespace"><a href="#Whitespace" class="headerlink" title="Whitespace"></a>Whitespace</h4><ul>
+<li>Tabs, not spaces.</li>
+<li>End files with a newline.</li>
+<li>Make liberal use of vertical whitespace to divide code into logical chunks.</li>
+<li>Don’t leave trailing whitespace.<ul>
+<li>Not even leading indentation on blank lines.</li>
+</ul>
+</li>
+</ul>
+<h4 id="留空白"><a href="#留空白" class="headerlink" title="留空白"></a>留空白</h4><ul>
+<li>用 Tabs，而非 空格</li>
+<li>文件结束时留一空行</li>
+<li>用足够的空行把代码分割成合理的块</li>
+<li>不要在一行结尾留下空白<ul>
+<li>千万别在空行留下缩进</li>
+</ul>
+</li>
+</ul>
+<h4 id="Prefer-let-bindings-over-var-bindings-wherever-possible"><a href="#Prefer-let-bindings-over-var-bindings-wherever-possible" class="headerlink" title="Prefer let-bindings over var-bindings wherever possible"></a>Prefer <code>let</code>-bindings over <code>var</code>-bindings wherever possible</h4><h4 id="能用-let-尽量用-let-而不是-var"><a href="#能用-let-尽量用-let-而不是-var" class="headerlink" title="能用 let 尽量用 let 而不是 var"></a>能用 <code>let</code> 尽量用 <code>let</code> 而不是 <code>var</code></h4><p>Use <code>let foo = …</code> over <code>var foo = …</code> wherever possible (and when in doubt). Only use <code>var</code> if you absolutely have to (i.e. you <em>know</em> that the value might change, e.g. when using the <code>weak</code> storage modifier).</p>
+<p><em>Rationale:</em> The intent and meaning of both keywords is clear, but <em>let-by-default</em> results in safer and clearer code.</p>
+<p>尽可能的用 <code>let foo = ...</code> 而不是 <code>var foo = ...</code> （并且包括你疑惑的时候）。万不得已的时候，再用 <code>var</code> （就是说：你 <em>知道</em> 这个值会改变，比如：有 <code>weak</code> 修饰的存储变量）。</p>
+<p><em>理由：</em> 这俩关键字 无论意图还是意义 都很清楚了，但是 <em>let</em> 可以产生安全清晰的代码。</p>
+<p>A <code>let</code>-binding guarantees and <em>clearly signals to the programmer</em> that its value will never change. Subsequent code can thus make stronger assumptions about its usage.</p>
+<p>It becomes easier to reason about code. Had you used <code>var</code> while still making the assumption that the value never changed, you would have to manually check that.</p>
+<p>Accordingly, whenever you see a <code>var</code> identifier being used, assume that it will change and ask yourself why.</p>
+<p><code>let</code>-有保障 并且它的值的永远不会变对程序猿也是个 <em>清晰的标记</em>，对于它的用法，之后的代码可以做个强而有力的推断。</p>
+<p>猜测代码更容易了。不然一旦你用了 <code>var</code>，还要去推测值会不会变，这时候你就不得不人肉去检查。</p>
+<p>这样，无论何时你看到 <code>var</code>，就假设它会变，并问自己为啥。</p>
+<h4 id="Return-and-break-early"><a href="#Return-and-break-early" class="headerlink" title="Return and break early"></a>Return and break early</h4><h4 id="尽早地-Return-或者-break"><a href="#尽早地-Return-或者-break" class="headerlink" title="尽早地 Return 或者 break"></a>尽早地 <code>Return</code> 或者 <code>break</code></h4><p>When you have to meet certain criteria to continue execution, try to exit early. So, instead of this:  </p>
+<p>当你遇到某些操作需要通过条件判断去执行，应当尽早地退出判断条件：你不应该用下面这种写法</p>
+<pre><code>if n.isNumber {
+    // Use n here
+} else {
+    return
+}
+</code></pre><p>use this:</p>
+<pre><code>guard n.isNumber else {
+    return
+}
+// Use n here
+</code></pre><p>You can also do it with <code>if</code> statement, but using <code>guard</code> is prefered, because <code>guard</code> statement without <code>return</code>, <code>break</code> or <code>continue</code> produces a compile-time error, so exit is guaranteed.</p>
+<p>或者你也可以用 <code>if</code> 声明，但是我们推荐你使用 <code>guard</code></p>
+<p><em>理由：</em> 你一但声明 <code>guard</code> 编译器会强制要求你和 <code>return</code>, <code>break</code> 或者 <code>continue</code> 一起搭配使用，否则会产生一个编译时的错误。 </p>
+<h4 id="Avoid-Using-Force-Unwrapping-of-Optionals"><a href="#Avoid-Using-Force-Unwrapping-of-Optionals" class="headerlink" title="Avoid Using Force-Unwrapping of Optionals"></a>Avoid Using Force-Unwrapping of Optionals</h4><h4 id="避免对-可选类型-强解包"><a href="#避免对-可选类型-强解包" class="headerlink" title="避免对 可选类型 强解包"></a>避免对 可选类型 强解包</h4><p>If you have an identifier <code>foo</code> of type <code>FooType?</code> or <code>FooType!</code>, don’t force-unwrap it to get to the underlying value (<code>foo!</code>) if possible.</p>
+<p>如果你有个 <code>FooType?</code> 或 <code>FooType!</code> 的 <code>foo</code>，尽量不要强行展开它以得到基本类型（<code>foo!</code>）。</p>
+<p>Instead, prefer this:</p>
+<pre><code>if let foo = foo {
+    // Use unwrapped `foo` value in here
+} else {
+    // If appropriate, handle the case where the optional is nil
+}
+</code></pre><p>Alternatively, you might want to use Swift’s Optional Chaining in some of these cases, such as:</p>
+<p>或者使用可选链，比如：</p>
+<pre><code>// Call the function if `foo` is not nil. If `foo` is nil, ignore we ever tried to make the call
+foo?.callSomethingIfFooIsNotNil()
+</code></pre><p><em>Rationale:</em> Explicit <code>if let</code>-binding of optionals results in safer code. Force unwrapping is more prone to lead to runtime crashes.</p>
+<p><em>理由：</em> <code>if let</code> 绑定可选类型产生了更安全的代码，强行展开很可能导致运行时崩溃。</p>
+<h4 id="Avoid-Using-Implicitly-Unwrapped-Optionals"><a href="#Avoid-Using-Implicitly-Unwrapped-Optionals" class="headerlink" title="Avoid Using Implicitly Unwrapped Optionals"></a>Avoid Using Implicitly Unwrapped Optionals</h4><h4 id="避免毫无保留地展开可选类型"><a href="#避免毫无保留地展开可选类型" class="headerlink" title="避免毫无保留地展开可选类型"></a>避免毫无保留地展开可选类型</h4><p>Where possible, use <code>let foo: FooType?</code> instead of <code>let foo: FooType!</code> if <code>foo</code> may be nil (Note that in general, <code>?</code> can be used instead of <code>!</code>).</p>
+<p><em>Rationale:</em> Explicit optionals result in safer code. Implicitly unwrapped optionals have the potential of crashing at runtime.</p>
+<p>如果 foo 可能为 nil ，尽可能的用 <code>let foo: FooType?</code> 代替 <code>let foo: FooType!</code>（注意：一般情况下，<code>?</code>可以代替<code>!</code>）</p>
+<p><em>理由:</em> 明确的可选类型产生了更安全的代码。无保留地展开可选类型也会挂。</p>
+<h4 id="Prefer-implicit-getters-on-read-only-properties-and-subscripts"><a href="#Prefer-implicit-getters-on-read-only-properties-and-subscripts" class="headerlink" title="Prefer implicit getters on read-only properties and subscripts"></a>Prefer implicit getters on read-only properties and subscripts</h4><h4 id="对于只读属性的-properties-和-subscripts，选用隐式的-getters-方法"><a href="#对于只读属性的-properties-和-subscripts，选用隐式的-getters-方法" class="headerlink" title="对于只读属性的 properties 和 subscripts，选用隐式的 getters 方法"></a>对于只读属性的 <code>properties</code> 和 <code>subscripts</code>，选用隐式的 getters 方法</h4><p>When possible, omit the <code>get</code> keyword on read-only computed properties and<br>read-only subscripts.</p>
+<p>如果可以，省略只读属性的 <code>properties</code> 和 <code>subscripts</code> 的 <code>get</code> 关键字</p>
+<p>So, write these:</p>
+<pre><code>var myGreatProperty: Int {
+    return 4
+}
+
+subscript(index: Int) -&gt; T {
+    return objects[index]
+}
+</code></pre><p>… not these:</p>
+<pre><code>var myGreatProperty: Int {
+    get {
+        return 4
+    }
+}
+
+subscript(index: Int) -&gt; T {
+    get {
+        return objects[index]
+    }
+}
+</code></pre><p><em>Rationale:</em> The intent and meaning of the first version is clear, and results in less code.</p>
+<p><em>理由:</em> 第一个版本的代码意图已经很清楚了，并且用了更少的代码</p>
+<h4 id="Always-specify-access-control-explicitly-for-top-level-definitions"><a href="#Always-specify-access-control-explicitly-for-top-level-definitions" class="headerlink" title="Always specify access control explicitly for top-level definitions"></a>Always specify access control explicitly for top-level definitions</h4><h4 id="对于顶级定义，永远明确的列出权限控制"><a href="#对于顶级定义，永远明确的列出权限控制" class="headerlink" title="对于顶级定义，永远明确的列出权限控制"></a>对于顶级定义，永远明确的列出权限控制</h4><p>Top-level functions, types, and variables should always have explicit access control specifiers:</p>
+<p>顶级函数，类型和变量，永远应该有着详尽的权限控制说明符</p>
+<pre><code>public var whoopsGlobalState: Int
+internal struct TheFez {}
+private func doTheThings(things: [Thing]) {}
+</code></pre><p>However, definitions within those can leave access control implicit, where appropriate:</p>
+<p>当然，这样也是恰当的，因为用了隐式权限控制</p>
+<pre><code>internal struct TheFez {
+    var owner: Person = Joshaber()
+}
+</code></pre><p><em>Rationale:</em> It’s rarely appropriate for top-level definitions to be specifically <code>internal</code>, and being explicit ensures that careful thought goes into that decision. Within a definition, reusing the same access control specifier is just duplicative, and the default is usually reasonable.</p>
+<p><em>理由:</em> 顶级定义指定为 <code>internal</code>很少有恰当的，要明确的确保经过了仔细的判断。有了一个定义，重用同样的权限控制说明符就显得重复，所以默认的通常是合理的。</p>
+<h4 id="When-specifying-a-type-always-associate-the-colon-with-the-identifier"><a href="#When-specifying-a-type-always-associate-the-colon-with-the-identifier" class="headerlink" title="When specifying a type, always associate the colon with the identifier"></a>When specifying a type, always associate the colon with the identifier</h4><h4 id="当指定一个类型时，把-冒号和标识符-连在一起"><a href="#当指定一个类型时，把-冒号和标识符-连在一起" class="headerlink" title="当指定一个类型时，把 冒号和标识符 连在一起"></a>当指定一个类型时，把 冒号和标识符 连在一起</h4><p>When specifying the type of an identifier, always put the colon immediately<br>after the identifier, followed by a space and then the type name.</p>
+<p>当指定标示符的类型时，冒号要紧跟着标示符，然后空一格再写类型</p>
+<pre><code>class SmallBatchSustainableFairtrade: Coffee { ... }
+
+let timeToCoffee: NSTimeInterval = 2
+
+func makeCoffee(type: CoffeeType) -&gt; Coffee { ... }
+</code></pre><p><em>Rationale:</em> The type specifier is saying something about the <em>identifier</em> so<br>it should be positioned with it.</p>
+<p><em>理由:</em> 类型区分号是对于 <em>identifier</em> 来说的，所以要跟它连在一起。</p>
+<p>Also, when specifying the type of a dictionary, always put the colon immediately<br>after the key type, followed by a space and then the value type.</p>
+<h4 id="Only-explicitly-refer-to-self-when-required"><a href="#Only-explicitly-refer-to-self-when-required" class="headerlink" title="Only explicitly refer to self when required"></a>Only explicitly refer to <code>self</code> when required</h4><h4 id="需要时才写上-self"><a href="#需要时才写上-self" class="headerlink" title="需要时才写上 self"></a>需要时才写上 <code>self</code></h4><p>When accessing properties or methods on <code>self</code>, leave the reference to <code>self</code> implicit by default:</p>
+<p>当调用 <code>self</code> 的 <code>properties</code> 或 <code>methods</code> 时，<code>self</code> 用默认的隐式引用：</p>
+<pre><code>private class History {
+    var events: [Event]
+
+    func rewrite() {
+        events = []
+    }
+}
+</code></pre><p>Only include the explicit keyword when required by the language—for example, in a closure, or when parameter names conflict:</p>
+<p>必要的时候再加上<code>self</code>, 比如在闭包里，或者 参数名冲突了：</p>
+<pre><code>extension History {
+    init(events: [Event]) {
+        self.events = events
+    }
+
+    var whenVictorious: () -&gt; () {
+        return {
+            self.rewrite()
+        }
+    }
+}
+</code></pre><p><em>Rationale:</em> This makes the capturing semantics of <code>self</code> stand out more in closures, and avoids verbosity elsewhere.</p>
+<p><em>原因:</em> 在闭包里用<code>self</code>更加凸显它的语义，并且避免了别处的冗长</p>
+<h4 id="Prefer-structs-over-classes"><a href="#Prefer-structs-over-classes" class="headerlink" title="Prefer structs over classes"></a>Prefer structs over classes</h4><h4 id="首选-structs-而非-classes"><a href="#首选-structs-而非-classes" class="headerlink" title="首选 structs 而非 classes"></a>首选 <code>structs</code> 而非 <code>classes</code></h4><p>Unless you require functionality that can only be provided by a class (like identity or deinitializers), implement a struct instead.</p>
+<p>Note that inheritance is (by itself) usually <em>not</em> a good reason to use classes, because polymorphism can be provided by protocols, and implementation reuse can be provided through composition.</p>
+<p>For example, this class hierarchy:</p>
+<p>除非你需要 <code>class</code> 才能提供的功能（比如 <code>identity</code> 或 <code>deinitializers</code>），不然就用 <code>struct</code></p>
+<p>要注意到继承通常<strong>不</strong>是用 类 的好理由，因为 多态 可以通过 协议 实现，重用 可以通过 组合 实现。</p>
+<p>比如，这个类的分级</p>
+<pre><code>class Vehicle {
+    let numberOfWheels: Int
+
+    init(numberOfWheels: Int) {
+        self.numberOfWheels = numberOfWheels
+    }
+
+    func maximumTotalTirePressure(pressurePerWheel: Float) -&gt; Float {
+        return pressurePerWheel * Float(numberOfWheels)
+    }
+}
+
+class Bicycle: Vehicle {
+    init() {
+        super.init(numberOfWheels: 2)
+    }
+}
+
+class Car: Vehicle {
+    init() {
+        super.init(numberOfWheels: 4)
+    }
+}
+</code></pre><p>could be refactored into these definitions:</p>
+<p>可以重构成酱紫：</p>
+<pre><code>protocol Vehicle {
+    var numberOfWheels: Int { get }
+}
+
+func maximumTotalTirePressure(vehicle: Vehicle, pressurePerWheel: Float) -&gt; Float {
+    return pressurePerWheel * Float(vehicle.numberOfWheels)
+}
+
+struct Bicycle: Vehicle {
+    let numberOfWheels = 2
+}
+
+struct Car: Vehicle {
+    let numberOfWheels = 4
+}
+</code></pre><p><em>Rationale:</em> Value types are simpler, easier to reason about, and behave as expected with the <code>let</code> keyword.</p>
+<p><em>理由:</em> 值的类型更简单，容易辨别，并且通过<code>let</code>关键字可猜测行为。</p>
+<h4 id="Make-classes-final-by-default"><a href="#Make-classes-final-by-default" class="headerlink" title="Make classes final by default"></a>Make classes <code>final</code> by default</h4><h4 id="默认-classes-为-final"><a href="#默认-classes-为-final" class="headerlink" title="默认 classes 为 final"></a>默认 <code>classes</code> 为 <code>final</code></h4><p>Classes should start as <code>final</code>, and only be changed to allow subclassing if a valid need for inheritance has been identified. Even in that case, as many definitions as possible <em>within</em> the class should be <code>final</code> as well, following the same rules.</p>
+<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting <em>in</em> to inheritance hopefully means that more thought will be put into the decision.</p>
+<p><code>Classes</code> 应该作为基类，只能被子类已识别正当的继承（and only be changed to allow subclassing if a valid need for inheritance has been identified.）。即使这种例子，根据同样的规则，类中的定义也要尽可能的用 <code>final</code> 标注上</p>
+<p><em>理由:</em> 组合通常比继承更合适，而且不用 继承意味着考虑的更多（and opting in to inheritance hopefully means that more thought will be put into the decision.）。</p>
+<h4 id="Omit-type-parameters-where-possible"><a href="#Omit-type-parameters-where-possible" class="headerlink" title="Omit type parameters where possible"></a>Omit type parameters where possible</h4><h4 id="能不写类型参数的就别写了"><a href="#能不写类型参数的就别写了" class="headerlink" title="能不写类型参数的就别写了"></a>能不写类型参数的就别写了</h4><p>Methods of parameterized types can omit type parameters on the receiving type when they’re identical to the receiver’s. For example:</p>
+<p>参数化类型的方法可以省略接收者的类型参数，当他们对接收者来说一样时。比如：</p>
+<pre><code>struct Composite&lt;T&gt; {
+    …
+    func compose(other: Composite&lt;T&gt;) -&gt; Composite&lt;T&gt; {
+        return Composite&lt;T&gt;(self, other)
+    }
+}
+</code></pre><p>could be rendered as:</p>
+<pre><code>struct Composite&lt;T&gt; {
+    …
+    func compose(other: Composite) -&gt; Composite {
+        return Composite(self, other)
+    }
+}
+</code></pre><p><em>Rationale:</em> Omitting redundant type parameters clarifies the intent, and makes it obvious by contrast when the returned type takes different type parameters.</p>
+<p><em>理由:</em> 省略多余的类型参数让意图更清晰，并且通过对比，让返回值为不同的类型参数的情况也清楚了很多。</p>
+<h4 id="Use-whitespace-around-operator-definitions"><a href="#Use-whitespace-around-operator-definitions" class="headerlink" title="Use whitespace around operator definitions"></a>Use whitespace around operator definitions</h4><h4 id="操作定义符-两边留空格"><a href="#操作定义符-两边留空格" class="headerlink" title="操作定义符 两边留空格"></a>操作定义符 两边留空格</h4><p>Use whitespace around operators when defining them. Instead of:</p>
+<p>当定义操作定义符 时，两边留空格。不要酱紫：</p>
+<pre><code>func &lt;|(lhs: Int, rhs: Int) -&gt; Int
+func &lt;|&lt;&lt;A&gt;(lhs: A, rhs: A) -&gt; A
+</code></pre><p>write:</p>
+<pre><code>func &lt;| (lhs: Int, rhs: Int) -&gt; Int
+func &lt;|&lt; &lt;A&gt;(lhs: A, rhs: A) -&gt; A
+</code></pre><p><em>Rationale:</em> Operators consist of punctuation characters, which can make them difficult to read when immediately followed by the punctuation for a type or value parameter list. Adding whitespace separates the two more clearly.</p>
+<p><em>理由：</em> 操作符 由 标点字符组成，当立即连着 类型或者参数值，会让代码非常难读。加上空格分开他们就清晰了</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-在OC与Swift混编时需要注意些神马" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/15/在OC与Swift混编时需要注意些神马/" class="article-date">
+  	<time datetime="2016-03-14T20:48:20.000Z" itemprop="datePublished">2016-03-15</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/15/在OC与Swift混编时需要注意些神马/">在OC与Swift混编时需要注意些神马？</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="swift新特性（nullable和nonnull）"><a href="#swift新特性（nullable和nonnull）" class="headerlink" title="swift新特性（nullable和nonnull）"></a>swift新特性（<strong>nullable和</strong>nonnull）</h2><p>在swift中，可以使用!和?来表示一个对象是optional的还是non-optional，如view?和view!。而在Objective-C中则没有这一区分，view即可表示这个对象是optional，也可表示是non-optioanl。</p>
+<p>在Swift与Objective-C混编时，Swift编译器并不知道一个Objective-C对象到底是optional还是non-optional，因此这种情况下编译器会隐式地将Objective-C的对象当成是non-optional</p>
+<p>为了解决这个问题，苹果在Xcode 6.3引入了一个Objective-C的新特性：nullability annotations</p>
+<p>这一新特性的核心是两个新的类型注释：<strong>nullable和</strong>nonnull。从字面上我们可以猜到，<strong>__nullable表示对象可以是NULL或nil</strong> ，而 <strong>__nonnull表示对象不应该为空</strong>。当我们不遵循这一规则时，编译器就会给出警告。</p>
+<h2 id="NSArray和NSDictionary"><a href="#NSArray和NSDictionary" class="headerlink" title="NSArray和NSDictionary"></a>NSArray和NSDictionary</h2><p>在使用集合时，如果你能够确定集合内的对象类型时，最好明确指定类型<br>比如</p>
+<pre><code>@property (nonatomic, strong) NSArray&lt;NSString *&gt; *array;
+</code></pre><p>否则在swift调用时   会识别为[AnyObject] 导致一些不必要产生的转换</p>
+<hr>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-OSX开发之如何实现拖入文件" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/03/09/OSX开发之如何实现拖入文件/" class="article-date">
+  	<time datetime="2016-03-08T18:20:00.000Z" itemprop="datePublished">2016-03-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/09/OSX开发之如何实现拖入文件/">OSX开发之如何实现拖入文件</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="如何在app中实现将文件拖入的功能-Drag-amp-Drop"><a href="#如何在app中实现将文件拖入的功能-Drag-amp-Drop" class="headerlink" title="如何在app中实现将文件拖入的功能?  Drag &amp; Drop"></a>如何在app中实现将文件拖入的功能?  Drag &amp; Drop</h3><p><strong>NSView</strong> 的 <strong>registerForDraggedTypes</strong> 方法，用于声明Drag and Drop响应的文件类型</p>
+<pre><code>self.registerForDraggedTypes([NSFilenamesPboardType])
+</code></pre><p>当有文件拖入时就会调用<strong>draggingEntered</strong>方法，该方法中判断是不是要对拖动进行响应，<br>如果响应则继续进入<strong>performDragOperation</strong>方法，完成处理</p>
+<pre><code>override func draggingEntered(sender: NSDraggingInfo) -&gt; NSDragOperation {
+    let pasteboard = sender.draggingPasteboard()
+        // 在这可以判断是否是需要的文件类型 然后根据需要返回对应的值
+    return NSDragOperation.Copy
+}
+
+override func prepareForDragOperation(sender: NSDraggingInfo) -&gt; Bool {
+    let pasteboard = sender.draggingPasteboard()
+    if let list = pasteboard.propertyListForType(NSFilenamesPboardType) {
+        // 这里会获取文件路径列表
+        NSLog(&quot;list ==\n\(list)&quot;)
+    }
+    return true
+}
+</code></pre><hr>
+<p>ok  拖动文件功能实现了</p>
+<p>但是！！！如果你需要用到 <strong>mouseEntered</strong> &amp; <strong>mouseExited</strong>  或者其他的方法<br>你会发现响应会出现一些异常</p>
+<p>这时候  你需要重写 <strong>updateTrackingAreas</strong> 方法</p>
+<pre><code>override func updateTrackingAreas() {
+    let trackings = self.trackingAreas
+    for tracking in trackings {
+        self.removeTrackingArea(tracking)
+    }
+
+    let trackingArea = NSTrackingArea(rect: bounds, options:[.MouseEnteredAndExited, .ActiveAlways, .MouseMoved], owner: self, userInfo: nil)
+    self.addTrackingArea(trackingArea)
+}
+</code></pre><p>就像这样<del>~</del></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swfit/">swfit</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-CentOS 6.x 一键安装PPTP VPN脚本" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/02/02/CentOS 6.x 一键安装PPTP VPN脚本/" class="article-date">
+  	<time datetime="2016-02-02T05:37:26.000Z" itemprop="datePublished">2016-02-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/02/02/CentOS 6.x 一键安装PPTP VPN脚本/">CentOS 6.x 一键安装PPTP VPN脚本</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>环境</p>
+<p>CentOS 6.x 32位/64位</p>
+<p>XEN/KVM/OpenVZ</p>
+<p>步骤</p>
+<p>依次运行下列命令</p>
+<pre><code>#wget http://www.hi-vps.com/shell/vpn_centos6.sh
+#chmod a+x vpn_centos6.sh
+</code></pre><p>安装Centos6.2PPTPVPN脚本</p>
+<pre><code>#bash vpn_centos6.sh
+</code></pre><p>执行完后有1、2、3种英文，对应如下中文意思。<br>&gt;</p>
+<ol>
+<li>安装VPN服务</li>
+<li>修复VPN</li>
+<li>添加VPN用户</li>
+</ol>
+<p>我们要安装PPTP vpn，当然输入1，然后enter键了。等待安装完成，就会出现账号和密码啦，默认账号是vpn，密码是一串随机数字，自己用的话就不用加账号和密码了，复制下来备用吧。</p>
+<p>安装完成如下：</p>
+<pre><code>DKMS: add Completed.
+Module build for the currently running kernel was skipped
+since the kernel source for this kernel does not seem to be
+installed.
+kernel_ppp_mppe-1.0.2-3dkms.noarch
+warning: ppp-2.4.5-17.0.rhel6.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 862acc42: NOKEY
+Preparing...                ########################################### [100%]
+   1:ppp                    ########################################### [100%]
+warning: pptpd-1.3.4-2.el6.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 862acc42: NOKEY
+Preparing...                ########################################### [100%]
+   1:pptpd                  ########################################### [100%]
+mknod: &quot;/dev/ppp&quot;: 文件已存在
+iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
+Starting pptpd:                                            [  OK  ]
+VPN service is installed, your VPN username is vpn, VPN password is 7OXoJ0V1
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vpn/">vpn</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <a class="extend prev" rel="prev" href="/">&laquo; Prev</a><a class="page-number" href="/">1</a><span class="page-number current">2</span><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/3/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

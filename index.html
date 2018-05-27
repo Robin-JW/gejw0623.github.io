@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Robin灬桑">
+<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:locale" content="default">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Robin灬桑">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap">
+  
+    <article id="post-macOS开发-如何实现自定义文件后缀的关联" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/" class="article-date">
+  	<time datetime="2017-01-30T09:06:40.000Z" itemprop="datePublished">2017-01-30</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/">macOS开发-如何实现自定义文件后缀的关联</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="在mac-APP开发中，有时候需要定义一个自己的文件后缀名-比如开发编辑器，就需要一个自己的文件格式-，方便用户能够双击文件就能打开程序，接下来就讲解下，如何实现文件关联，实现文件图标的修改"><a href="#在mac-APP开发中，有时候需要定义一个自己的文件后缀名-比如开发编辑器，就需要一个自己的文件格式-，方便用户能够双击文件就能打开程序，接下来就讲解下，如何实现文件关联，实现文件图标的修改" class="headerlink" title="在mac APP开发中，有时候需要定义一个自己的文件后缀名(比如开发编辑器，就需要一个自己的文件格式)，方便用户能够双击文件就能打开程序，接下来就讲解下，如何实现文件关联，实现文件图标的修改"></a>在mac APP开发中，有时候需要定义一个自己的文件后缀名(比如开发编辑器，就需要一个自己的文件格式)，方便用户能够双击文件就能打开程序，接下来就讲解下，如何实现文件关联，实现文件图标的修改</h3><hr>
+<h2 id="1-在Info-plist中添加下面的文件"><a href="#1-在Info-plist中添加下面的文件" class="headerlink" title="1. 在Info.plist中添加下面的文件"></a>1. 在Info.plist中添加下面的文件</h2><pre><code>&lt;key&gt;CFBundleDocumentTypes&lt;/key&gt;
+&lt;array&gt;
+    &lt;dict&gt;
+        &lt;!-- 文件后缀名 --&gt;
+        &lt;key&gt;CFBundleTypeExtensions&lt;/key&gt;
+        &lt;array&gt;
+            &lt;string&gt;ssa&lt;/string&gt;
+        &lt;/array&gt;
+        &lt;!-- 文件图标 --&gt;
+        &lt;key&gt;CFBundleTypeIconFile&lt;/key&gt;
+        &lt;string&gt;fileIcon&lt;/string&gt;
+        &lt;!-- 文件右击显示简介中的种类 --&gt;
+        &lt;key&gt;CFBundleTypeName&lt;/key&gt;
+        &lt;string&gt;ShotBuilder&lt;/string&gt;
+        &lt;!-- 申明文件和程序的关系 --&gt;
+        &lt;key&gt;CFBundleTypeRole&lt;/key&gt;
+        &lt;string&gt;Editor&lt;/string&gt;
+        &lt;!-- 暂时没查到用处 --&gt;
+        &lt;key&gt;LSIsAppleDefaultForType&lt;/key&gt;
+        &lt;true/&gt;
+    &lt;/dict&gt;
+&lt;/array&gt;
+</code></pre><h2 id="2-文件图标"><a href="#2-文件图标" class="headerlink" title="2. 文件图标"></a>2. 文件图标</h2><blockquote>
+<p>之前一直绕在png图标上，然后一直不显示，后来把png转成icns格式后，就实现了</p>
+</blockquote>
+<p><a href="https://iconverticons.com/online/" target="_blank" rel="external">点我在线转换icns</a></p>
+<h2 id="3-重启Finder"><a href="#3-重启Finder" class="headerlink" title="3. 重启Finder"></a>3. 重启Finder</h2><p>由于缓存的关系，可能在更改<strong>CFBundleDocumentTypes</strong>字段内容后，没有变化，所以需要重启下Finder</p>
+<pre><code>sudo killall Finder
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/macos/">macos</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-如何在方校长的脚下节约时间来进行开发" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/23/如何在方校长的脚下节约时间来进行开发/" class="article-date">
+  	<time datetime="2017-01-23T08:35:25.000Z" itemprop="datePublished">2017-01-23</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/01/23/如何在方校长的脚下节约时间来进行开发/">如何在方校长的脚下节约时间来进行开发</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在开发过程中，如果卡在下载，可以尝试开vpn<br>或者配合shadowsocks进行翻墙 </p>
+<blockquote>
+<h4 id="1-github项目在git-clone时特别慢的解决办法-同时能够解决ios开发中-cocoapods执行慢的问题"><a href="#1-github项目在git-clone时特别慢的解决办法-同时能够解决ios开发中-cocoapods执行慢的问题" class="headerlink" title="1.github项目在git clone时特别慢的解决办法(同时能够解决ios开发中 cocoapods执行慢的问题):"></a>1.github项目在git clone时特别慢的解决办法(同时能够解决ios开发中 cocoapods执行慢的问题):</h4><p><a href="http://gejw.cn/2016/12/13/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fgit-clone/" target="_blank" rel="external">点我查看</a></p>
+<h4 id="2-brew-install-安装慢的解决办法："><a href="#2-brew-install-安装慢的解决办法：" class="headerlink" title="2.brew install 安装慢的解决办法："></a>2.brew install 安装慢的解决办法：</h4><p><a href="http://gejw.cn/2016/10/22/%E7%94%A8shadowsocks%E5%8A%A0%E9%80%9Fbrew%E4%B8%8B%E8%BD%BD/" target="_blank" rel="external">点我查看</a></p>
+<h4 id="3-android-studio-shadowsocks代理设置方法"><a href="#3-android-studio-shadowsocks代理设置方法" class="headerlink" title="3.android studio shadowsocks代理设置方法:"></a>3.android studio shadowsocks代理设置方法:</h4><p> <a href="http://www.jianshu.com/p/5fa894881667" target="_blank" rel="external">点我查看</a></p>
+<h4 id="4-ruby慢可以用ruby-china"><a href="#4-ruby慢可以用ruby-china" class="headerlink" title="4.ruby慢可以用ruby china"></a>4.ruby慢可以用ruby china</h4><pre><code>gem source -a https://gems.ruby-china.org
+</code></pre><h4 id="5-nodejs慢可以用淘宝源"><a href="#5-nodejs慢可以用淘宝源" class="headerlink" title="5. nodejs慢可以用淘宝源"></a>5. nodejs慢可以用淘宝源</h4><p><a href="https://npm.taobao.org/" target="_blank" rel="external">点我查看</a></p>
+</blockquote>
+<hr>
+<p>shadowsocks购买地址(购买【Shadowsocks网页、视频加速 50GB】，其他的网速比较差)</p>
+<p> <a href="https://my.ximcloud.cn/aff.php?aff=73" target="_blank" rel="external">点我购买shadowsocks</a></p>
+<p> <a href="http://gejw.cn/shadowsocks.zip" target="_blank" rel="external">点我下载shadowsocks</a></p>
+<hr>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/翻墙/">翻墙</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-用shadowsocks加速git-clone" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/12/13/用shadowsocks加速git-clone/" class="article-date">
+  	<time datetime="2016-12-13T11:21:00.000Z" itemprop="datePublished">2016-12-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/12/13/用shadowsocks加速git-clone/">用socks5 代理服务器 加速git clone</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>Git 平常使用最多的是 SSH 协议和 HTTP(S) 协议，</p>
+<p>假设本地 1080 端口有一个 socks5 代理服务器，就要为这两个协议分别设置代理。</p>
+<p>最常用的socks5代理就是 大名鼎鼎的shadowsocks</p>
+</blockquote>
+<p>下面的讲解都建立在  socks5端口为 1080 的情况下</p>
+<h2 id="HTTP-S-协议"><a href="#HTTP-S-协议" class="headerlink" title="HTTP(S)协议"></a>HTTP(S)协议</h2><p>全局代理</p>
+<pre><code>git config --global http.proxy socks5://127.0.0.1:1080
+</code></pre><p>只对特定 URL 设置代理：</p>
+<pre><code>git config --global http.&lt;要设置代理的URL&gt;.proxy socks5://127.0.0.1:1080
+
+# 对 https://github.com 进行设置代理
+git config --global http.https://github.com.proxy socks5://127.0.0.1:1080
+</code></pre><h2 id="SSH-协议"><a href="#SSH-协议" class="headerlink" title="SSH 协议"></a>SSH 协议</h2><p>修改 ~/.ssh/config</p>
+<p>全局代理</p>
+<pre><code>ProxyCommand nc -x 127.0.0.1:1080 %h %p
+</code></pre><p>只对特定域名进行代理</p>
+<pre><code>   Host 域名
+          ProxyCommand nc -x 127.0.0.1:1080 %h %p
+
+# 对 github.com 进行设置代理
+   Host github.com
+          ProxyCommand nc -x 127.0.0.1:1080 %h %p
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/github/">github</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-用shadowsocks加速brew下载" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/22/用shadowsocks加速brew下载/" class="article-date">
+  	<time datetime="2016-10-22T09:19:52.000Z" itemprop="datePublished">2016-10-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/22/用shadowsocks加速brew下载/">用shadowsocks加速brew下载</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>伟大祖国屏蔽了Google系网站这就包括了托管代码和软件包的Google Code，<br><br>当我们使用homebrew为mac安装几个小工具的时候有可能碰见连接超时而失败的情况。</p>
+<p>解决办法就是要有代理了，我们这使用shadowsocks.<br><br>要使命令行中的软件通过代理访问Google Code，设置一个环境变量是“可能”有效的。</p>
+<p>编辑~/.bashrc加入一行，然后执行source ~/.bashrc</p>
+<pre><code>export HTTP_PROXY=socks5://127.0.0.1:1080
+</code></pre><p>这对于brew调用的curl可能是无效的，那么我们需要为curl创建一个初始化文件，编辑 ~/.curlrc 写入你的代理地址</p>
+<pre><code>--socks5 127.0.0.1:1080
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/brew/">brew</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Xcode如何快速下载模拟器" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/13/Xcode如何快速下载模拟器/" class="article-date">
+  	<time datetime="2016-10-13T12:28:02.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/Xcode如何快速下载模拟器/">Xcode如何快速下载模拟器</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <pre><code>1. 在 Mac 下, 打开 Xcode, 进入 Preference 中的 Downloads 面板
+2. 点击任意的下载按钮
+3. 打开系统帮助工具 Console
+4. 稍等一会儿, 在 Xcode 里取消下载, 然后你会在 Console 里面看到对应的下载地址
+     DVTDownloadable: Download Cancelled. Downloadable: https://devimages.apple.com.edgekey.net/downloads/xcode/simulators/com.apple.pkg.iPhoneSimulatorSDK9_3-9.3.1.1460411551.dmg
+5. 复制对应的链接地址, 到某雷或者任何比 Xcode 下载快的工具里
+6. 等待下载完成, 进入 ~/Library/Caches/com.apple.dt.Xcode/Downloads
+7. 将下载好的文件移动到 Downloads 目录 (最好不要改动文件名)
+8. 重启 Xcode, 回到 Downloads 面板, 点击对应下载好的 Simulator 或者 Doc
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Swiftlint-安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/10/13/Swiftlint-安装/" class="article-date">
+  	<time datetime="2016-10-13T05:34:57.000Z" itemprop="datePublished">2016-10-13</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/10/13/Swiftlint-安装/">Swiftlint 安装</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="1-安装支持3-0的swiftlint"><a href="#1-安装支持3-0的swiftlint" class="headerlink" title="1. 安装支持3.0的swiftlint"></a>1. 安装支持3.0的swiftlint</h1><pre><code>brew install --HEAD swiftlint
+</code></pre><h1 id="2-添加XCode-Scripte"><a href="#2-添加XCode-Scripte" class="headerlink" title="2. 添加XCode Scripte"></a>2. 添加XCode Scripte</h1><blockquote>
+<p>在 XCode 中添加一个新的”Run Script Phase”并且包含如下代码即可：</p>
+</blockquote>
+<pre><code>if which swiftlint &gt;/dev/null; then
+  swiftlint
+else
+  echo &quot;warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint&quot;
+fi
+</code></pre><h1 id="3-添加配置文件"><a href="#3-添加配置文件" class="headerlink" title="3. 添加配置文件"></a>3. 添加配置文件</h1><h3 id="a-创建配置文件"><a href="#a-创建配置文件" class="headerlink" title="a. 创建配置文件"></a>a. 创建配置文件</h3><pre><code>// 进入项目根目录
+cd [project path]
+// 创建配置文件
+touch .swiftlint.yml 
+// 编译配置文件
+nano .swiftlint.yml
+</code></pre><h3 id="b-将下面的配置复制到新建的文件中"><a href="#b-将下面的配置复制到新建的文件中" class="headerlink" title="b. 将下面的配置复制到新建的文件中"></a>b. 将下面的配置复制到新建的文件中</h3><pre><code>disabled_rules:
+  # - trailing_whitespace
+
+comma: error
+colon: error
+# 大括号问题
+opening_brace: error
+closing_brace: error
+
+control_statement: error
+leading_whitespace: error
+vertical_whitespace: error
+# 行结尾空行
+trailing_newline: error
+# 行结尾分号
+trailing_semicolon: error
+# 行结尾的空格
+trailing_whitespace:
+  ignores_empty_lines: true
+  severity: error
+
+return_arrow_whitespace: error
+
+# 行长 超过160个字符，报错
+line_length: 
+  warning: 160
+  error: 160
+
+# 文件长度 超出1500行报警，超出3000行报错
+file_length:
+  warning: 1500
+  error: 3000
+
+## 不需要检测的文件夹
+excluded: 
+  - Pods
+
+# 属性名
+variable_name:
+  # 属性名最小长度
+  min_length:
+    warning: 0
+    error: 0
+
+# 方法最大行数
+function_body_length:
+  warning: 300
+  error: 400
+
+type_body_length:
+  warning: 1000
+  error: 2000
+# 方法参数个数限制 
+function_parameter_count: 10
+
+cyclomatic_complexity: 100
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/xcode/">xcode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-XCode8-无法使用DEBUG宏定义" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/09/XCode8-无法使用DEBUG宏定义/" class="article-date">
+  	<time datetime="2016-09-08T21:11:24.000Z" itemprop="datePublished">2016-09-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/09/XCode8-无法使用DEBUG宏定义/">XCode8 无法使用DEBUG宏定义</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>在Build Setting中搜索 Active Compilation Conditions</p>
+<p>然后添加 DEBUG</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Swift/">Swift</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/XCode/">XCode</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-树莓派搭建一个DLNA多媒体下载机" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/03/树莓派搭建一个DLNA多媒体下载机/" class="article-date">
+  	<time datetime="2016-09-03T14:17:24.000Z" itemprop="datePublished">2016-09-03</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/09/03/树莓派搭建一个DLNA多媒体下载机/">树莓派搭建一个DLNA多媒体下载机</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置表"><a href="#配置表" class="headerlink" title="配置表"></a>配置表</h3><ul>
+<li>树莓派一台</li>
+<li>TF卡一张</li>
+<li>1T硬盘一个</li>
+<li>硬盘供电一个</li>
+</ul>
+<hr>
+<h2 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1. 安装系统"></a>1. 安装系统</h2><p>我们选择原生系统 <strong>RaspBian</strong></p>
+<p>RaspBian下载地址: <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">点击下载</a></p>
+<h3 id="将下载的img写入到TF卡"><a href="#将下载的img写入到TF卡" class="headerlink" title="将下载的img写入到TF卡"></a>将下载的img写入到TF卡</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><blockquote>
+<p>Windows下直接使用 win32diskimager 工具</p>
+</blockquote>
+<p>win32diskimager下载地址: <a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="external">戳我下载</a>    </p>
+<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><p>前往我的另外一篇博客: <a href="http://gejw.cn/2015/11/25/OSX%E4%B8%8B%E7%BB%99%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Raspbian%E7%B3%BB%E7%BB%9F/" target="_blank" rel="external">点我前往</a></p>
+<h2 id="2-启动树莓派"><a href="#2-启动树莓派" class="headerlink" title="2. 启动树莓派"></a>2. 启动树莓派</h2><p>系统准备就绪，接上电源，接上网线，启动PI</p>
+<p>启动后使用SSH登录(将下面的IP改为你的树莓派地址)</p>
+<pre><code>ssh pi@192.168.1.1
+</code></pre><blockquote>
+<p>默认账户 pi </p>
+<p>默认密码 raspberry</p>
+</blockquote>
+<h2 id="3-启用root账户"><a href="#3-启用root账户" class="headerlink" title="3. 启用root账户"></a>3. 启用root账户</h2><blockquote>
+<p>为什么要启用？ 因为我懒的一直用sudo</p>
+</blockquote>
+<h3 id="设置root账户密码"><a href="#设置root账户密码" class="headerlink" title="设置root账户密码"></a>设置root账户密码</h3><pre><code>pi@raspberrypi:~$ sudo passwd root
+Enter new UNIX password:   #输入第一遍密码
+Retype new UNIX password:  #输入第二遍密码
+</code></pre><h3 id="启用root账户登录"><a href="#启用root账户登录" class="headerlink" title="启用root账户登录"></a>启用root账户登录</h3><pre><code>pi@raspberrypi:~$ sudo passwd --unlock root
+passwd: password expiry information changed.
+</code></pre><blockquote>
+<p>输入上面第一行代码 第二行是提示错误的代码</p>
+<p>原因是 新版本ssh默认关闭root登陆 你可以修改一下ssh的配置文件</p>
+</blockquote>
+<h3 id="编辑配置文件-启动"><a href="#编辑配置文件-启动" class="headerlink" title="编辑配置文件 启动"></a>编辑配置文件 启动</h3><pre><code>pi@raspberrypi:~$ sudo nano /etc/ssh/sshd_config
+</code></pre><blockquote>
+<p>Ctrl + W 快捷键 搜索 PermitRootLogin without-password</p>
+<p>修改 PermitRootLogin without-password 为 PermitRootLogin yes</p>
+<p>Ctrl + O 快捷键 保存</p>
+<p>Ctrl + O 快捷键 退出 Nano 编辑器</p>
+</blockquote>
+<p>执行完之后，用 reboot 命令重启，这样就可以解锁root账户。</p>
+<h3 id="使用root账户登录"><a href="#使用root账户登录" class="headerlink" title="使用root账户登录"></a>使用root账户登录</h3><pre><code>ssh root@192.168.1.1
+</code></pre><h2 id="4-准备硬盘"><a href="#4-准备硬盘" class="headerlink" title="4.准备硬盘"></a>4.准备硬盘</h2><h3 id="准备硬盘格式"><a href="#准备硬盘格式" class="headerlink" title="准备硬盘格式"></a>准备硬盘格式</h3><blockquote>
+<p>安装程序 支持硬盘格式</p>
+</blockquote>
+<pre><code>apt-get install ntfs-3g
+apt-get install exfat-nofuse
+</code></pre><p>装上这两个模块后，就可以支持 NTFS 和 exFAT 了</p>
+<h3 id="查看硬盘"><a href="#查看硬盘" class="headerlink" title="查看硬盘"></a>查看硬盘</h3><pre><code>root@raspberrypi:~# fdisk -l
+Device     Boot Start        End    Sectors  Size Id Type
+/dev/sda1        2048 3907026943 3907024896  1.8T  7 HPFS/NTFS/exFAT
+
+上面的/dev/sda1 就是需要用到的
+</code></pre><p>为了性能问题，格式化硬盘为ext4</p>
+<pre><code>mkfs.ext4 /dev/sda1
+</code></pre><h3 id="挂载硬盘"><a href="#挂载硬盘" class="headerlink" title="挂载硬盘"></a>挂载硬盘</h3><p>新建一个文件夹用来挂载硬盘</p>
+<pre><code>mkdir -p /mnt/disk
+</code></pre><p>编辑/etc/fstab文件，就可以进行开机自动挂在配置了</p>
+<pre><code>/dev/sda1       /mnt/disk      ext4    defaults,noatime        0       0
+/dev/sda1       /mnt/disk      ntfs    defaults,noatime,uid=1000,gid=1000        0       0
+/dev/sda1       /mnt/disk      exfat    defaults,noatime,uid=1000,gid=1000        0       0
+</code></pre><p>执行命令 让配置生效</p>
+<pre><code>mount -a
+</code></pre><h2 id="5-安装迅雷远程下载"><a href="#5-安装迅雷远程下载" class="headerlink" title="5.安装迅雷远程下载"></a>5.安装迅雷远程下载</h2><h3 id="下载安装迅雷"><a href="#下载安装迅雷" class="headerlink" title="下载安装迅雷"></a>下载安装迅雷</h3><p>前往下载迅雷固件 <a href="http://luyou.xunlei.com/thread-3155-1-1.html?_t=1398873558" target="_blank" rel="external">点我下载</a></p>
+<p>选择 <strong>armel_v5te_glibc</strong> 版本</p>
+<p>将程序下载到目录 <strong>/mnt/xunlei</strong> (你可以选择其他目录)</p>
+<p>启动迅雷程序 </p>
+<pre><code>./portal
+</code></pre><p>启动成功后会出现一串激活码, 类似于 <strong>H2DS72</strong></p>
+<p> 将激活码填入 <a href="http://yuancheng.xunlei.com/" target="_blank" rel="external">迅雷远程下载</a></p>
+<h3 id="将迅雷程序添加到开启启动项"><a href="#将迅雷程序添加到开启启动项" class="headerlink" title="将迅雷程序添加到开启启动项"></a>将迅雷程序添加到开启启动项</h3><p>编辑 /etc/rc.local 文件</p>
+<p>在 exit 0 之前添加执行代码</p>
+<pre><code>./mnt/xunlei/portal
+</code></pre><p>迅雷安装完成，随时随地 看见喜欢的电影 可以直接到<a href="http://yuancheng.xunlei.com/" target="_blank" rel="external">迅雷远程下载</a>进行下载</p>
+<h2 id="6-安装minidlna"><a href="#6-安装minidlna" class="headerlink" title="6.安装minidlna"></a>6.安装minidlna</h2><blockquote>
+<p>我们可以直接使用 <strong>apt-get install minidlna</strong> 安装</p>
+<p>但是安装之后的dlna协议，不支持rmvb格式 所以我们要下载源码 进行修改后编译</p>
+</blockquote>
+<h3 id="添加源"><a href="#添加源" class="headerlink" title="添加源:"></a>添加源:</h3><pre><code>echo &quot;deb-src http://archive.raspbian.org/raspbian wheezy main contrib non-free&quot; | sudo tee -a /etc/apt/sources.list
+</code></pre><h3 id="更新源"><a href="#更新源" class="headerlink" title="更新源:"></a>更新源:</h3><pre><code>apt-get update
+</code></pre><h3 id="安装编译环境依赖包"><a href="#安装编译环境依赖包" class="headerlink" title="安装编译环境依赖包:"></a>安装编译环境依赖包:</h3><pre><code>apt-get build-dep minidlna -y
+</code></pre><h3 id="下载minidlna1-1-4源码"><a href="#下载minidlna1-1-4源码" class="headerlink" title="下载minidlna1.1.4源码:"></a>下载minidlna1.1.4源码:</h3><pre><code>wget http://sourceforge.net/projects/minidlna/files/minidlna/1.1.4/minidlna-1.1.4.tar.gz
+</code></pre><h3 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h3><pre><code>tar -xvf minidlna-1.1.4.tar.gz
+</code></pre><h3 id="修改源码"><a href="#修改源码" class="headerlink" title="修改源码"></a>修改源码</h3><h4 id="metadata-c-840行左右"><a href="#metadata-c-840行左右" class="headerlink" title="metadata.c (840行左右)"></a>metadata.c (840行左右)</h4><pre><code>else if( strncmp(ctx-&gt;iformatctx-&gt;name, &quot;matroska&quot;, 8) == 0 )  
+    xasprintf(&amp;m.mime, &quot;video/x-matroska&quot;);  
+else if( strcmp(ctx-&gt;iformatctx-&gt;name, &quot;flv&quot;) == 0 )  
+    xasprintf(&amp;m.mime, &quot;video/x-flv&quot;);  
+
+/* 添加下面的代码 */ 
+else if( strcmp(ctx-&gt;iformat-&gt;name, &quot;rm&quot;) == 0 )  
+    xasprintf(&amp;m.mime, &quot;video/x-pn-realvideo&quot;);  
+else if( strcmp(ctx-&gt;iformat-&gt;name, &quot;rmvb&quot;) == 0 )  
+    xasprintf(&amp;m.mime, &quot;video/x-pn-realvideo&quot;);  
+/* 添加上面的代码 */ 
+
+if( m.mime )  
+    goto video_nodlna;  
+</code></pre><h4 id="upnpglobalvars-h-169行左右"><a href="#upnpglobalvars-h-169行左右" class="headerlink" title="upnpglobalvars.h(169行左右)"></a>upnpglobalvars.h(169行左右)</h4><blockquote>
+<p>⚠️ 在 <strong>“http-get:<em>:application/ogg:</em>,”</strong> 后 添加一个反斜杠</p>
+</blockquote>
+<pre><code>&quot;http-get:*:audio/mp4:*,&quot; \  
+&quot;http-get:*:audio/x-wav:*,&quot; \  
+&quot;http-get:*:audio/x-flac:*,&quot; \  
+&quot;http-get:*:application/ogg:*,&quot; \  
+
+/* 添加下面的代码 */ 
+&quot;http-get:*:video/x-pn-realvideo:*&quot;  
+/* 添加上面的代码 */ 
+
+#define DLNA_FLAG_DLNA_V1_5      0x00100000  
+#define DLNA_FLAG_HTTP_STALLING  0x00200000 
+</code></pre><h4 id="utils-c-381行左右"><a href="#utils-c-381行左右" class="headerlink" title="utils.c (381行左右)"></a>utils.c (381行左右)</h4><pre><code>ends_with(file, &quot;.m2t&quot;) || ends_with(file, &quot;.mkv&quot;)   ||  
+ends_with(file, &quot;.vob&quot;) || ends_with(file, &quot;.ts&quot;)    ||  
+ends_with(file, &quot;.flv&quot;) || ends_with(file, &quot;.xvid&quot;)  ||  
+
+/* 添加下面的代码 */ 
+ends_with(file, &quot;.rm&quot;)  || ends_with(file, &quot;.rmvb&quot;)  ||  
+/* 添加上面的代码 */ 
+
+#ifdef TIVO_SUPPORT  
+    ends_with(file, &quot;.TiVo&quot;) ||  
+#endif
+    ends_with(file, &quot;.mov&quot;) || ends_with(file, &quot;.3gp&quot;));  
+</code></pre><h3 id="安装编译环境"><a href="#安装编译环境" class="headerlink" title="安装编译环境"></a>安装编译环境</h3><blockquote>
+<p>执行命令</p>
+</blockquote>
+<pre><code>apt-get install autoconf automake autopoint
+./autogen.sh
+./configure
+</code></pre><h3 id="编译并安装"><a href="#编译并安装" class="headerlink" title="编译并安装"></a>编译并安装</h3><pre><code>make
+make install
+</code></pre><h3 id="移动配置文件并编辑"><a href="#移动配置文件并编辑" class="headerlink" title="移动配置文件并编辑"></a>移动配置文件并编辑</h3><pre><code>cp minidlna.conf /etc/
+nano /etc/minidlna.conf
+</code></pre><p>修改<strong>media_dir</strong>字段, 将<strong>media_dir</strong>字段修改为你的硬盘挂载目录</p>
+<pre><code>media_dir=/mnt/disk
+</code></pre><h3 id="测试minidlna"><a href="#测试minidlna" class="headerlink" title="测试minidlna"></a>测试minidlna</h3><pre><code>/usr/local/sbin/minidlnad -d -v  
+
+没出错就ctrl+c 结束进程
+</code></pre><h3 id="添加到开机启动"><a href="#添加到开机启动" class="headerlink" title="添加到开机启动"></a>添加到开机启动</h3><pre><code>cp linux/minidlna.init.d.script /etc/init.d/minidlna
+chmod 755 /etc/init.d/minidlna
+update-rc.d minidlna defaults
+</code></pre><hr>
+<p>所有配置完成, 开启你的设备  看看能不能查找到</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/DLNA/">DLNA</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Raspberry/">Raspberry</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/下载机/">下载机</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-Swift利用协议优化NSNotificationCenter之添加Block" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/06/Swift利用协议优化NSNotificationCenter之添加Block/" class="article-date">
+  	<time datetime="2016-06-06T07:19:33.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/Swift利用协议优化NSNotificationCenter之添加Block/">Swift利用协议优化NSNotificationCenter之添加Block</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://medium.com/swift-programming/swift-nsnotificationcenter-protocol-c527e67d93a1#.67xdekbrj" target="_blank" rel="external">代码参考! 下面的源码基于这个  添加了Block模式，方便调用</a></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>private class STObserversManager: NSObject {
+
+    static let sharedInstance = STObserversManager()
+
+    private var _observers = [(AnyObject, String, NSObjectProtocol)]()
+
+    func add(observer: AnyObject, name: String, obj: NSObjectProtocol) {
+        let arr = _observers.filter({$0.0 === observer &amp;&amp; $0.1 == name})
+        if arr.count &gt; 0 {
+            return
+        }
+        _observers.append((observer, name, obj))
+    }
+
+    func exist(observer: AnyObject, name: String? = nil) -&gt; Bool {
+        return observers(observer, name: name).count &gt; 0
+    }
+
+    func observers(observer: AnyObject, name: String? = nil) -&gt; [(AnyObject, String, NSObjectProtocol)] {
+        return _observers.filter({name != nil ? $0.0 === observer &amp;&amp; $0.1 == name : $0.0 === observer})
+    }
+
+    func removeAll(observer: AnyObject) {
+        for i in (0..&lt;_observers.count).reverse() {
+            if _observers[i].0 === observer {
+                _observers.removeAtIndex(i)
+            }
+        }
+    }
+
+}
+
+public protocol STNotifier {
+
+    associatedtype NotificationKey: RawRepresentable
+
+}
+
+// MARK: - 定义MTNotifier的方法
+public extension STNotifier where NotificationKey.RawValue == String {
+
+    private static func nameFor(notification: NotificationKey) -&gt; String {
+        return &quot;\(self).\(notification.rawValue)&quot;
+    }
+
+    func postNotification(notification: NotificationKey, object: AnyObject? = nil) {
+        Self.postNotification(notification, object: object)
+    }
+
+    func postNotification(notification: NotificationKey, object: AnyObject? = nil, userInfo: [String : AnyObject]? = nil) {
+        Self.postNotification(notification, object: object, userInfo: userInfo)
+    }
+
+    static func postNotification(notification: NotificationKey, object: AnyObject? = nil, userInfo: [String : AnyObject]? = nil) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .postNotificationName(name, object: object, userInfo: userInfo)
+    }
+
+    static func addObserver(observer: AnyObject, notification: NotificationKey, block: (notification: NSNotification) -&gt; Void) {
+        let name = nameFor(notification)
+        if STObserversManager.sharedInstance.exist(observer, name: name) {
+            NSLog(&quot;observer is exist&quot;)
+        } else {
+            let obj = NSNotificationCenter.defaultCenter()
+                .addObserverForName(name, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: block)
+            STObserversManager.sharedInstance.add(observer, name: name, obj: obj)
+        }
+    }
+
+    static func addObserver(observer: AnyObject, selector: Selector, notification: NotificationKey) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(observer, selector: selector, name: name, object: nil)
+    }
+
+    static func removeObserver(observer: AnyObject, notification: NotificationKey, object: AnyObject? = nil) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .removeObserver(observer, name: name, object: object)
+    }
+
+    static func removeObservers(observer: AnyObject?) {
+        if let observer = observer {
+            for observer in STObserversManager.sharedInstance.observers(observer) {
+                NSNotificationCenter.defaultCenter().removeObserver(observer.2)
+            }
+            STObserversManager.sharedInstance.removeAll(observer)
+        }
+    }
+
+}
+</code></pre><hr>
+<p>##如何调用</p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>首先继承<code>STNotifier</code></p>
+<pre><code>class MTMYNTNotifier: STNotifier {
+
+    enum NotificationKey: String {
+        case aaa
+        case bbb
+    }
+
+}
+</code></pre><h3 id="添加监听"><a href="#添加监听" class="headerlink" title="添加监听"></a>添加监听</h3><pre><code>MTMYNTNotifier.addObserver(self, notification: .aaa) { (notification) in
+  NSLog(&quot;....notification...aaa...&quot;)
+}
+</code></pre><h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><pre><code>MTMYNTNotifier.postNotification(.aaa)
+</code></pre><h3 id="移除监听"><a href="#移除监听" class="headerlink" title="移除监听"></a>移除监听</h3><pre><code>MTMYNTNotifier.removeObservers(self)
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-app-store提交截图分辨率" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/app-store提交截图分辨率/" class="article-date">
+  	<time datetime="2016-05-10T18:21:03.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/app-store提交截图分辨率/">app store提交截图分辨率</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h2><h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><pre><code>640 x 920 pixels for hi-res portrait (without status bar) minimum
+640 x 960 pixels for hi-res portrait (full screen) maximum
+960 x 600 pixels for hi-res landscape (without status bar) minimum
+960 x 640 pixels for hi-res landscape (full screen) maximum
+</code></pre><h4 id="4-0"><a href="#4-0" class="headerlink" title="4.0"></a>4.0</h4><pre><code>640 x 1096 pixels for portrait (without status bar) minimum
+640 x 1136 pixels for portrait (full screen) maximum
+1136 x 600 pixels for landscape (without status bar) minimum
+1136 x 640 pixels for landscape (full screen) minimum
+</code></pre><h4 id="4-7"><a href="#4-7" class="headerlink" title="4.7"></a>4.7</h4><pre><code>750 x 1334 pixels for hi-res portrait
+1334 x 750 pixels for hi-res landscape
+</code></pre><h4 id="5-5"><a href="#5-5" class="headerlink" title="5.5"></a>5.5</h4><pre><code>1242 x 2208 pixels for hi-res portrait
+2208 x 1242 pixels for hi-res landscape
+</code></pre><h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><h4 id="iPad-1"><a href="#iPad-1" class="headerlink" title="iPad"></a>iPad</h4><pre><code>1024 x 748 pixels for landscape (without status bar) minimum
+1024 x 768 pixels for landscape (full screen) maximum
+2048 x 1496 pixels for hi-res (without status bar) minimum
+2048 x 1536 pixels for hi-res landscape (full screen) maximum
+768 x 1004 pixels for portrait (without status bar) minimum
+768 x 1024 pixels for portrait (full screen) maximum
+1536 x 2008 pixels for hi-res portrait (without status bar) minimum
+1536 x 2048 pixels for hi-res portrait (full screen) maximum
+</code></pre><h4 id="iPad-Pro"><a href="#iPad-Pro" class="headerlink" title="iPad Pro"></a>iPad Pro</h4><pre><code>2048 x 2732 pixels for hi-res portrait
+2732 x 2048 pixels for hi-res landscape
+</code></pre><h2 id="OSX"><a href="#OSX" class="headerlink" title="OSX"></a>OSX</h2><pre><code>1280 x 800 pixels
+1440 x 900 pixels
+2560 x 1600 pixels
+2880 x 1800 pixels
+</code></pre><h2 id="tvOS"><a href="#tvOS" class="headerlink" title="tvOS"></a>tvOS</h2><pre><code>1920 X 1080
+</code></pre><h2 id="Apple-Watch"><a href="#Apple-Watch" class="headerlink" title="Apple Watch"></a>Apple Watch</h2><pre><code>312 x 390
+</code></pre><hr>
+<h1 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h1><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">原始</th>
+<th style="text-align:center">横向</th>
+<th style="text-align:center">纵向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 Series</td>
+<td style="text-align:center">1136 x 640 (16:9)</td>
+<td style="text-align:center">1920 x 1080 or 1136 x 640</td>
+<td style="text-align:center">1080 x 1920 or 640 x 1136</td>
+</tr>
+<tr>
+<td>iPad and iPad Pro</td>
+<td style="text-align:center">2048 x 1536 (4:3)</td>
+<td style="text-align:center">1200 x 900</td>
+<td style="text-align:center">900 x 1200</td>
+</tr>
+<tr>
+<td>iPhone 6</td>
+<td style="text-align:center">1334 x 750</td>
+<td style="text-align:center">1334 x 750</td>
+<td style="text-align:center">750 x 1334</td>
+</tr>
+<tr>
+<td>iPhone 6 Plus</td>
+<td style="text-align:center">2208 x 1242 (Rendered Pixels) <br> 1920 x 1080 (Physical Pixels)</td>
+<td style="text-align:center">1920 x 1080</td>
+<td style="text-align:center">1920 x 1080</td>
+</tr>
+<tr>
+<td>AppleTV</td>
+<td style="text-align:center">1920 x 1080 (16:9)</td>
+<td style="text-align:center">1920 x 1080</td>
+<td style="text-align:center">n / a</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apple/">apple</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/itunes-connect/">itunes connect</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+  
+    <nav id="page-nav">
+      <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="page-number" href="/page/4/">4</a><a class="extend next" rel="next" href="/page/2/">Next &raquo;</a>
+    </nav>
+  
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: true,
+		isPost: false,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>

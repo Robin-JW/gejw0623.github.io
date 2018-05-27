@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+
+  <!-- ad start -->
+  <script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-8610613941786025",
+    enable_page_level_ads: true
+  });
+</script>
+  <!-- ad end -->
+  
+  <title>ios中计算两个经纬度的距离 | Robin灬桑</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="源码 -&amp;gt;   extension CLLocationCoordinate2D {      /**      计算两个经纬度的距离 (使用ios自带算法)       - parameter coor: 第二个经纬度       - returns: 返回距离(m)      */     func distanceFromCoor(coor: CLLocationCoordinate">
+<meta name="keywords" content="ios,swift">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ios中计算两个经纬度的距离">
+<meta property="og:url" content="http://yoursite.com/2016/04/09/ios中计算两个经纬度的距离/index.html">
+<meta property="og:site_name" content="Robin灬桑">
+<meta property="og:description" content="源码 -&amp;gt;   extension CLLocationCoordinate2D {      /**      计算两个经纬度的距离 (使用ios自带算法)       - parameter coor: 第二个经纬度       - returns: 返回距离(m)      */     func distanceFromCoor(coor: CLLocationCoordinate">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-01-30T09:28:12.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="ios中计算两个经纬度的距离">
+<meta name="twitter:description" content="源码 -&amp;gt;   extension CLLocationCoordinate2D {      /**      计算两个经纬度的距离 (使用ios自带算法)       - parameter coor: 第二个经纬度       - returns: 返回距离(m)      */     func distanceFromCoor(coor: CLLocationCoordinate">
+  
+    <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/avatar.jpg">
+  
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+	<header id="header" class="inner">
+		<a href="/" class="profilepic">
+			
+			<img lazy-src="/avatar.jpg" class="js-avatar">
+			
+		</a>
+
+		<hgroup>
+		  <h1 class="header-author"><a href="/">Robin灬桑</a></h1>
+		</hgroup>
+
+		
+
+		
+
+		<div class="switch-area">
+			<div class="switch-wrap">
+				<section class="switch-part switch-part1">
+					<nav class="header-menu">
+						<ul>
+						
+							<li><a href="/">主页</a></li>
+				        
+							<li><a href="/archives">所有文章</a></li>
+				        
+							<li><a href="/about">关于我</a></li>
+				        
+						</ul>
+					</nav>
+					<nav class="header-nav">
+						<div class="social">
+							
+								<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+					        
+								<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+					        
+								<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+					        
+								<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+					        
+						</div>
+					</nav>
+				</section>
+				
+				
+				
+				
+
+				
+			</div>
+		</div>
+	</header>				
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+  	<div class="overlay">
+  		<div class="slider-trigger"></div>
+  		<h1 class="header-author js-mobile-header hide">Robin灬桑</h1>
+  	</div>
+	<div class="intrude-less">
+		<header id="header" class="inner">
+			<div class="profilepic">
+				<img lazy-src="/avatar.jpg" class="js-avatar">
+			</div>
+			<hgroup>
+			  <h1 class="header-author">Robin灬桑</h1>
+			</hgroup>
+			
+			<nav class="header-menu">
+				<ul>
+				
+					<li><a href="/">主页</a></li>
+		        
+					<li><a href="/archives">所有文章</a></li>
+		        
+					<li><a href="/about">关于我</a></li>
+		        
+		        <div class="clearfix"></div>
+				</ul>
+			</nav>
+			<nav class="header-nav">
+				<div class="social">
+					
+						<a class="github" target="_blank" href="https://github.com/gejw0623" title="github">github</a>
+			        
+						<a class="weibo" target="_blank" href="http://weibo.com/234399610" title="weibo">weibo</a>
+			        
+						<a class="facebook" target="_blank" href="https://www.facebook.com/ge.jiawei.7" title="facebook">facebook</a>
+			        
+						<a class="google" target="_blank" href="https://plus.google.com/118428492772479606670" title="google">google</a>
+			        
+				</div>
+			</nav>
+		</header>				
+	</div>
+</nav>
+      <div class="body-wrap"><article id="post-ios中计算两个经纬度的距离" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/04/09/ios中计算两个经纬度的距离/" class="article-date">
+  	<time datetime="2016-04-09T06:16:20.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ios中计算两个经纬度的距离
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+        
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p>源码 -&gt; </p>
+</blockquote>
+<pre><code>extension CLLocationCoordinate2D {
+
+    /**
+     计算两个经纬度的距离 (使用ios自带算法)
+
+     - parameter coor: 第二个经纬度
+
+     - returns: 返回距离(m)
+     */
+    func distanceFromCoor(coor: CLLocationCoordinate2D) -&gt; Double {
+        let curLocation = CLLocation(latitude: latitude, longitude: longitude)
+        let otherLocation = CLLocation(latitude: coor.latitude, longitude: coor.longitude)
+        let distance = curLocation.distanceFromLocation(otherLocation)
+        return distance;
+    }
+
+    /**
+     计算两个经纬度的距离 (使用第三方算法)
+
+     - parameter coor: 第二个经纬度
+
+     - returns: 返回距离(m)
+     */
+    func distanceFromCoor2(coor: CLLocationCoordinate2D) -&gt; Double {
+        let PI: Double = 3.1415926
+        let er: Double = 6378137 // 6378700.0f;
+        //ave. radius = 6371.315 (someone said more accurate is 6366.707)
+        //equatorial radius = 6378.388
+        //nautical mile = 1.15078
+        var radlat1 = PI * latitude / 180.0
+        var radlat2 = PI * coor.latitude / 180.0
+        //now long.
+        var radlong1 = PI * longitude / 180.0
+        var radlong2 = PI*coor.longitude / 180.0
+        if( radlat1 &lt; 0 ) {
+            // south
+            radlat1 = PI / 2 + fabs(radlat1)
+        }
+        if( radlat1 &gt; 0 ) {
+            // north
+            radlat1 = PI / 2 - fabs(radlat1)
+        }
+        if( radlong1 &lt; 0 ) {
+            //west
+            radlong1 = PI * 2 - fabs(radlong1)
+        }
+        if( radlat2 &lt; 0 ) {
+            // south
+            radlat2 = PI / 2 + fabs(radlat2)
+        }
+        if( radlat2 &gt; 0 ) {
+            // north
+            radlat2 = PI / 2 - fabs(radlat2)
+        }
+        if( radlong2 &lt; 0 ) {
+            // west
+            radlong2 = PI * 2 - fabs(radlong2)
+        }
+        //spherical coordinates x=r*cos(ag)sin(at), y=r*sin(ag)*sin(at), z=r*cos(at)
+        //zero ag is up so reverse lat
+        let x1 = er * cos(radlong1) * sin(radlat1)
+        let y1 = er * sin(radlong1) * sin(radlat1)
+        let z1 = er * cos(radlat1)
+        let x2 = er * cos(radlong2) * sin(radlat2)
+        let y2 = er * sin(radlong2) * sin(radlat2)
+        let z2 = er * cos(radlat2)
+
+        let d = sqrt(pow(x1 - x2, 2) + pow(y1 - y2, 2) + pow(z1 - z2, 2))
+        //side, side, side, law of cosines and arccos
+        let theta = acos((pow(er, 2) + pow(er, 2) - pow(d, 2)) / (2 * pow(er, 2)))
+        let dist  = theta * er
+        return dist
+    }
+
+}
+</code></pre><blockquote>
+<p>测试执行 -&gt; </p>
+</blockquote>
+<pre><code>let coor1 = CLLocationCoordinate2D(latitude: 31.4785977506, longitude: 120.3755036570)
+let coor2 = CLLocationCoordinate2D(latitude: 31.4788786668, longitude: 120.3791247841)
+
+print(&quot;\(coor1.distanceFromCoor(coor2))&quot;)
+print(&quot;\(coor1.distanceFromCoor2(coor2))&quot;)
+</code></pre><blockquote>
+<p>输出结果 -&gt; </p>
+</blockquote>
+<pre><code>&quot;345.50016065661\n&quot;
+&quot;345.198446957566\n&quot;
+</code></pre><p>实地测试   误差可以接受</p>
+
+      
+    </div>
+    
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2016/04/09/Swift代码规范-自用型/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          Swift代码规范--自用型
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/03/21/开始使用React-Native/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">开始使用React Native</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+<div class="share">
+	<!-- JiaThis Button BEGIN -->
+	<div class="jiathis_style">
+		<span class="jiathis_txt">分享到：</span>
+		<a class="jiathis_button_tsina"></a>
+		<a class="jiathis_button_cqq"></a>
+		<a class="jiathis_button_douban"></a>
+		<a class="jiathis_button_weixin"></a>
+		<a class="jiathis_button_tumblr"></a>
+		<a href="http://www.jiathis.com/share" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+	</div>
+	<script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1405949716054953" charset="utf-8"></script>
+	<!-- JiaThis Button END -->
+</div>
+
+
+
+<div class="duoshuo">
+	<!-- 多说评论框 start -->
+	<div class="ds-thread" data-thread-key="ios中计算两个经纬度的距离" data-title="ios中计算两个经纬度的距离" data-url="http://yoursite.com/2016/04/09/ios中计算两个经纬度的距离/"></div>
+	<!-- 多说评论框 end -->
+	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+	<script type="text/javascript">
+	var duoshuoQuery = {short_name:"gejw"};
+	(function() {
+		var ds = document.createElement('script');
+		ds.type = 'text/javascript';ds.async = true;
+		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+		ds.charset = 'UTF-8';
+		(document.getElementsByTagName('head')[0] 
+		 || document.getElementsByTagName('body')[0]).appendChild(ds);
+	})();
+	</script>
+	<!-- 多说公共JS代码 end -->
+</div>
+
+
+
+
+</div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info">
+    	<div class="footer-left">
+    		&copy; 2018 Robin灬桑
+    	</div>
+      	<div class="footer-right">
+					<a href="http://www.miitbeian.gov.cn/">苏ICP备16009632号-1</a> 
+      		<a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">Yilia</a> by Litten
+      	</div>
+    </div>
+  </div>
+</footer>
+    </div>
+    
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+
+<script>
+	var yiliaConfig = {
+		fancybox: true,
+		mathjax: true,
+		animate: true,
+		isHome: false,
+		isPost: true,
+		isArchive: false,
+		isTag: false,
+		isCategory: false,
+		open_in_new: false
+	}
+</script>
+<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+
+
+
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+    tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+    }
+});
+
+MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';                 
+    }       
+});
+</script>
+
+<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
+
+
+  </div>
+</body>
+</html>
