@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Robin灬桑">
-<meta property="og:url" content="http://yoursite.com/page/4/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/page/4/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -134,10 +134,10 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-获取顶层UIViewController" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-提升效率的Android开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/02/获取顶层UIViewController/" class="article-date">
+      <a href="/2015/09/02/提升效率的Android开源库推荐/" class="article-date">
   	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
 </a>
     </div>
@@ -151,7 +151,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/获取顶层UIViewController/">如何获取顶层UIViewController</a>
+      <a class="article-title" href="/2015/09/02/提升效率的Android开源库推荐/">提升效率的Android开源库推荐</a>
     </h1>
   
 
@@ -160,289 +160,36 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>Objective-c版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (UIViewController *)appRootViewController&#123;</div><div class="line">    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;</div><div class="line">    UIViewController *topVC = appRootVC;</div><div class="line">    while (topVC.presentedViewController) &#123;</div><div class="line">        topVC = topVC.presentedViewController;</div><div class="line">    &#125;</div><div class="line">    return topVC;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>swift 2.0版本: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">extension UIApplication &#123;</div><div class="line">    </div><div class="line">    /// 顶层VC</div><div class="line">    static var appRootViewController: UIViewController? &#123;</div><div class="line">        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController</div><div class="line">        while topVC?.presentedViewController != nil &#123;</div><div class="line">            topVC = topVC?.presentedViewController</div><div class="line">        &#125;</div><div class="line">        return topVC</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/">iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="1、定位服务"><a href="#1、定位服务" class="headerlink" title="1、定位服务"></a>1、定位服务</h2><p>相关框架</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;CoreLocation/CoreLocation&gt;</div></pre></td></tr></table></figure>
-<p> 检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (CLAuthorizationStatus)authorizationStatus</div></pre></td></tr></table></figure>
-<p>相关返回参数</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">//用户尚未做出选择</div><div class="line">kCLAuthorizationStatusNotDetermined = 0,</div><div class="line">// 未授权，且用户无法更新，如家长控制情况下</div><div class="line">kCLAuthorizationStatusRestricted,</div><div class="line">// 用户拒绝App使用</div><div class="line">kCLAuthorizationStatusDenied,</div><div class="line">// 总是使用</div><div class="line">kCLAuthorizationStatusAuthorizedAlways NS_ENUM_AVAILABLE(NA, 8_0),</div><div class="line">// 按需使用</div><div class="line">kCLAuthorizationStatusAuthorizedWhenInUse NS_ENUM_AVAILABLE(NA, 8_0),</div><div class="line">// 已授权</div><div class="line">kCLAuthorizationStatusAuthorized</div></pre></td></tr></table></figure>
-<p> 参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkLocationAuth)(void) = ^&#123;</div><div class="line">    CLAuthorizationStatus authStatus = [CLLocationManager  authorizationStatus];</div><div class="line">     </div><div class="line">    if (CLAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkLocationAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkLocationAuth();</div></pre></td></tr></table></figure>
-<h2 id="2、通讯录"><a href="#2、通讯录" class="headerlink" title="2、通讯录"></a>2、通讯录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;AddressBook/AddressBook.h&gt;</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">ABAuthorizationStatus ABAddressBookGetAuthorizationStatus(void)</div></pre></td></tr></table></figure>
-<p> 授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">kABAuthorizationStatusNotDetermined = 0,    // 未进行授权选择&lt;br&gt;</div><div class="line">kABAuthorizationStatusRestricted,           // 未授权，且用户无法更新，如家长控制情况下&lt;br&gt;</div><div class="line">kABAuthorizationStatusDenied,               // 用户拒绝App使用&lt;br&gt;</div><div class="line">kABAuthorizationStatusAuthorized            // 已授权，可使用&lt;br&gt;</div></pre></td></tr></table></figure>
-<p> 参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkAddressBookAuth)(void) = ^&#123;</div><div class="line">    ABAuthorizationStatus authStatus = ABAddressBookGetAuthorizationStatus();</div><div class="line">     </div><div class="line">    if (kABAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkAddressBookAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkAddressBookAuth();</div></pre></td></tr></table></figure>
-<h2 id="3、日历-提醒事项授权"><a href="#3、日历-提醒事项授权" class="headerlink" title="3、日历/提醒事项授权"></a>3、日历/提醒事项授权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;EventKit/EventKit.h&gt;</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (EKAuthorizationStatus)authorizationStatusForEntityType:(EKEntityType)entityType</div></pre></td></tr></table></figure>
-<p>参数类型</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">EKEntityTypeEvent,  //事件</div><div class="line">EKEntityTypeReminder//提醒</div></pre></td></tr></table></figure>
-<p>授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">EKAuthorizationStatusNotDetermined = 0,// 未进行授权选择</div><div class="line">EKAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</div><div class="line">EKAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</div><div class="line">EKAuthorizationStatusAuthorized,　　　　// 已授权，可使用</div></pre></td></tr></table></figure>
-<p> 参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkCalanderAuth)(void) = ^&#123;</div><div class="line">    EKAuthorizationStatus authStatus = [EKAuthorizationStatus authorizationStatusForEntityType:EKEntityTypeEvent];</div><div class="line">     </div><div class="line">    if (EKAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkCalanderAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkCalanderAuth();</div></pre></td></tr></table></figure>
-<h2 id="4、照片库授权"><a href="#4、照片库授权" class="headerlink" title="4、照片库授权"></a>4、照片库授权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;ALAssetsLibrary/ALAssetsLibrary.h&gt;</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (ALAuthorizationStatus)authorizationStatus;</div></pre></td></tr></table></figure>
-<p>授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">ALAuthorizationStatusNotDetermined = 0,// 未进行授权选择</div><div class="line">ALAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</div><div class="line">ALAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</div><div class="line">ALAuthorizationStatusAuthorized,　　　　// 已授权，可使用</div></pre></td></tr></table></figure>
-<p>参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkAssetLibraryAuth)(void) = ^&#123;</div><div class="line">    ALAuthorizationStatus authStatus = [ALAuthorizationStatus authorizationStatus];</div><div class="line">     </div><div class="line">    if (ALAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkAssetLibraryAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkAssetLibraryAuth();</div></pre></td></tr></table></figure>
-<h2 id="5、蓝牙授权状态检测"><a href="#5、蓝牙授权状态检测" class="headerlink" title="5、蓝牙授权状态检测"></a>5、蓝牙授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (CBPeripheralManagerAuthorizationStatus)authorizationStatus;</div></pre></td></tr></table></figure>
-<p>授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">CBPeripheralManagerAuthorizationStatusNotDetermined = 0,// 未进行授权选择</div><div class="line">CBPeripheralManagerAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</div><div class="line">CBPeripheralManagerAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</div><div class="line">CBPeripheralManagerAuthorizationStatusAuthorized,　　　　// 已授权，可使用</div></pre></td></tr></table></figure>
-<p>参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkPeripheralAuth)(void) = ^&#123;</div><div class="line">    CBPeripheralManagerAuthorizationStatus authStatus = [CBPeripheralManagerAuthorizationStatus authorizationStatus];</div><div class="line">     </div><div class="line">    if (CBPeripheralManagerAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkPeripheralAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkPeripheralAuth();</div></pre></td></tr></table></figure>
-<h2 id="6、摄像头授权状态检测"><a href="#6、摄像头授权状态检测" class="headerlink" title="6、摄像头授权状态检测"></a>6、摄像头授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">+ (AVAuthorizationStatus)authorizationStatusForMediaType:(NSString *)mediaType;</div></pre></td></tr></table></figure>
-<p>授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">AVAuthorizationStatusNotDetermined = 0,// 未进行授权选择</div><div class="line">AVAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</div><div class="line">AVAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</div><div class="line">AVAuthorizationStatusAuthorized,　　　　// 已授权，可使用</div></pre></td></tr></table></figure>
-<p>参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkCameraAuth)(void) = ^&#123;</div><div class="line">    AVAuthorizationStatus authStatus = [AVAuthorizationStatus authorizationStatusForMediaType:AVMediaTypeVideo];</div><div class="line">     </div><div class="line">    if (AVAuthorizationStatusAuthorized == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkCameraAuth();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkCameraAuth();</div></pre></td></tr></table></figure>
-<h2 id="7、麦克风授权状态检测"><a href="#7、麦克风授权状态检测" class="headerlink" title="7、麦克风授权状态检测"></a>7、麦克风授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#import &lt;AVFoundation/AVFoundation.h</div></pre></td></tr></table></figure>
-<p>检测方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">- (AVAudioSessionRecordPermission)recordPermission;</div></pre></td></tr></table></figure>
-<p>授权状态</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">AVAudioSessionRecordPermissionUndetermined,　　　　// 用户尚未被请求许可。</div><div class="line">AVAudioSessionRecordPermissionDenied,　　　　　　 // 用户已被要求并已拒绝许可。</div><div class="line">AVAudioSessionRecordPermissionGranted,　　　　// 用户已被要求并已授予权限。</div></pre></td></tr></table></figure>
-<p>参考代码</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line">__block void (^checkRecordPermission)(void) = ^&#123;</div><div class="line">    AVAudioSessionRecordPermission authStatus = [[AVAudioSession sharedInstance] recordPermission];</div><div class="line">     </div><div class="line">    if (AVAudioSessionRecordPermissionGranted == authStatus) &#123;</div><div class="line">        //授权成功，执行后续操作</div><div class="line">    &#125;else &#123;</div><div class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</div><div class="line">            checkRecordPermission();</div><div class="line">        &#125;);</div><div class="line">    &#125;</div><div class="line">&#125;;</div><div class="line">checkRecordPermission();</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-设计师也要学物理学" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/设计师也要学物理学/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/设计师也要学物理学/">设计师也要学物理学</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####<a href="http://www.ui.cn/detail/62012.html" target="_blank" rel="external"><strong><em>本文转自UI.CN</em></strong></a><br>我们会把从小到大对这个世界的认识映射到屏幕世界中。所以从事物原理的角度出发，探究一下运动曲线。</p>
-<p>本文并不深入物理定律的本身，只讲述运动曲线的运用，曾经上课睡觉的同学也不必担心。<br><img src="http://img.ui.cn/data/file/8/2/3/305328.png?imageView2/2/w/900/q/90" alt=""><br>先引用下百科神马是物理：物理学是研究物质运动最一般规律和物质基本结构的学科。作为自然科学的带头学科，物理学研究大至宇宙，小至基本粒子等一切物质最基本的运动形式和规律，因此成为其他各自然科学学科的研究基础。它的理论结构充分地运用数学作为自己的工作语言，以实验作为检验理论正确性的唯一标准，它是当今最精密的一门自然科学学科。（猜你们也没仔细看，总之就是物理是一门非常牛逼的学科。）</p>
-<p>我一直认为动效设计的本身是人机交互中非常重要的环节，并且我们会把从小到大对这个世界的认识映射到屏幕世界中。比如最常见的抓、扔、移动等操作，都是婴儿时期就习得到的基本本能，那么这些动作经常会被我们本能的运用到长大后接触到的屏幕操作中。</p>
-<p>上一篇中已经提到了一些动效设计的原则（传送门：<a href="http://www.ui.cn/detail/54562.html" target="_blank" rel="external">UI中国</a> ），以及简单的写到了动效设计怎么样的表达让用户更加舒适。恩，今天要深入这个话题，动效设计师如何运用物理理论来让动画曲线更加贴近现实世界，如何让你的动画效果更加的如烟花般炫丽。</p>
+        <h3 id="FlycoTabLayout"><a href="#FlycoTabLayout" class="headerlink" title="FlycoTabLayout"></a><a href="https://github.com/H07000223/FlycoTabLayout" target="_blank" rel="noopener">FlycoTabLayout</a></h3><p>一个Android TabLayout库,目前有两个TabLayout</p>
+<ul>
+<li>SlidingTabLayout:    参照<a href="https://github.com/jpardogo/PagerSlidingTabStrip" target="_blank" rel="noopener">PagerSlidingTabStrip</a>进行大量修改</li>
+<li>CommonTabLayout:    不同于SlidingTabLayout对ViewPager依赖,它是一个不依赖ViewPager可以与其他控件自由搭配使用的TabLayout</li>
+</ul>
+<p><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_1.gif" alt=""><br><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_2.gif" alt=""></p>
 <hr>
-<p>###一.牛顿第一定律 又称惯性定律 由牛顿在1687年提出</p>
-<p>任何物体都要保持匀速直线运动或静止状态，直到外力迫使它改变运动状态为止。</p>
-<p>什么是保持匀速直线运动：</p>
-<p><img src="http://img.ui.cn/data/file/5/3/3/305335.gif" alt=""></p>
-<p>可以感觉到，它的运动似乎有些无聊，因为我们生活的这个世界存在引力、空气阻力、摩擦力等等。那就看一下最常见的外力因素——摩擦力，现实世界中的大部分运动都有它的身影。</p>
-<p>1.摩擦力 F=μ×FN </p>
-<p>阻碍物体相对运动（或相对运动趋势）的力叫做摩擦力。</p>
-<p>摩擦力是个宜动宜静的乖宝宝~它有两种形态：</p>
-<p>A 静摩擦力：两个相互接触的物体，当其接触表面之间有相对滑动的趋势，但尚保持相对静止时，彼此作用着阻碍相对滑动的阻力，这种阻力称为静滑动摩擦力，简称静摩擦力。</p>
-<p><img src="http://img.ui.cn/data/file/6/3/3/305336.gif" alt=""></p>
-<p>摩擦力比较大的时候会发生，由于相对没动，所以保持和传送带一起运动。</p>
-<p>B 动摩擦力：两接触物体之间存在相对滑动时，其接触面上产生阻碍对方滑动的阻力称为动滑动摩擦力。</p>
-<p><img src="http://img.ui.cn/data/file/0/4/3/305340.gif" alt=""></p>
-<p>可以看到由于材质的不同，或者又加上制动等因素，只要记住物体表面粗糙及压力越大，摩擦力越大，结合下面的牛顿第二定律<br>就可以模拟出一些不同感觉的运动曲线了。</p>
+<h3 id="sweet-alert-dialog"><a href="#sweet-alert-dialog" class="headerlink" title="sweet-alert-dialog"></a><a href="https://github.com/pedant/sweet-alert-dialog" target="_blank" rel="noopener">sweet-alert-dialog</a></h3><p>Android版的SweetAlert，清新文艺，快意灵动的甜心弹框</p>
+<p>灵感来源于JS版SweetAlert</p>
+<p><img src="https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif" alt=""></p>
 <hr>
-<p>###二.牛顿第二定律  F=ma 由牛顿在1687年提出</p>
-<p>物体加速度的大小跟作用力成正比，跟物体的质量成反比，且与物体质量的倒数成正比；加速度的方向跟作用力的方向相同。</p>
-<p>简单的说就是——物体越轻或者受到的力越大加速度越大：</p>
-<p><img src="http://img.ui.cn/data/file/7/3/3/305337.gif" alt=""></p>
+<h3 id="CircleImageView"><a href="#CircleImageView" class="headerlink" title="CircleImageView"></a><a href="https://github.com/hdodenhof/CircleImageView" target="_blank" rel="noopener">CircleImageView</a></h3><p>Android上快速实现圆形图片</p>
+<p><img src="https://camo.githubusercontent.com/e17a2a83e3e205a822d27172cb3736d4f441344d/68747470733a2f2f7261772e6769746875622e636f6d2f68646f64656e686f662f436972636c65496d616765566965772f6d61737465722f73637265656e73686f742e706e67" alt=""></p>
 <hr>
-<p>###三.牛顿第三运动定律 F=-F’ 由牛顿在1687年提出 </p>
-<p>相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。</p>
-<p>常见的比如说弹撞击，拉、推重物等等。反正哪哪都有它，不要忘记它就好。<br><img src="http://img.ui.cn/data/file/8/3/3/305338.gif" alt=""></p>
-<p>既然提到牛三那就一定要提到一个它最重要的衍生定律了：</p>
-<p>1.动量守恒定律 m1v1+m2v2=m1v1′+m2v2′</p>
-<p>一个系统不受外力或所受外力之和为零，那么这个系统的总动量保持不变。</p>
-<p>动量守恒定律最初是牛顿第三定律的推论， 但后来发现它们的适用范围远远广于牛顿定律。简单的描述就是，两个速度不同的物体碰撞之后会产生速度上的『传递』，打台球的同学应该有更深的感触。</p>
-<p> <img src="http://img.ui.cn/data/file/9/3/3/305339.gif" alt=""></p>
+<h3 id="SwitchButton"><a href="#SwitchButton" class="headerlink" title="SwitchButton"></a><a href="https://github.com/kyleduo/SwitchButton" target="_blank" rel="noopener">SwitchButton</a></h3><p>状态切换的 Button，类似 iOS，拥有良好的用户界面</p>
+<p><img src="https://raw.githubusercontent.com/kyleduo/SwitchButton/master/preview/demo_131.jpg" alt=""></p>
 <hr>
-<p>###四.阿基米德定律 F＝γV</p>
-<p>浸入静止流体(气体或液体)中的物体受到一个浮力，其大小等于该物体所排开的流体重量，方向垂直向上并通过所排开流体的形心。</p>
-<p>所以水中物体弹出速度与物体的体积、质量成正比~而且会越靠近水面越快。看下曲线图：</p>
-<p><img src="http://img.ui.cn/data/file/1/4/3/305341.gif" alt=""></p>
-<p>可以发现浮起来的过程因为外力的方向不断变化以致有些类似弹性曲线，继而联想到了胡克（弹性）定律：</p>
-<hr>
-<p>###五.胡克定律  F=-k·x 又称弹性定律 由胡克在1678年提出</p>
-<p>弹簧在发生弹性形变时，弹簧的弹力F和弹簧的伸长量（或压缩量）x成正比，即F= k·x 。k是物质的弹性系数，它只由材料的性质所决定，与其他因素无关。负号表示弹簧所产生的弹力与其伸长（或压缩）的方向相反。</p>
-<p>那么由胡可定律结合牛顿第二定律F=ma，我们就可以得出弹性曲线来，这里的关键因素就是物体质量、弹性系数、伸长量来决定。</p>
-<p><img src="http://img.ui.cn/data/file/2/4/3/305342.gif" alt=""></p>
-<p>*『制作』：描述弹性曲线通常的三个关键参数分别是：频率、过量、持续时间。</p>
-<hr>
-<p>###六.表面张力</p>
-<p>液体表面任意二相邻部分之间垂直于它们的单位长度分界线相互作用的拉力。表面张力的形成同处在液体表面薄层内的分子的特殊受力状态密切相关。</p>
-<p>表面张力是动效设计中和阿基米德定律一样容易遇到的流体力学里的知识。算式比较复杂，不再深究。张力的运用很广泛，那么我们做动效最常遇到的通常是融合效果：</p>
-<p><img src="http://img.ui.cn/data/file/3/4/3/305343.gif" alt=""></p>
-<p>总结</p>
-<p>物理的运用基本上在我们生活的世界中并没有理想状态，所以了解原理的同时，设计狮们请一定要愉快的观察我们身边的世界，真实世界才是最好的学习案例。</p>
-<p>最后的最后如果文中对科学道理的阐述有什么错误的地方，希望学霸同学们可以指出~</p>
-<p>附一：压箱底的缓动函数曲线 <a href="http://easings.net/zh-cn（如打不开，请使用科学上网法）" target="_blank" rel="external">http://easings.net/zh-cn（如打不开，请使用科学上网法）</a></p>
-<p>附二：写的过程中也看到阿里U一点的文章——动效设计的物理法则，重点的写了牛顿第一第二定律，感兴趣的的同学们可以点过去拜读下~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计/">设计</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-在Swift中使用DEBUG宏的方法" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/在Swift中使用DEBUG宏的方法/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/在Swift中使用DEBUG宏的方法/">在Swift中使用DEBUG宏的方法</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>来源于: <a href="http://qiita.com/qmihara/items/a6b88b74fe64e1e05ca4" target="_blank" rel="external">Qiita</a></p>
-<p>在Objective-C开发中  我们可以使用下面的方法来区分Debug和Release方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#if DEBUG</div><div class="line">   // ...</div><div class="line">#endif</div></pre></td></tr></table></figure>
-<p>但是到了swift之后  却不生效了<br>so  找了好几个文章  找到解决办法</p>
+<h3 id="Cube"><a href="#Cube" class="headerlink" title="Cube"></a><a href="http://cube-sdk.liaohuqiu.net/cn/" target="_blank" rel="noopener">Cube</a></h3><p>一个Android开发包, 可极大提高你的开发效率。</p>
 <blockquote>
-<p>Xcode -&gt; Build Settings -&gt; Swift Compiler - Custom Flags -&gt; Other Swift Flags</p>
+<ul>
+<li>图片加载</li>
+<li>简化接口请求</li>
+<li>等等等等功能</li>
+</ul>
 </blockquote>
-<p>选择Debug 添加 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-D DEBUG</div></pre></td></tr></table></figure>
-<p>so  你就可以愉快的在swift中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#if DEBUG</div></pre></td></tr></table></figure></p>
 <hr>
-<p><img src="https://qiita-image-store.s3.amazonaws.com/0/36383/4531e06e-1ad3-174a-e719-8736211a6abf.png" alt=""></p>
+<h3 id="android-Ultra-Pull-To-Refresh"><a href="#android-Ultra-Pull-To-Refresh" class="headerlink" title="android-Ultra-Pull-To-Refresh"></a><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh" target="_blank" rel="noopener">android-Ultra-Pull-To-Refresh</a></h3><p>纯粹的一个下拉刷新库</p>
+<p><img src="https://camo.githubusercontent.com/588a2ef2cdcfb6c71e88437df486226dd15605b3/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672d61727261792e676966" alt=""><br><img src="https://camo.githubusercontent.com/d3fbe757c87fddc94e998ebdd08ac55956aed1cf/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672e676966" alt=""></p>
+<hr>
+<h3 id="GridViewWithHeaderAndFooter"><a href="#GridViewWithHeaderAndFooter" class="headerlink" title="GridViewWithHeaderAndFooter"></a><a href="https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter" target="_blank" rel="noopener">GridViewWithHeaderAndFooter</a></h3><p>可以addFooterView() 和 addHeaderView() 的 GridView</p>
 
       
     </div>
@@ -451,122 +198,7 @@
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-调用私有方法开启关闭蓝牙" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/调用私有方法开启关闭蓝牙/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/调用私有方法开启关闭蓝牙/">调用私有方法开启关闭蓝牙</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先导入IOBluetooth.framework</p>
-<p>然后调用我写的方法</p>
-<p><strong>MTBluetooth.h</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div></pre></td><td class="code"><pre><div class="line">@interface MTBluetooth : NSObject</div><div class="line"></div><div class="line">/**</div><div class="line"> *  蓝牙是否可用</div><div class="line"> *</div><div class="line"> *  @return</div><div class="line"> */</div><div class="line">+ (BOOL)isAvaliable;</div><div class="line"></div><div class="line">/**</div><div class="line"> *  是否开启</div><div class="line"> *</div><div class="line"> *  @return &lt;#return value description#&gt;</div><div class="line"> */</div><div class="line">+ (BOOL)isPower;</div><div class="line"></div><div class="line">/**</div><div class="line"> *  开启蓝牙</div><div class="line"> */</div><div class="line">+ (void)openBluetooth;</div><div class="line"></div><div class="line">/**</div><div class="line"> *  关闭蓝牙</div><div class="line"> */</div><div class="line">+ (void)closeBluetooth;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
-<p><strong>MTBluetooth.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div><div class="line">43</div><div class="line">44</div><div class="line">45</div><div class="line">46</div><div class="line">47</div><div class="line">48</div><div class="line">49</div><div class="line">50</div><div class="line">51</div><div class="line">52</div><div class="line">53</div><div class="line">54</div><div class="line">55</div><div class="line">56</div><div class="line">57</div><div class="line">58</div><div class="line">59</div><div class="line">60</div><div class="line">61</div><div class="line">62</div></pre></td><td class="code"><pre><div class="line">#import &quot;MTBluetooth.h&quot;</div><div class="line"></div><div class="line"></div><div class="line">// private methods</div><div class="line">int IOBluetoothPreferencesAvailable();</div><div class="line"></div><div class="line">int IOBluetoothPreferenceGetControllerPowerState();</div><div class="line">void IOBluetoothPreferenceSetControllerPowerState(int state);</div><div class="line"></div><div class="line">int IOBluetoothPreferenceGetDiscoverableState();</div><div class="line">void IOBluetoothPreferenceSetDiscoverableState(int state);</div><div class="line"></div><div class="line">// dry</div><div class="line">int BTSetParamState(int state, int (*getter)(), void (*setter)(int)) &#123;</div><div class="line">    if (state == getter()) &#123;</div><div class="line">        return EXIT_SUCCESS;</div><div class="line">    &#125; else &#123;</div><div class="line">        setter(state);</div><div class="line">        </div><div class="line">        usleep(1000000); // Just wait, checking getter even in 10 seconds gives old result</div><div class="line">        return EXIT_SUCCESS;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">// short names</div><div class="line">typedef int (*getterFunc)();</div><div class="line">typedef int (*setterFunc)(int);</div><div class="line"></div><div class="line">#define BTAvaliable IOBluetoothPreferencesAvailable</div><div class="line"></div><div class="line">#define BTPowerState IOBluetoothPreferenceGetControllerPowerState</div><div class="line">int BTSetPowerState(int state) &#123;</div><div class="line">    return BTSetParamState(state, BTPowerState, IOBluetoothPreferenceSetControllerPowerState);</div><div class="line">&#125;</div><div class="line"></div><div class="line">#define BTDiscoverableState IOBluetoothPreferenceGetDiscoverableState</div><div class="line">int BTSetDiscoverableState(int state) &#123;</div><div class="line">    return BTSetParamState(state, BTDiscoverableState, IOBluetoothPreferenceSetDiscoverableState);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@implementation MTBluetooth</div><div class="line"></div><div class="line">+ (BOOL)isAvaliable &#123;</div><div class="line">    return BTAvaliable();</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (BOOL)isPower &#123;</div><div class="line">    if ([self isAvaliable]) &#123;</div><div class="line">        return BTPowerState() == 1;</div><div class="line">    &#125;</div><div class="line">    return NO;</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (void)openBluetooth &#123;</div><div class="line">    BTSetPowerState(1);</div><div class="line">&#125;</div><div class="line"></div><div class="line">+ (void)closeBluetooth &#123;</div><div class="line">    BTSetPowerState(0);</div><div class="line">&#125;</div><div class="line"></div><div class="line">@end</div></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-获取当前的wifi SSID" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/获取当前的wifi SSID/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/获取当前的wifi SSID/">获取当前的wifi SSID</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>version: swift 2.0</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div></pre></td><td class="code"><pre><div class="line">extension UIDevice &#123;</div><div class="line">    </div><div class="line">    /// wifi SSID</div><div class="line">    static var WIFISSID: String &#123;</div><div class="line">        let interfaces: CFArray? = CNCopySupportedInterfaces()</div><div class="line">        if interfaces == nil &#123; return &quot;&quot; &#125;</div><div class="line">        </div><div class="line">        let if0: UnsafePointer&lt;Void&gt;? = CFArrayGetValueAtIndex(interfaces, 0)</div><div class="line">        if if0 == nil &#123; return &quot;&quot; &#125;</div><div class="line">        </div><div class="line">        let interfaceName: CFStringRef = unsafeBitCast(if0!, CFStringRef.self)</div><div class="line">        let dictionary = CNCopyCurrentNetworkInfo(interfaceName) as NSDictionary?</div><div class="line">        if dictionary == nil &#123; return &quot;&quot; &#125;</div><div class="line">        </div><div class="line">        if let SSID = dictionary?[kCNNetworkInfoKeySSID as String] as? String &#123;</div><div class="line">            return SSID</div><div class="line">        &#125;</div><div class="line">        return &quot;&quot;</div><div class="line">    &#125;</div><div class="line"></div><div class="line"></div><div class="line">&#125;</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
       
@@ -627,6 +259,484 @@
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-调用私有方法开启关闭蓝牙" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/调用私有方法开启关闭蓝牙/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/调用私有方法开启关闭蓝牙/">调用私有方法开启关闭蓝牙</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>先导入IOBluetooth.framework</p>
+<p>然后调用我写的方法</p>
+<p><strong>MTBluetooth.h</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@interface MTBluetooth : NSObject</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  蓝牙是否可用</span><br><span class="line"> *</span><br><span class="line"> *  @return</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isAvaliable;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  是否开启</span><br><span class="line"> *</span><br><span class="line"> *  @return &lt;#return value description#&gt;</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isPower;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  开启蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)openBluetooth;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  关闭蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)closeBluetooth;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p><strong>MTBluetooth.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MTBluetooth.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// private methods</span><br><span class="line">int IOBluetoothPreferencesAvailable();</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetControllerPowerState();</span><br><span class="line">void IOBluetoothPreferenceSetControllerPowerState(int state);</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetDiscoverableState();</span><br><span class="line">void IOBluetoothPreferenceSetDiscoverableState(int state);</span><br><span class="line"></span><br><span class="line">// dry</span><br><span class="line">int BTSetParamState(int state, int (*getter)(), void (*setter)(int)) &#123;</span><br><span class="line">    if (state == getter()) &#123;</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        setter(state);</span><br><span class="line">        </span><br><span class="line">        usleep(1000000); // Just wait, checking getter even in 10 seconds gives old result</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// short names</span><br><span class="line">typedef int (*getterFunc)();</span><br><span class="line">typedef int (*setterFunc)(int);</span><br><span class="line"></span><br><span class="line">#define BTAvaliable IOBluetoothPreferencesAvailable</span><br><span class="line"></span><br><span class="line">#define BTPowerState IOBluetoothPreferenceGetControllerPowerState</span><br><span class="line">int BTSetPowerState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTPowerState, IOBluetoothPreferenceSetControllerPowerState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#define BTDiscoverableState IOBluetoothPreferenceGetDiscoverableState</span><br><span class="line">int BTSetDiscoverableState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTDiscoverableState, IOBluetoothPreferenceSetDiscoverableState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@implementation MTBluetooth</span><br><span class="line"></span><br><span class="line">+ (BOOL)isAvaliable &#123;</span><br><span class="line">    return BTAvaliable();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (BOOL)isPower &#123;</span><br><span class="line">    if ([self isAvaliable]) &#123;</span><br><span class="line">        return BTPowerState() == 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)openBluetooth &#123;</span><br><span class="line">    BTSetPowerState(1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)closeBluetooth &#123;</span><br><span class="line">    BTSetPowerState(0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-设计师也要学物理学" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/设计师也要学物理学/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/设计师也要学物理学/">设计师也要学物理学</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####<a href="http://www.ui.cn/detail/62012.html" target="_blank" rel="noopener"><strong><em>本文转自UI.CN</em></strong></a><br>我们会把从小到大对这个世界的认识映射到屏幕世界中。所以从事物原理的角度出发，探究一下运动曲线。</p>
+<p>本文并不深入物理定律的本身，只讲述运动曲线的运用，曾经上课睡觉的同学也不必担心。<br><img src="http://img.ui.cn/data/file/8/2/3/305328.png?imageView2/2/w/900/q/90" alt=""><br>先引用下百科神马是物理：物理学是研究物质运动最一般规律和物质基本结构的学科。作为自然科学的带头学科，物理学研究大至宇宙，小至基本粒子等一切物质最基本的运动形式和规律，因此成为其他各自然科学学科的研究基础。它的理论结构充分地运用数学作为自己的工作语言，以实验作为检验理论正确性的唯一标准，它是当今最精密的一门自然科学学科。（猜你们也没仔细看，总之就是物理是一门非常牛逼的学科。）</p>
+<p>我一直认为动效设计的本身是人机交互中非常重要的环节，并且我们会把从小到大对这个世界的认识映射到屏幕世界中。比如最常见的抓、扔、移动等操作，都是婴儿时期就习得到的基本本能，那么这些动作经常会被我们本能的运用到长大后接触到的屏幕操作中。</p>
+<p>上一篇中已经提到了一些动效设计的原则（传送门：<a href="http://www.ui.cn/detail/54562.html" target="_blank" rel="noopener">UI中国</a> ），以及简单的写到了动效设计怎么样的表达让用户更加舒适。恩，今天要深入这个话题，动效设计师如何运用物理理论来让动画曲线更加贴近现实世界，如何让你的动画效果更加的如烟花般炫丽。</p>
+<hr>
+<p>###一.牛顿第一定律 又称惯性定律 由牛顿在1687年提出</p>
+<p>任何物体都要保持匀速直线运动或静止状态，直到外力迫使它改变运动状态为止。</p>
+<p>什么是保持匀速直线运动：</p>
+<p><img src="http://img.ui.cn/data/file/5/3/3/305335.gif" alt=""></p>
+<p>可以感觉到，它的运动似乎有些无聊，因为我们生活的这个世界存在引力、空气阻力、摩擦力等等。那就看一下最常见的外力因素——摩擦力，现实世界中的大部分运动都有它的身影。</p>
+<p>1.摩擦力 F=μ×FN </p>
+<p>阻碍物体相对运动（或相对运动趋势）的力叫做摩擦力。</p>
+<p>摩擦力是个宜动宜静的乖宝宝~它有两种形态：</p>
+<p>A 静摩擦力：两个相互接触的物体，当其接触表面之间有相对滑动的趋势，但尚保持相对静止时，彼此作用着阻碍相对滑动的阻力，这种阻力称为静滑动摩擦力，简称静摩擦力。</p>
+<p><img src="http://img.ui.cn/data/file/6/3/3/305336.gif" alt=""></p>
+<p>摩擦力比较大的时候会发生，由于相对没动，所以保持和传送带一起运动。</p>
+<p>B 动摩擦力：两接触物体之间存在相对滑动时，其接触面上产生阻碍对方滑动的阻力称为动滑动摩擦力。</p>
+<p><img src="http://img.ui.cn/data/file/0/4/3/305340.gif" alt=""></p>
+<p>可以看到由于材质的不同，或者又加上制动等因素，只要记住物体表面粗糙及压力越大，摩擦力越大，结合下面的牛顿第二定律<br>就可以模拟出一些不同感觉的运动曲线了。</p>
+<hr>
+<p>###二.牛顿第二定律  F=ma 由牛顿在1687年提出</p>
+<p>物体加速度的大小跟作用力成正比，跟物体的质量成反比，且与物体质量的倒数成正比；加速度的方向跟作用力的方向相同。</p>
+<p>简单的说就是——物体越轻或者受到的力越大加速度越大：</p>
+<p><img src="http://img.ui.cn/data/file/7/3/3/305337.gif" alt=""></p>
+<hr>
+<p>###三.牛顿第三运动定律 F=-F’ 由牛顿在1687年提出 </p>
+<p>相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。</p>
+<p>常见的比如说弹撞击，拉、推重物等等。反正哪哪都有它，不要忘记它就好。<br><img src="http://img.ui.cn/data/file/8/3/3/305338.gif" alt=""></p>
+<p>既然提到牛三那就一定要提到一个它最重要的衍生定律了：</p>
+<p>1.动量守恒定律 m1v1+m2v2=m1v1′+m2v2′</p>
+<p>一个系统不受外力或所受外力之和为零，那么这个系统的总动量保持不变。</p>
+<p>动量守恒定律最初是牛顿第三定律的推论， 但后来发现它们的适用范围远远广于牛顿定律。简单的描述就是，两个速度不同的物体碰撞之后会产生速度上的『传递』，打台球的同学应该有更深的感触。</p>
+<p> <img src="http://img.ui.cn/data/file/9/3/3/305339.gif" alt=""></p>
+<hr>
+<p>###四.阿基米德定律 F＝γV</p>
+<p>浸入静止流体(气体或液体)中的物体受到一个浮力，其大小等于该物体所排开的流体重量，方向垂直向上并通过所排开流体的形心。</p>
+<p>所以水中物体弹出速度与物体的体积、质量成正比~而且会越靠近水面越快。看下曲线图：</p>
+<p><img src="http://img.ui.cn/data/file/1/4/3/305341.gif" alt=""></p>
+<p>可以发现浮起来的过程因为外力的方向不断变化以致有些类似弹性曲线，继而联想到了胡克（弹性）定律：</p>
+<hr>
+<p>###五.胡克定律  F=-k·x 又称弹性定律 由胡克在1678年提出</p>
+<p>弹簧在发生弹性形变时，弹簧的弹力F和弹簧的伸长量（或压缩量）x成正比，即F= k·x 。k是物质的弹性系数，它只由材料的性质所决定，与其他因素无关。负号表示弹簧所产生的弹力与其伸长（或压缩）的方向相反。</p>
+<p>那么由胡可定律结合牛顿第二定律F=ma，我们就可以得出弹性曲线来，这里的关键因素就是物体质量、弹性系数、伸长量来决定。</p>
+<p><img src="http://img.ui.cn/data/file/2/4/3/305342.gif" alt=""></p>
+<p>*『制作』：描述弹性曲线通常的三个关键参数分别是：频率、过量、持续时间。</p>
+<hr>
+<p>###六.表面张力</p>
+<p>液体表面任意二相邻部分之间垂直于它们的单位长度分界线相互作用的拉力。表面张力的形成同处在液体表面薄层内的分子的特殊受力状态密切相关。</p>
+<p>表面张力是动效设计中和阿基米德定律一样容易遇到的流体力学里的知识。算式比较复杂，不再深究。张力的运用很广泛，那么我们做动效最常遇到的通常是融合效果：</p>
+<p><img src="http://img.ui.cn/data/file/3/4/3/305343.gif" alt=""></p>
+<p>总结</p>
+<p>物理的运用基本上在我们生活的世界中并没有理想状态，所以了解原理的同时，设计狮们请一定要愉快的观察我们身边的世界，真实世界才是最好的学习案例。</p>
+<p>最后的最后如果文中对科学道理的阐述有什么错误的地方，希望学霸同学们可以指出~</p>
+<p>附一：压箱底的缓动函数曲线 <a href="http://easings.net/zh-cn（如打不开，请使用科学上网法）" target="_blank" rel="noopener">http://easings.net/zh-cn（如打不开，请使用科学上网法）</a></p>
+<p>附二：写的过程中也看到阿里U一点的文章——动效设计的物理法则，重点的写了牛顿第一第二定律，感兴趣的的同学们可以点过去拜读下~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计/">设计</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-CentOS安装ShadowSocks服务端" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/CentOS安装ShadowSocks服务端/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/CentOS安装ShadowSocks服务端/">CentOS安装ShadowSocks服务端</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-查看系统"><a href="#1-查看系统" class="headerlink" title="1.查看系统"></a>1.查看系统</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/issue</span><br><span class="line">CentOS release 6.6 (Final)</span><br><span class="line">[root@localhost ~]# uname -a</span><br><span class="line">Linux localhost.localdomain 2.6.32-042stab106.6 #1 SMP Mon Apr 20 14:48:47 MSK 2015 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="2-安装ShadowSocks"><a href="#2-安装ShadowSocks" class="headerlink" title="2.安装ShadowSocks"></a>2.安装ShadowSocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line"># pip install shadowsocks</span><br></pre></td></tr></table></figure>
+<hr>
+<h3 id="3-创建配置文件-etc-shadowsocks-json"><a href="#3-创建配置文件-etc-shadowsocks-json" class="headerlink" title="3.创建配置文件/etc/shadowsocks.json"></a>3.创建配置文件/etc/shadowsocks.json</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# touch /etc/shadowsocks.json</span><br><span class="line">[root@localhost /]# vi /etc/shadowsocks.json</span><br><span class="line">&#123;</span><br><span class="line">	&quot;server&quot;:&quot;你的服务器ip&quot;,</span><br><span class="line">	&quot;server_port&quot;:443,</span><br><span class="line">	&quot;local_address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">	&quot;local_port&quot;:1080,</span><br><span class="line">	&quot;password&quot;:&quot;登陆密码&quot;,</span><br><span class="line">	&quot;timeout&quot;:600,</span><br><span class="line">	&quot;method&quot;:&quot;rc4-md5&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果需要多账号的话  可以使用这个格式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;timeout&quot;: 600,</span><br><span class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;port_password&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;40001&quot;: &quot;password1&quot;,</span><br><span class="line">        &quot;40002&quot;: &quot;password2&quot;,</span><br><span class="line">        &quot;40003&quot;: &quot;password3&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>备注：加密方式官方默认使用aes-256-cfb，推荐使用rc4-md5，因为 RC4比AES速度快好几倍。</p>
+<p>各字段说明：</p>
+<pre><code> server:服务器IP
+ server_port:服务器端口
+ local_port:本地端端口
+password:用来加密的密码
+ timeout:超时时间（秒）
+ method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″等
+</code></pre></blockquote>
+<hr>
+<h3 id="4-使用配置文件在后台运行shadowsocks服务"><a href="#4-使用配置文件在后台运行shadowsocks服务" class="headerlink" title="4.使用配置文件在后台运行shadowsocks服务"></a>4.使用配置文件在后台运行shadowsocks服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>备注：若无配置文件，在后台可以使用一下命令运行：</p>
+</blockquote>
+<pre><code>[root@localhost /]# ssserver -p 443 -k MyPass -m rc4-md5 -d start
+</code></pre><hr>
+<h3 id="5-停止服务"><a href="#5-停止服务" class="headerlink" title="5.停止服务"></a>5.停止服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-27个提升效率的iOS开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/27个提升效率的iOS开源库推荐/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/27个提升效率的iOS开源库推荐/">27个提升效率的iOS开源库推荐</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####<a href="https://medium.com/app-coder-io/27-ios-open-source-libraries-to-skyrocket-your-development-301b67d3124c" target="_blank" rel="noopener"><strong><em>本文转自Medium</em></strong></a></p>
+<p>我热爱开源，更喜爱那些花费宝贵的业余时间来创造奇迹的开发者们，感谢他们将自己辛苦劳动的成果无偿分享给大家。开源作者和贡献者们，你们太了不起了，感谢你们所付出的一切。</p>
+<p>鉴于我是收集不全会死星人，这里我根据个人喜好选取了一些iOS的开源库。这些项目的顺序完全随机，每个都棒到爆。绝大多数支持CocoaPods，所以将它们添加到你的Xcode项目中只是小事一桩。</p>
+<p>在本文末尾你可以找到一个长文慎入版本——一个只包含题目与项目链接的简单列表。如果你觉得这篇文章有用的话，请把它分享给其他做iOS开发的小伙伴们，好酒也怕巷子深。</p>
+<hr>
+<h3 id="DZNEmptyDataSet"><a href="#DZNEmptyDataSet" class="headerlink" title="DZNEmptyDataSet"></a><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="noopener">DZNEmptyDataSet</a></h3><p>DZNEmptyDataSet算是一个很标准的iOS内建方式，适合用来处理空的table view和collection view。默认情况下，如果你的table view为空，屏幕就为空，这样一来用户体验并不理想。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_JHal.jpg" alt=""></p>
+<p>使用这个库，你只需遵守一些协议，iOS就会自动将collection view处理完善，并将用户消息以合适美观的方式显示出来。每个iOS项目都可以自动处理，不用再一一费神。</p>
+<hr>
+<h3 id="PDTSimpleCalendar"><a href="#PDTSimpleCalendar" class="headerlink" title="PDTSimpleCalendar"></a><a href="https://github.com/jivesoftware/PDTSimpleCalendar" target="_blank" rel="noopener">PDTSimpleCalendar</a></h3><p>你的应用需要一个简单美观且正常运行的日历组件吗？现在有了——PDTSimpleCalendar也许可以算是iOS最棒的日历组件了。你可以在各个方面对它进行定制，无论是运行逻辑还是外观方面。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_Eyak.jpg" alt=""></p>
+<hr>
+<h3 id="MagicalRecord"><a href="#MagicalRecord" class="headerlink" title="MagicalRecord"></a><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="noopener">MagicalRecord</a></h3><p>他们都说：Core Data简洁易用。他们又说：很棒很好用噢。哈？真的吗，苹果？添加到各个项目中的大量样板数据完全不符合简洁而易用的标准。更别提添加、移除和更新那一大堆的entities、保存context、按不同环境创建不同的Core Data堆栈等等。当然，我很喜欢Core Data，但是苹果真的可以把它更好地简化一下——使用MagicalRecord方式。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_saCW.jpg" alt=""></p>
+<p>MagicalRecord就像是给Core Data提供了一层外包装，隐藏掉所有不相关的东西。如果你曾经使用过active record模式（比如Ruby on Rails），你就知道了。倾情推荐，在应用中使用Core Data的童鞋们可一定要试试。</p>
+<hr>
+<h3 id="Chameleon"><a href="#Chameleon" class="headerlink" title="Chameleon"></a><a href="https://github.com/ViccAlexander/Chameleon" target="_blank" rel="noopener">Chameleon</a></h3><p>如果你已经看到这里了，我猜你更有可能是个程序猿，而不是设计狮。这里有个东东很适合你。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_CM0X.jpg" alt=""></p>
+<p>Chameleon是一个iOS的色彩框架。它运用现代化flat color将UIColor扩展地非常美观。我们还可以通过它运用自定义颜色创建调色板。它还有很多功用，请浏览readme。如果你想要应用美观的话，一定要把这个库加到项目里。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_aDGz.jpg" alt=""></p>
+<hr>
+<h3 id="Alamofire"><a href="#Alamofire" class="headerlink" title="Alamofire"></a><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="noopener">Alamofire</a></h3><p>Alamofire是一个简洁的网络库，用Swift语言编写。你是否曾经使用过AFNetworking呢？Alamofire是它的小弟。更年轻更时尚，当然（AFNetworking是用Objective-C编写的）。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_y2rc.jpg" alt=""></p>
+<p>如果你需要进行网络的相关工作，诸如下载、上传与获取JSONs等等的话，Alamofire正是你所需要的。GitHub上8000人次推荐，一定不会错。</p>
+<hr>
+<h3 id="TextFieldEffects"><a href="#TextFieldEffects" class="headerlink" title="TextFieldEffects"></a><a href="https://github.com/raulriera/TextFieldEffects" target="_blank" rel="noopener">TextFieldEffects</a></h3><p>你不觉得标准的UITextField有些枯燥么？我也这样想——来认识一下TextFieldEffects吧！废话不多说，只要看几个例子：</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_RiIN.gif" alt=""></p>
+<p>是啊，都是些简单的dropin控制器。你甚至可以在storyboard中使用IBDesignables。</p>
+<p>不幸地是：这个库不支持CocoaPods（如果你来自未来，而这一情况什么时候会改变的话，一定要在Twitter上告诉我），但是它支持Carthage。你只管从GitHub上下载项目，把它放入你的workspace就行了。</p>
+<hr>
+<h3 id="GPUImage"><a href="#GPUImage" class="headerlink" title="GPUImage"></a><a href="https://github.com/BradLarson/GPUImage" target="_blank" rel="noopener">GPUImage</a></h3><p>你曾经写过照相机应用吗？如果没有的话，很快你一定会遇到这个库的。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_Blnb.jpg" alt=""></p>
+<p>GPUImage为我们提供了一个GPU加速的照相机效果（同时支持照片与视频），而且处理速度飞快。在App Store中，使用这个库的应用数以百计。我有一个应用也用到了GPUImage。 它在GitHub上获得了8869个star，而且还在增长。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_PitN.jpg" alt=""></p>
+<hr>
+<h3 id="iRate"><a href="#iRate" class="headerlink" title="iRate"></a><a href="https://github.com/nicklockwood/iRate" target="_blank" rel="noopener">iRate</a></h3><p>想要在App Store中获得更多评论的最佳方式是什么？想要回答这个问题，我缺乏切实数据，但如果必须猜一下的话，我会建议问问用户。也许这样做有点老套——大多开发者现在都有创建定制的应用内置alert。</p>
+<p>但是如果你没有时间，或者不想从头实现的话，最好用一下iRata。这个就是iRata——一个小型库——你可以把它放入项目中，把问卷调查什么的都忘记吧，iRate会在恰当的时候为你解决这个问题。</p>
+<hr>
+<h3 id="GameCenterManager"><a href="#GameCenterManager" class="headerlink" title="GameCenterManager"></a><a href="https://github.com/nihalahmed/GameCenterManager" target="_blank" rel="noopener">GameCenterManager</a></h3><p>无论你喜不喜欢单例模式，管理一个GameCenter都比我们已知的其他相反模式要好很多。（你的游戏只有一个GameCenter，对吗？）</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_7mrT.jpg" alt=""></p>
+<p>说实话，在iOS上管理GameCenter vanilla并不算难，但是有了这个库会更简单也更快。好上加好不是更好么。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_giJD.jpg" alt=""></p>
+<p>我在我一个游戏中用到了这个，体验很好。</p>
+<hr>
+<h3 id="PKRevealController-2"><a href="#PKRevealController-2" class="headerlink" title="PKRevealController 2"></a><a href="https://github.com/pkluz/PKRevealController" target="_blank" rel="noopener">PKRevealController 2</a></h3><p>这个要注意，真的很棒！是我最喜爱的iOS控件之一。PKRevealController是一个可以滑动的侧边栏菜单（可向左、向右或者同时向两侧），只需手指轻轻一点（或者按一下按钮，但是这样滑动时不够炫酷）。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_mfbR.jpg" alt=""></p>
+<p>我试过一些可以提供这类控制的其他库，而PKRevealController是最棒的。安装简便，高度定制且对手势识别良好。可以当做一个标准控件用在iOS SDK中。</p>
+<hr>
+<h3 id="SlackTextViewController"><a href="#SlackTextViewController" class="headerlink" title="SlackTextViewController"></a><a href="https://github.com/slackhq/SlackTextViewController" target="_blank" rel="noopener">SlackTextViewController</a></h3><p>你曾经用过Slack iOS应用吗？如果你在较大的软件公司工作，也许会用过。对那些没用过的人呢？—?Slack令人激动。用到Slack的应用也是这样，尤其是用作极佳、定制的文本输入控制时。这时你有了一个现成可用在应用中的代码。</p>
+<p>自适应文本区域？试一下。</p>
+<p>手势识别、自动填充、多媒体合并？试一下。</p>
+<p>快速drop-in解决方案？试一下。</p>
+<p>其他还想要什么？</p>
+<hr>
+<h3 id="RETableViewManager"><a href="#RETableViewManager" class="headerlink" title="RETableViewManager"></a><a href="https://github.com/romaonthego/RETableViewManager" target="_blank" rel="noopener">RETableViewManager</a></h3><p>RETableViewManager可以帮助你进行动态创建与管理table views。它给我们提供了预定义cells（bool类型、文本、日期等等——请看下面的截图），但是你还可以创建自定义views，并与默认视图一同使用。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_tfBS.jpg" alt=""></p>
+<p>左侧截图显得非常古板！在storyboard中没有这个库的时候，你能做的就是这些了，但是有时候代码比可视化编辑器要好。</p>
+<hr>
+<h3 id="PermissionScope"><a href="#PermissionScope" class="headerlink" title="PermissionScope"></a><a href="https://github.com/nickoneill/PermissionScope" target="_blank" rel="noopener">PermissionScope</a></h3><p>用这个库可以在询问用户前，就告知用户所需的系统权限，为用户带来更好的体验。接受度更高—&gt;更多活跃用户-&gt;更高的留存率-&gt;数据更好-&gt;下载率更高。墙裂推荐pod。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_5VPi.jpg" alt=""></p>
+<hr>
+<h3 id="SVProgressHUD"><a href="#SVProgressHUD" class="headerlink" title="SVProgressHUD"></a><a href="https://github.com/TransitApp/SVProgressHUD" target="_blank" rel="noopener">SVProgressHUD</a></h3><p>这张图片在正常加载，无需等待太久或者刷新页面。这正是SVProgressHUD在你的应用中的表现。如果你需要定制化的等待提示器，这个就是了（也许是最好的）。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_9HWQ.jpg" alt=""></p>
+<hr>
+<h3 id="FontAwesomeKit"><a href="#FontAwesomeKit" class="headerlink" title="FontAwesomeKit"></a><a href="https://github.com/PrideChung/FontAwesomeKit" target="_blank" rel="noopener">FontAwesomeKit</a></h3><p>Font Awesome很棒，有了它你可以很容易地给项目加字体，使用方式繁多。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_o5UZ.jpg" alt=""></p>
+<hr>
+<h3 id="SnapKit"><a href="#SnapKit" class="headerlink" title="SnapKit"></a><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="noopener">SnapKit</a></h3><p>喜欢自动布局吗？当然喜欢！至少在storyboard中创建时会喜欢。 在代码中纯手工创建约束灰常痛苦，但幸运的是我们有了SnapKit，在board中用上它，你可以简单直观地编写约束了。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_HSbF.jpg" alt=""></p>
+<hr>
+<h3 id="MGSwipeTableCell"><a href="#MGSwipeTableCell" class="headerlink" title="MGSwipeTableCell"></a><a href="https://github.com/MortimerGoro/MGSwipeTableCell" target="_blank" rel="noopener">MGSwipeTableCell</a></h3><p>这是另一个常见于很多应用中的UI组件，苹果应该考虑在标准的iOS SDK中加入一些类似的内容。Swipeable表格cell是这个pod的最佳描述，也是最好的。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131835_kWbv.gif" alt=""></p>
+<p>这只是其中三个动画类型，还有更多变化，请查看readme。</p>
+<hr>
+<h3 id="Quick"><a href="#Quick" class="headerlink" title="Quick"></a><a href="https://github.com/Quick/Quick" target="_blank" rel="noopener">Quick</a></h3><p>用于Swift中的单元测试（也可用于Objective-C），与Xcode整合在一起。如果你是Objective-C的粉丝，我建议用Specta代替这个，但是对Swift使用者来说，Quick是最佳选择。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_ELO4.jpg" alt=""></p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_DKqd.jpg" alt=""></p>
+<hr>
+<h3 id="IAPHelper"><a href="#IAPHelper" class="headerlink" title="IAPHelper"></a><a href="https://github.com/saturngod/IAPHelper" target="_blank" rel="noopener">IAPHelper</a></h3><p>应用内付费给我们提供了很多样本代码，而这个库丢掉了那些代码，将金钱交易相关的大多通用任务做了简单的封装。</p>
+<hr>
+<h3 id="ReactiveCocoa"><a href="#ReactiveCocoa" class="headerlink" title="ReactiveCocoa"></a><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="noopener">ReactiveCocoa</a></h3><p>好吧，这是个小怪物。</p>
+<p>ReactiveCocoa并不像列表中其他库一样，它不是小型的drop-in项目。ReactiveCocoa给我们带来了一个迥异的编程风格与结构，它是基于信号与数据流的。首先你需要忘掉已知的一切，才能理解它的工作方式。很有难度，但是价值不斐。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_XmAz.jpg" alt=""></p>
+<p>在这里教ReactiveCocoa有点不合适，但是如果你感兴趣的话，我会提供一些好源：</p>
+<ul>
+<li><a href="http://www.teehanlax.com/blog/getting-started-with-reactivecocoa/" target="_blank" rel="noopener">Getting Started with ReactiveCocoa</a></li>
+<li><a href="http://nshipster.com/reactivecocoa/" target="_blank" rel="noopener">Mattt Thompson：ReactiveCocoa</a></li>
+<li><a href="http://www.raywenderlich.com/62699/reactivecocoa-tutorial-pt1" target="_blank" rel="noopener">ReactiveCocoa Tutorial – The Definitive Introduction: Part 1/2</a><br>注意：对我们iOS开发社区的朋友来说，这会是一个稍微有些技术含量的活儿。</li>
+</ul>
+<hr>
+<h3 id="SwiftyJSON"><a href="#SwiftyJSON" class="headerlink" title="SwiftyJSON"></a><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="noopener">SwiftyJSON</a></h3><p>使Swift的JSON解析变得简单。</p>
+<hr>
+<h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a><a href="https://github.com/MengTo/Spring" target="_blank" rel="noopener">Spring</a></h3><p>使动画在简单性、可链接性与声明性方面有所提高。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_S6De.jpg" alt=""></p>
+<hr>
+<h3 id="FontBlaster"><a href="#FontBlaster" class="headerlink" title="FontBlaster"></a><a href="https://github.com/ArtSabintsev/FontBlaster" target="_blank" rel="noopener">FontBlaster</a></h3><p>载入定制字体时更简单。</p>
+<hr>
+<h3 id="TAPromotee"><a href="#TAPromotee" class="headerlink" title="TAPromotee"></a><a href="https://github.com/JanC/TAPromotee" target="_blank" rel="noopener">TAPromotee</a></h3><p>交叉推广应用是你可以免费实现的最佳市场推广策略之一。使用这个库做起来非常简单，不用都不可能——将TAPromotee加入你的podfile中，免费配置与享受更多下载吧。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_IBwy.jpg" alt=""></p>
+<hr>
+<h3 id="Concorde"><a href="#Concorde" class="headerlink" title="Concorde"></a><a href="https://github.com/contentful-labs/Concorde" target="_blank" rel="noopener">Concorde</a></h3><p>你在应用中载入了一堆jpeg吗？有了Concorde，你可以用更好的方式来解决，这是一个很大的进步。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_oKko.gif" alt=""></p>
+<hr>
+<h3 id="KeychainAccess"><a href="#KeychainAccess" class="headerlink" title="KeychainAccess"></a><a href="https://github.com/kishikawakatsumi/KeychainAccess" target="_blank" rel="noopener">KeychainAccess</a></h3><p>管理Keychain接入的小助手。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_QT4T.jpg" alt=""></p>
+<hr>
+<h3 id="iOS-charts"><a href="#iOS-charts" class="headerlink" title="iOS-charts"></a><a href="https://github.com/danielgindi/ios-charts" target="_blank" rel="noopener">iOS-charts</a></h3><p>最后一个，但绝不是最不重要的——iOS图表库！非常有用而且美观，这里我无需赘言。向下看，你就知道用它可以做什么了。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_hXLu.jpg" alt=""></p>
+<p>没错，一切都变成了drop-in组件了（也许是“code-in组件）。</p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_SWVP.jpg" alt=""></p>
+<p><img src="http://static.oschina.net/uploads/img/201507/27131836_ym45.jpg" alt=""></p>
+<p>不幸的是，它还不支持CocoaPods，所以你得手动把它拽到你的Xcode workspace里面去。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-AndroidStudio小技巧--依赖库" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/AndroidStudio小技巧--依赖库/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/AndroidStudio小技巧--依赖库/">AndroidStudio小技巧--依赖库</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="配置依赖项目"><a href="#配置依赖项目" class="headerlink" title="配置依赖项目"></a>配置依赖项目</h3><p>有时候我们会开发一些平台库项目，我自己写了一个Library的Android库，用于后面不需要重复造轮子，现在我有另外一个项目Demo，也想开始依赖于Library，怎么做比较合适。</p>
+<p>先来看以一下目录结构：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Library</span><br><span class="line">	|-library</span><br><span class="line">DemoProject</span><br><span class="line">	|-app</span><br><span class="line">	|-library</span><br></pre></td></tr></table></figure>
+<p>直接copy一份到Demo肯定是不行的，因为这样就存在两个副本要维护。</p>
+<p>解决办法就是手动配置依赖库的位置：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include &apos;:app&apos;, &apos;:library&apos;</span><br><span class="line">project(&apos;:library&apos;).projectDir = new File(rootDir, &quot;../Library/library&quot;)</span><br></pre></td></tr></table></figure>
+<p>打开setting.gradle，包含Library，然后指定其项目位置，我这里用的是相对路径。<br>剩下的就是在app的build.gradle里配置依赖了</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile project(&apos;:library&apos;)</span><br></pre></td></tr></table></figure>
+<p>最后同步一下gradle，Library会出现在左侧的导航面板中，就可以正常使用Library中的资源了。</p>
+<hr>
+<p>小结<br>这个方法相对来说既简单又实用，关键在于配置Library的路径，这和Eclipse中的操作其实是类似的，只不过AndroidStudio目前并有有可视化的方法来添加目录并不在项目之内的库，所以需要自己手动配置。</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
 	</div>
 
       

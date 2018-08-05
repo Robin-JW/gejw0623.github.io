@@ -19,7 +19,7 @@
 <meta name="keywords" content="Raspberry,DLNA,下载机">
 <meta property="og:type" content="article">
 <meta property="og:title" content="树莓派搭建一个DLNA多媒体下载机">
-<meta property="og:url" content="http://yoursite.com/2016/09/03/树莓派搭建一个DLNA多媒体下载机/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2016/09/03/树莓派搭建一个DLNA多媒体下载机/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="配置表 树莓派一台 TF卡一张 1T硬盘一个 硬盘供电一个   1. 安装系统我们选择原生系统 RaspBian RaspBian下载地址: 点击下载 将下载的img写入到TF卡Windows Windows下直接使用 win32diskimager 工具  win32diskimager下载地址: 戳我下载     Mac前往我的另外一篇博客: 点我前往 2. 启动树莓派系统准备就绪，接上电源，">
 <meta property="og:locale" content="default">
@@ -182,12 +182,12 @@
 </ul>
 <hr>
 <h2 id="1-安装系统"><a href="#1-安装系统" class="headerlink" title="1. 安装系统"></a>1. 安装系统</h2><p>我们选择原生系统 <strong>RaspBian</strong></p>
-<p>RaspBian下载地址: <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="external">点击下载</a></p>
+<p>RaspBian下载地址: <a href="https://www.raspberrypi.org/downloads/raspbian/" target="_blank" rel="noopener">点击下载</a></p>
 <h3 id="将下载的img写入到TF卡"><a href="#将下载的img写入到TF卡" class="headerlink" title="将下载的img写入到TF卡"></a>将下载的img写入到TF卡</h3><h4 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h4><blockquote>
 <p>Windows下直接使用 win32diskimager 工具</p>
 </blockquote>
-<p>win32diskimager下载地址: <a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="external">戳我下载</a>    </p>
-<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><p>前往我的另外一篇博客: <a href="http://gejw.cn/2015/11/25/OSX%E4%B8%8B%E7%BB%99%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Raspbian%E7%B3%BB%E7%BB%9F/" target="_blank" rel="external">点我前往</a></p>
+<p>win32diskimager下载地址: <a href="https://sourceforge.net/projects/win32diskimager/" target="_blank" rel="noopener">戳我下载</a>    </p>
+<h4 id="Mac"><a href="#Mac" class="headerlink" title="Mac"></a>Mac</h4><p>前往我的另外一篇博客: <a href="http://gejw.cn/2015/11/25/OSX%E4%B8%8B%E7%BB%99%E6%A0%91%E8%8E%93%E6%B4%BE%E5%AE%89%E8%A3%85Raspbian%E7%B3%BB%E7%BB%9F/" target="_blank" rel="noopener">点我前往</a></p>
 <h2 id="2-启动树莓派"><a href="#2-启动树莓派" class="headerlink" title="2. 启动树莓派"></a>2. 启动树莓派</h2><p>系统准备就绪，接上电源，接上网线，启动PI</p>
 <p>启动后使用SSH登录(将下面的IP改为你的树莓派地址)</p>
 <pre><code>ssh pi@192.168.1.1
@@ -237,17 +237,17 @@ Device     Boot Start        End    Sectors  Size Id Type
 /dev/sda1       /mnt/disk      exfat    defaults,noatime,uid=1000,gid=1000        0       0
 </code></pre><p>执行命令 让配置生效</p>
 <pre><code>mount -a
-</code></pre><h2 id="5-安装迅雷远程下载"><a href="#5-安装迅雷远程下载" class="headerlink" title="5.安装迅雷远程下载"></a>5.安装迅雷远程下载</h2><h3 id="下载安装迅雷"><a href="#下载安装迅雷" class="headerlink" title="下载安装迅雷"></a>下载安装迅雷</h3><p>前往下载迅雷固件 <a href="http://luyou.xunlei.com/thread-3155-1-1.html?_t=1398873558" target="_blank" rel="external">点我下载</a></p>
+</code></pre><h2 id="5-安装迅雷远程下载"><a href="#5-安装迅雷远程下载" class="headerlink" title="5.安装迅雷远程下载"></a>5.安装迅雷远程下载</h2><h3 id="下载安装迅雷"><a href="#下载安装迅雷" class="headerlink" title="下载安装迅雷"></a>下载安装迅雷</h3><p>前往下载迅雷固件 <a href="http://luyou.xunlei.com/thread-3155-1-1.html?_t=1398873558" target="_blank" rel="noopener">点我下载</a></p>
 <p>选择 <strong>armel_v5te_glibc</strong> 版本</p>
 <p>将程序下载到目录 <strong>/mnt/xunlei</strong> (你可以选择其他目录)</p>
 <p>启动迅雷程序 </p>
 <pre><code>./portal
 </code></pre><p>启动成功后会出现一串激活码, 类似于 <strong>H2DS72</strong></p>
-<p> 将激活码填入 <a href="http://yuancheng.xunlei.com/" target="_blank" rel="external">迅雷远程下载</a></p>
+<p> 将激活码填入 <a href="http://yuancheng.xunlei.com/" target="_blank" rel="noopener">迅雷远程下载</a></p>
 <h3 id="将迅雷程序添加到开启启动项"><a href="#将迅雷程序添加到开启启动项" class="headerlink" title="将迅雷程序添加到开启启动项"></a>将迅雷程序添加到开启启动项</h3><p>编辑 /etc/rc.local 文件</p>
 <p>在 exit 0 之前添加执行代码</p>
 <pre><code>./mnt/xunlei/portal
-</code></pre><p>迅雷安装完成，随时随地 看见喜欢的电影 可以直接到<a href="http://yuancheng.xunlei.com/" target="_blank" rel="external">迅雷远程下载</a>进行下载</p>
+</code></pre><p>迅雷安装完成，随时随地 看见喜欢的电影 可以直接到<a href="http://yuancheng.xunlei.com/" target="_blank" rel="noopener">迅雷远程下载</a>进行下载</p>
 <h2 id="6-安装minidlna"><a href="#6-安装minidlna" class="headerlink" title="6.安装minidlna"></a>6.安装minidlna</h2><blockquote>
 <p>我们可以直接使用 <strong>apt-get install minidlna</strong> 安装</p>
 <p>但是安装之后的dlna协议，不支持rmvb格式 所以我们要下载源码 进行修改后编译</p>
@@ -366,7 +366,7 @@ update-rc.d minidlna defaults
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="树莓派搭建一个DLNA多媒体下载机" data-title="树莓派搭建一个DLNA多媒体下载机" data-url="http://yoursite.com/2016/09/03/树莓派搭建一个DLNA多媒体下载机/"></div>
+	<div class="ds-thread" data-thread-key="树莓派搭建一个DLNA多媒体下载机" data-title="树莓派搭建一个DLNA多媒体下载机" data-url="http://blog.gejw.cn/2016/09/03/树莓派搭建一个DLNA多媒体下载机/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

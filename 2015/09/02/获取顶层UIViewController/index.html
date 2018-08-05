@@ -19,7 +19,7 @@
 <meta name="keywords" content="ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="如何获取顶层UIViewController">
-<meta property="og:url" content="http://yoursite.com/2015/09/02/获取顶层UIViewController/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2015/09/02/获取顶层UIViewController/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="Objective-c版本： 12345678- (UIViewController *)appRootViewController&amp;#123;    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;    UIViewController *topVC = a">
 <meta property="og:locale" content="default">
@@ -175,9 +175,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>Objective-c版本：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">- (UIViewController *)appRootViewController&#123;</div><div class="line">    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;</div><div class="line">    UIViewController *topVC = appRootVC;</div><div class="line">    while (topVC.presentedViewController) &#123;</div><div class="line">        topVC = topVC.presentedViewController;</div><div class="line">    &#125;</div><div class="line">    return topVC;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (UIViewController *)appRootViewController&#123;</span><br><span class="line">    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;</span><br><span class="line">    UIViewController *topVC = appRootVC;</span><br><span class="line">    while (topVC.presentedViewController) &#123;</span><br><span class="line">        topVC = topVC.presentedViewController;</span><br><span class="line">    &#125;</span><br><span class="line">    return topVC;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>swift 2.0版本: </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">extension UIApplication &#123;</div><div class="line">    </div><div class="line">    /// 顶层VC</div><div class="line">    static var appRootViewController: UIViewController? &#123;</div><div class="line">        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController</div><div class="line">        while topVC?.presentedViewController != nil &#123;</div><div class="line">            topVC = topVC?.presentedViewController</div><div class="line">        &#125;</div><div class="line">        return topVC</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extension UIApplication &#123;</span><br><span class="line">    </span><br><span class="line">    /// 顶层VC</span><br><span class="line">    static var appRootViewController: UIViewController? &#123;</span><br><span class="line">        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController</span><br><span class="line">        while topVC?.presentedViewController != nil &#123;</span><br><span class="line">            topVC = topVC?.presentedViewController</span><br><span class="line">        &#125;</span><br><span class="line">        return topVC</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -186,18 +186,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/02/AndroidStudio小技巧--依赖库/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/02/iOS 如何放大按钮点击热区/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          AndroidStudio小技巧--依赖库
+          iOS 如何放大按钮点击热区
         
       </div>
     </a>
   
   
-    <a href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测</div>
+    <a href="/2015/09/02/提升效率的Android开源库推荐/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">提升效率的Android开源库推荐</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -226,7 +226,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="获取顶层UIViewController" data-title="如何获取顶层UIViewController" data-url="http://yoursite.com/2015/09/02/获取顶层UIViewController/"></div>
+	<div class="ds-thread" data-thread-key="获取顶层UIViewController" data-title="如何获取顶层UIViewController" data-url="http://blog.gejw.cn/2015/09/02/获取顶层UIViewController/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

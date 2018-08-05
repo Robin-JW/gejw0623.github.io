@@ -19,7 +19,7 @@
 <meta name="keywords" content="android">
 <meta property="og:type" content="article">
 <meta property="og:title" content="AndroidStudio小技巧--依赖库">
-<meta property="og:url" content="http://yoursite.com/2015/09/02/AndroidStudio小技巧--依赖库/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2015/09/02/AndroidStudio小技巧--依赖库/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="配置依赖项目有时候我们会开发一些平台库项目，我自己写了一个Library的Android库，用于后面不需要重复造轮子，现在我有另外一个项目Demo，也想开始依赖于Library，怎么做比较合适。 先来看以一下目录结构： 12345Library	|-libraryDemoProject	|-app	|-library 直接copy一份到Demo肯定是不行的，因为这样就存在两个副本要维护。 解决办法">
 <meta property="og:locale" content="default">
@@ -176,12 +176,12 @@
       
         <h3 id="配置依赖项目"><a href="#配置依赖项目" class="headerlink" title="配置依赖项目"></a>配置依赖项目</h3><p>有时候我们会开发一些平台库项目，我自己写了一个Library的Android库，用于后面不需要重复造轮子，现在我有另外一个项目Demo，也想开始依赖于Library，怎么做比较合适。</p>
 <p>先来看以一下目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Library</div><div class="line">	|-library</div><div class="line">DemoProject</div><div class="line">	|-app</div><div class="line">	|-library</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Library</span><br><span class="line">	|-library</span><br><span class="line">DemoProject</span><br><span class="line">	|-app</span><br><span class="line">	|-library</span><br></pre></td></tr></table></figure>
 <p>直接copy一份到Demo肯定是不行的，因为这样就存在两个副本要维护。</p>
 <p>解决办法就是手动配置依赖库的位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">include &apos;:app&apos;, &apos;:library&apos;</div><div class="line">project(&apos;:library&apos;).projectDir = new File(rootDir, &quot;../Library/library&quot;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include &apos;:app&apos;, &apos;:library&apos;</span><br><span class="line">project(&apos;:library&apos;).projectDir = new File(rootDir, &quot;../Library/library&quot;)</span><br></pre></td></tr></table></figure>
 <p>打开setting.gradle，包含Library，然后指定其项目位置，我这里用的是相对路径。<br>剩下的就是在app的build.gradle里配置依赖了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile project(&apos;:library&apos;)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile project(&apos;:library&apos;)</span><br></pre></td></tr></table></figure>
 <p>最后同步一下gradle，Library会出现在左侧的导航面板中，就可以正常使用Library中的资源了。</p>
 <hr>
 <p>小结<br>这个方法相对来说既简单又实用，关键在于配置Library的路径，这和Eclipse中的操作其实是类似的，只不过AndroidStudio目前并有有可视化的方法来添加目录并不在项目之内的库，所以需要自己手动配置。</p>
@@ -194,20 +194,15 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/02/提升效率的Android开源库推荐/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/02/27个提升效率的iOS开源库推荐/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          提升效率的Android开源库推荐
+          27个提升效率的iOS开源库推荐
         
       </div>
     </a>
   
-  
-    <a href="/2015/09/02/获取顶层UIViewController/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">如何获取顶层UIViewController</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
   
 </nav>
 
@@ -234,7 +229,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="AndroidStudio小技巧--依赖库" data-title="AndroidStudio小技巧--依赖库" data-url="http://yoursite.com/2015/09/02/AndroidStudio小技巧--依赖库/"></div>
+	<div class="ds-thread" data-thread-key="AndroidStudio小技巧--依赖库" data-title="AndroidStudio小技巧--依赖库" data-url="http://blog.gejw.cn/2015/09/02/AndroidStudio小技巧--依赖库/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

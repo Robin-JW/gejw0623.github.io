@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Robin灬桑">
-<meta property="og:url" content="http://yoursite.com/page/3/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/page/3/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -284,6 +284,70 @@ for f in iterateEnum(Enum) {
 
 
   
+    <article id="post-iOS系列之常见开发Tips" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/04/iOS系列之常见开发Tips/" class="article-date">
+  	<time datetime="2015-09-03T20:42:37.000Z" itemprop="datePublished">2015-09-04</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/04/iOS系列之常见开发Tips/">iOS系列之常见开发Tips</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p>ARC下NSNotificationCenter需要remove</p>
+<ul>
+<li>(void) dealloc {<br>  //  [super dealloc] 千万不要画蛇添足<br>  [[NSNotificationCenter defaultCenter] removeObserver:self];<br>}</li>
+</ul>
+</li>
+<li><p>const or #define</p>
+<p>  #define PI 3.14159  //只预处理时进行符号替换,不推荐<br>  const doulbe Pi=3.14159 //安全性高,和效率上推荐</p>
+</li>
+</ul>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-使用一个包含category的静态库" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -382,314 +446,6 @@ for f in iterateEnum(Enum) {
 
 
   
-    <article id="post-iOS系列之常见开发Tips" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/04/iOS系列之常见开发Tips/" class="article-date">
-  	<time datetime="2015-09-03T20:42:37.000Z" itemprop="datePublished">2015-09-04</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/04/iOS系列之常见开发Tips/">iOS系列之常见开发Tips</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li><p>ARC下NSNotificationCenter需要remove</p>
-<ul>
-<li>(void) dealloc {<br>  //  [super dealloc] 千万不要画蛇添足<br>  [[NSNotificationCenter defaultCenter] removeObserver:self];<br>}</li>
-</ul>
-</li>
-<li><p>const or #define</p>
-<p>  #define PI 3.14159  //只预处理时进行符号替换,不推荐<br>  const doulbe Pi=3.14159 //安全性高,和效率上推荐</p>
-</li>
-</ul>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-27个提升效率的iOS开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/27个提升效率的iOS开源库推荐/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/27个提升效率的iOS开源库推荐/">27个提升效率的iOS开源库推荐</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####<a href="https://medium.com/app-coder-io/27-ios-open-source-libraries-to-skyrocket-your-development-301b67d3124c" target="_blank" rel="external"><strong><em>本文转自Medium</em></strong></a></p>
-<p>我热爱开源，更喜爱那些花费宝贵的业余时间来创造奇迹的开发者们，感谢他们将自己辛苦劳动的成果无偿分享给大家。开源作者和贡献者们，你们太了不起了，感谢你们所付出的一切。</p>
-<p>鉴于我是收集不全会死星人，这里我根据个人喜好选取了一些iOS的开源库。这些项目的顺序完全随机，每个都棒到爆。绝大多数支持CocoaPods，所以将它们添加到你的Xcode项目中只是小事一桩。</p>
-<p>在本文末尾你可以找到一个长文慎入版本——一个只包含题目与项目链接的简单列表。如果你觉得这篇文章有用的话，请把它分享给其他做iOS开发的小伙伴们，好酒也怕巷子深。</p>
-<hr>
-<h3 id="DZNEmptyDataSet"><a href="#DZNEmptyDataSet" class="headerlink" title="DZNEmptyDataSet"></a><a href="https://github.com/dzenbot/DZNEmptyDataSet" target="_blank" rel="external">DZNEmptyDataSet</a></h3><p>DZNEmptyDataSet算是一个很标准的iOS内建方式，适合用来处理空的table view和collection view。默认情况下，如果你的table view为空，屏幕就为空，这样一来用户体验并不理想。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_JHal.jpg" alt=""></p>
-<p>使用这个库，你只需遵守一些协议，iOS就会自动将collection view处理完善，并将用户消息以合适美观的方式显示出来。每个iOS项目都可以自动处理，不用再一一费神。</p>
-<hr>
-<h3 id="PDTSimpleCalendar"><a href="#PDTSimpleCalendar" class="headerlink" title="PDTSimpleCalendar"></a><a href="https://github.com/jivesoftware/PDTSimpleCalendar" target="_blank" rel="external">PDTSimpleCalendar</a></h3><p>你的应用需要一个简单美观且正常运行的日历组件吗？现在有了——PDTSimpleCalendar也许可以算是iOS最棒的日历组件了。你可以在各个方面对它进行定制，无论是运行逻辑还是外观方面。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_Eyak.jpg" alt=""></p>
-<hr>
-<h3 id="MagicalRecord"><a href="#MagicalRecord" class="headerlink" title="MagicalRecord"></a><a href="https://github.com/magicalpanda/MagicalRecord" target="_blank" rel="external">MagicalRecord</a></h3><p>他们都说：Core Data简洁易用。他们又说：很棒很好用噢。哈？真的吗，苹果？添加到各个项目中的大量样板数据完全不符合简洁而易用的标准。更别提添加、移除和更新那一大堆的entities、保存context、按不同环境创建不同的Core Data堆栈等等。当然，我很喜欢Core Data，但是苹果真的可以把它更好地简化一下——使用MagicalRecord方式。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_saCW.jpg" alt=""></p>
-<p>MagicalRecord就像是给Core Data提供了一层外包装，隐藏掉所有不相关的东西。如果你曾经使用过active record模式（比如Ruby on Rails），你就知道了。倾情推荐，在应用中使用Core Data的童鞋们可一定要试试。</p>
-<hr>
-<h3 id="Chameleon"><a href="#Chameleon" class="headerlink" title="Chameleon"></a><a href="https://github.com/ViccAlexander/Chameleon" target="_blank" rel="external">Chameleon</a></h3><p>如果你已经看到这里了，我猜你更有可能是个程序猿，而不是设计狮。这里有个东东很适合你。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_CM0X.jpg" alt=""></p>
-<p>Chameleon是一个iOS的色彩框架。它运用现代化flat color将UIColor扩展地非常美观。我们还可以通过它运用自定义颜色创建调色板。它还有很多功用，请浏览readme。如果你想要应用美观的话，一定要把这个库加到项目里。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_aDGz.jpg" alt=""></p>
-<hr>
-<h3 id="Alamofire"><a href="#Alamofire" class="headerlink" title="Alamofire"></a><a href="https://github.com/Alamofire/Alamofire" target="_blank" rel="external">Alamofire</a></h3><p>Alamofire是一个简洁的网络库，用Swift语言编写。你是否曾经使用过AFNetworking呢？Alamofire是它的小弟。更年轻更时尚，当然（AFNetworking是用Objective-C编写的）。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_y2rc.jpg" alt=""></p>
-<p>如果你需要进行网络的相关工作，诸如下载、上传与获取JSONs等等的话，Alamofire正是你所需要的。GitHub上8000人次推荐，一定不会错。</p>
-<hr>
-<h3 id="TextFieldEffects"><a href="#TextFieldEffects" class="headerlink" title="TextFieldEffects"></a><a href="https://github.com/raulriera/TextFieldEffects" target="_blank" rel="external">TextFieldEffects</a></h3><p>你不觉得标准的UITextField有些枯燥么？我也这样想——来认识一下TextFieldEffects吧！废话不多说，只要看几个例子：</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_RiIN.gif" alt=""></p>
-<p>是啊，都是些简单的dropin控制器。你甚至可以在storyboard中使用IBDesignables。</p>
-<p>不幸地是：这个库不支持CocoaPods（如果你来自未来，而这一情况什么时候会改变的话，一定要在Twitter上告诉我），但是它支持Carthage。你只管从GitHub上下载项目，把它放入你的workspace就行了。</p>
-<hr>
-<h3 id="GPUImage"><a href="#GPUImage" class="headerlink" title="GPUImage"></a><a href="https://github.com/BradLarson/GPUImage" target="_blank" rel="external">GPUImage</a></h3><p>你曾经写过照相机应用吗？如果没有的话，很快你一定会遇到这个库的。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_Blnb.jpg" alt=""></p>
-<p>GPUImage为我们提供了一个GPU加速的照相机效果（同时支持照片与视频），而且处理速度飞快。在App Store中，使用这个库的应用数以百计。我有一个应用也用到了GPUImage。 它在GitHub上获得了8869个star，而且还在增长。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_PitN.jpg" alt=""></p>
-<hr>
-<h3 id="iRate"><a href="#iRate" class="headerlink" title="iRate"></a><a href="https://github.com/nicklockwood/iRate" target="_blank" rel="external">iRate</a></h3><p>想要在App Store中获得更多评论的最佳方式是什么？想要回答这个问题，我缺乏切实数据，但如果必须猜一下的话，我会建议问问用户。也许这样做有点老套——大多开发者现在都有创建定制的应用内置alert。</p>
-<p>但是如果你没有时间，或者不想从头实现的话，最好用一下iRata。这个就是iRata——一个小型库——你可以把它放入项目中，把问卷调查什么的都忘记吧，iRate会在恰当的时候为你解决这个问题。</p>
-<hr>
-<h3 id="GameCenterManager"><a href="#GameCenterManager" class="headerlink" title="GameCenterManager"></a><a href="https://github.com/nihalahmed/GameCenterManager" target="_blank" rel="external">GameCenterManager</a></h3><p>无论你喜不喜欢单例模式，管理一个GameCenter都比我们已知的其他相反模式要好很多。（你的游戏只有一个GameCenter，对吗？）</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_7mrT.jpg" alt=""></p>
-<p>说实话，在iOS上管理GameCenter vanilla并不算难，但是有了这个库会更简单也更快。好上加好不是更好么。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_giJD.jpg" alt=""></p>
-<p>我在我一个游戏中用到了这个，体验很好。</p>
-<hr>
-<h3 id="PKRevealController-2"><a href="#PKRevealController-2" class="headerlink" title="PKRevealController 2"></a><a href="https://github.com/pkluz/PKRevealController" target="_blank" rel="external">PKRevealController 2</a></h3><p>这个要注意，真的很棒！是我最喜爱的iOS控件之一。PKRevealController是一个可以滑动的侧边栏菜单（可向左、向右或者同时向两侧），只需手指轻轻一点（或者按一下按钮，但是这样滑动时不够炫酷）。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_mfbR.jpg" alt=""></p>
-<p>我试过一些可以提供这类控制的其他库，而PKRevealController是最棒的。安装简便，高度定制且对手势识别良好。可以当做一个标准控件用在iOS SDK中。</p>
-<hr>
-<h3 id="SlackTextViewController"><a href="#SlackTextViewController" class="headerlink" title="SlackTextViewController"></a><a href="https://github.com/slackhq/SlackTextViewController" target="_blank" rel="external">SlackTextViewController</a></h3><p>你曾经用过Slack iOS应用吗？如果你在较大的软件公司工作，也许会用过。对那些没用过的人呢？—?Slack令人激动。用到Slack的应用也是这样，尤其是用作极佳、定制的文本输入控制时。这时你有了一个现成可用在应用中的代码。</p>
-<p>自适应文本区域？试一下。</p>
-<p>手势识别、自动填充、多媒体合并？试一下。</p>
-<p>快速drop-in解决方案？试一下。</p>
-<p>其他还想要什么？</p>
-<hr>
-<h3 id="RETableViewManager"><a href="#RETableViewManager" class="headerlink" title="RETableViewManager"></a><a href="https://github.com/romaonthego/RETableViewManager" target="_blank" rel="external">RETableViewManager</a></h3><p>RETableViewManager可以帮助你进行动态创建与管理table views。它给我们提供了预定义cells（bool类型、文本、日期等等——请看下面的截图），但是你还可以创建自定义views，并与默认视图一同使用。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_tfBS.jpg" alt=""></p>
-<p>左侧截图显得非常古板！在storyboard中没有这个库的时候，你能做的就是这些了，但是有时候代码比可视化编辑器要好。</p>
-<hr>
-<h3 id="PermissionScope"><a href="#PermissionScope" class="headerlink" title="PermissionScope"></a><a href="https://github.com/nickoneill/PermissionScope" target="_blank" rel="external">PermissionScope</a></h3><p>用这个库可以在询问用户前，就告知用户所需的系统权限，为用户带来更好的体验。接受度更高—&gt;更多活跃用户-&gt;更高的留存率-&gt;数据更好-&gt;下载率更高。墙裂推荐pod。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_5VPi.jpg" alt=""></p>
-<hr>
-<h3 id="SVProgressHUD"><a href="#SVProgressHUD" class="headerlink" title="SVProgressHUD"></a><a href="https://github.com/TransitApp/SVProgressHUD" target="_blank" rel="external">SVProgressHUD</a></h3><p>这张图片在正常加载，无需等待太久或者刷新页面。这正是SVProgressHUD在你的应用中的表现。如果你需要定制化的等待提示器，这个就是了（也许是最好的）。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_9HWQ.jpg" alt=""></p>
-<hr>
-<h3 id="FontAwesomeKit"><a href="#FontAwesomeKit" class="headerlink" title="FontAwesomeKit"></a><a href="https://github.com/PrideChung/FontAwesomeKit" target="_blank" rel="external">FontAwesomeKit</a></h3><p>Font Awesome很棒，有了它你可以很容易地给项目加字体，使用方式繁多。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_o5UZ.jpg" alt=""></p>
-<hr>
-<h3 id="SnapKit"><a href="#SnapKit" class="headerlink" title="SnapKit"></a><a href="https://github.com/SnapKit/SnapKit" target="_blank" rel="external">SnapKit</a></h3><p>喜欢自动布局吗？当然喜欢！至少在storyboard中创建时会喜欢。 在代码中纯手工创建约束灰常痛苦，但幸运的是我们有了SnapKit，在board中用上它，你可以简单直观地编写约束了。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_HSbF.jpg" alt=""></p>
-<hr>
-<h3 id="MGSwipeTableCell"><a href="#MGSwipeTableCell" class="headerlink" title="MGSwipeTableCell"></a><a href="https://github.com/MortimerGoro/MGSwipeTableCell" target="_blank" rel="external">MGSwipeTableCell</a></h3><p>这是另一个常见于很多应用中的UI组件，苹果应该考虑在标准的iOS SDK中加入一些类似的内容。Swipeable表格cell是这个pod的最佳描述，也是最好的。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131835_kWbv.gif" alt=""></p>
-<p>这只是其中三个动画类型，还有更多变化，请查看readme。</p>
-<hr>
-<h3 id="Quick"><a href="#Quick" class="headerlink" title="Quick"></a><a href="https://github.com/Quick/Quick" target="_blank" rel="external">Quick</a></h3><p>用于Swift中的单元测试（也可用于Objective-C），与Xcode整合在一起。如果你是Objective-C的粉丝，我建议用Specta代替这个，但是对Swift使用者来说，Quick是最佳选择。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_ELO4.jpg" alt=""></p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_DKqd.jpg" alt=""></p>
-<hr>
-<h3 id="IAPHelper"><a href="#IAPHelper" class="headerlink" title="IAPHelper"></a><a href="https://github.com/saturngod/IAPHelper" target="_blank" rel="external">IAPHelper</a></h3><p>应用内付费给我们提供了很多样本代码，而这个库丢掉了那些代码，将金钱交易相关的大多通用任务做了简单的封装。</p>
-<hr>
-<h3 id="ReactiveCocoa"><a href="#ReactiveCocoa" class="headerlink" title="ReactiveCocoa"></a><a href="https://github.com/ReactiveCocoa/ReactiveCocoa" target="_blank" rel="external">ReactiveCocoa</a></h3><p>好吧，这是个小怪物。</p>
-<p>ReactiveCocoa并不像列表中其他库一样，它不是小型的drop-in项目。ReactiveCocoa给我们带来了一个迥异的编程风格与结构，它是基于信号与数据流的。首先你需要忘掉已知的一切，才能理解它的工作方式。很有难度，但是价值不斐。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_XmAz.jpg" alt=""></p>
-<p>在这里教ReactiveCocoa有点不合适，但是如果你感兴趣的话，我会提供一些好源：</p>
-<ul>
-<li><a href="http://www.teehanlax.com/blog/getting-started-with-reactivecocoa/" target="_blank" rel="external">Getting Started with ReactiveCocoa</a></li>
-<li><a href="http://nshipster.com/reactivecocoa/" target="_blank" rel="external">Mattt Thompson：ReactiveCocoa</a></li>
-<li><a href="http://www.raywenderlich.com/62699/reactivecocoa-tutorial-pt1" target="_blank" rel="external">ReactiveCocoa Tutorial – The Definitive Introduction: Part 1/2</a><br>注意：对我们iOS开发社区的朋友来说，这会是一个稍微有些技术含量的活儿。</li>
-</ul>
-<hr>
-<h3 id="SwiftyJSON"><a href="#SwiftyJSON" class="headerlink" title="SwiftyJSON"></a><a href="https://github.com/SwiftyJSON/SwiftyJSON" target="_blank" rel="external">SwiftyJSON</a></h3><p>使Swift的JSON解析变得简单。</p>
-<hr>
-<h3 id="Spring"><a href="#Spring" class="headerlink" title="Spring"></a><a href="https://github.com/MengTo/Spring" target="_blank" rel="external">Spring</a></h3><p>使动画在简单性、可链接性与声明性方面有所提高。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_S6De.jpg" alt=""></p>
-<hr>
-<h3 id="FontBlaster"><a href="#FontBlaster" class="headerlink" title="FontBlaster"></a><a href="https://github.com/ArtSabintsev/FontBlaster" target="_blank" rel="external">FontBlaster</a></h3><p>载入定制字体时更简单。</p>
-<hr>
-<h3 id="TAPromotee"><a href="#TAPromotee" class="headerlink" title="TAPromotee"></a><a href="https://github.com/JanC/TAPromotee" target="_blank" rel="external">TAPromotee</a></h3><p>交叉推广应用是你可以免费实现的最佳市场推广策略之一。使用这个库做起来非常简单，不用都不可能——将TAPromotee加入你的podfile中，免费配置与享受更多下载吧。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_IBwy.jpg" alt=""></p>
-<hr>
-<h3 id="Concorde"><a href="#Concorde" class="headerlink" title="Concorde"></a><a href="https://github.com/contentful-labs/Concorde" target="_blank" rel="external">Concorde</a></h3><p>你在应用中载入了一堆jpeg吗？有了Concorde，你可以用更好的方式来解决，这是一个很大的进步。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_oKko.gif" alt=""></p>
-<hr>
-<h3 id="KeychainAccess"><a href="#KeychainAccess" class="headerlink" title="KeychainAccess"></a><a href="https://github.com/kishikawakatsumi/KeychainAccess" target="_blank" rel="external">KeychainAccess</a></h3><p>管理Keychain接入的小助手。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_QT4T.jpg" alt=""></p>
-<hr>
-<h3 id="iOS-charts"><a href="#iOS-charts" class="headerlink" title="iOS-charts"></a><a href="https://github.com/danielgindi/ios-charts" target="_blank" rel="external">iOS-charts</a></h3><p>最后一个，但绝不是最不重要的——iOS图表库！非常有用而且美观，这里我无需赘言。向下看，你就知道用它可以做什么了。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_hXLu.jpg" alt=""></p>
-<p>没错，一切都变成了drop-in组件了（也许是“code-in组件）。</p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_SWVP.jpg" alt=""></p>
-<p><img src="http://static.oschina.net/uploads/img/201507/27131836_ym45.jpg" alt=""></p>
-<p>不幸的是，它还不支持CocoaPods，所以你得手动把它拽到你的Xcode workspace里面去。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-CentOS安装ShadowSocks服务端" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/CentOS安装ShadowSocks服务端/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/CentOS安装ShadowSocks服务端/">CentOS安装ShadowSocks服务端</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-查看系统"><a href="#1-查看系统" class="headerlink" title="1.查看系统"></a>1.查看系统</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">[root@localhost ~]# cat /etc/issue</div><div class="line">CentOS release 6.6 (Final)</div><div class="line">[root@localhost ~]# uname -a</div><div class="line">Linux localhost.localdomain 2.6.32-042stab106.6 #1 SMP Mon Apr 20 14:48:47 MSK 2015 x86_64 x86_64 x86_64 GNU/Linux</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="2-安装ShadowSocks"><a href="#2-安装ShadowSocks" class="headerlink" title="2.安装ShadowSocks"></a>2.安装ShadowSocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"># yum install python-setuptools &amp;&amp; easy_install pip</div><div class="line"># pip install shadowsocks</div></pre></td></tr></table></figure>
-<hr>
-<h3 id="3-创建配置文件-etc-shadowsocks-json"><a href="#3-创建配置文件-etc-shadowsocks-json" class="headerlink" title="3.创建配置文件/etc/shadowsocks.json"></a>3.创建配置文件/etc/shadowsocks.json</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# touch /etc/shadowsocks.json</div><div class="line">[root@localhost /]# vi /etc/shadowsocks.json</div><div class="line">&#123;</div><div class="line">	&quot;server&quot;:&quot;你的服务器ip&quot;,</div><div class="line">	&quot;server_port&quot;:443,</div><div class="line">	&quot;local_address&quot;: &quot;127.0.0.1&quot;,</div><div class="line">	&quot;local_port&quot;:1080,</div><div class="line">	&quot;password&quot;:&quot;登陆密码&quot;,</div><div class="line">	&quot;timeout&quot;:600,</div><div class="line">	&quot;method&quot;:&quot;rc4-md5&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>如果需要多账号的话  可以使用这个格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    &quot;timeout&quot;: 600,</div><div class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</div><div class="line">    &quot;port_password&quot;:</div><div class="line">    &#123;</div><div class="line">        &quot;40001&quot;: &quot;password1&quot;,</div><div class="line">        &quot;40002&quot;: &quot;password2&quot;,</div><div class="line">        &quot;40003&quot;: &quot;password3&quot;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<blockquote>
-<p>备注：加密方式官方默认使用aes-256-cfb，推荐使用rc4-md5，因为 RC4比AES速度快好几倍。</p>
-<p>各字段说明：</p>
-<pre><code> server:服务器IP
- server_port:服务器端口
- local_port:本地端端口
-password:用来加密的密码
- timeout:超时时间（秒）
- method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″等
-</code></pre></blockquote>
-<hr>
-<h3 id="4-使用配置文件在后台运行shadowsocks服务"><a href="#4-使用配置文件在后台运行shadowsocks服务" class="headerlink" title="4.使用配置文件在后台运行shadowsocks服务"></a>4.使用配置文件在后台运行shadowsocks服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d start</div></pre></td></tr></table></figure>
-<blockquote>
-<p>备注：若无配置文件，在后台可以使用一下命令运行：</p>
-<pre><code>[root@localhost /]# ssserver -p 443 -k MyPass -m rc4-md5 -d start
-</code></pre></blockquote>
-<hr>
-<h3 id="5-停止服务"><a href="#5-停止服务" class="headerlink" title="5.停止服务"></a>5.停止服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d stop</div></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-OSX下给树莓派安装Raspbian系统" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -716,21 +472,21 @@ password:用来加密的密码
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从<a href="https://www.raspberrypi.org" target="_blank" rel="external">树莓派</a>官网下载镜像</p>
+        <p>从<a href="https://www.raspberrypi.org" target="_blank" rel="noopener">树莓派</a>官网下载镜像</p>
 <p>插入SD卡，用df命令查看当前已挂载的卷</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity  iused   ifree %iused  Mounted on</div><div class="line">/dev/disk1     112Gi   80Gi   31Gi    72% 21068699 8254563   72%   /</div><div class="line">devfs          187Ki  187Ki    0Bi   100%      646       0  100%   /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%        0       0  100%   /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%        0       0  100%   /home</div><div class="line">/dev/disk2s1    56Mi   19Mi   37Mi    34%      512       0  100%   /Volumes/boot</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ df -h</span><br><span class="line">Filesystem      Size   Used  Avail Capacity  iused   ifree %iused  Mounted on</span><br><span class="line">/dev/disk1     112Gi   80Gi   31Gi    72% 21068699 8254563   72%   /</span><br><span class="line">devfs          187Ki  187Ki    0Bi   100%      646       0  100%   /dev</span><br><span class="line">map -hosts       0Bi    0Bi    0Bi   100%        0       0  100%   /net</span><br><span class="line">map auto_home    0Bi    0Bi    0Bi   100%        0       0  100%   /home</span><br><span class="line">/dev/disk2s1    56Mi   19Mi   37Mi    34%      512       0  100%   /Volumes/boot</span><br></pre></td></tr></table></figure>
 <p>对比Size和Name可以找到SD卡的分区在系统里对应的设备文件（这里是/dev/disk2s1），如果你有多个分区，可能还会有disk1s2之类的。</p>
 <p>使用diskutil unmount将这些分区卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ diskutil unmount /dev/disk2s1</div><div class="line">Volume boot on disk2s1 unmounted</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ diskutil unmount /dev/disk2s1</span><br><span class="line">Volume boot on disk2s1 unmounted</span><br></pre></td></tr></table></figure>
 <p>通过diskutil list来确认设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ diskutil list</div><div class="line">/dev/disk0</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:          Apple_CoreStorage                         120.5 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk1</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:                  Apple_HFS Macintosh HD           *120.1 GB   disk1</div><div class="line">                                 Logical Volume on disk0s2</div><div class="line">                                 90141AB8-C189-4966-AC2F-D97481F904DD</div><div class="line">                                 Unlocked Encrypted</div><div class="line">/dev/disk2</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:     FDisk_partition_scheme                        *7.9 GB     disk2</div><div class="line">   1:             Windows_FAT_32 boot                    58.7 MB    disk2s1</div><div class="line">   2:                      Linux                         7.9 GB     disk2s2</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ diskutil list</span><br><span class="line">/dev/disk0</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:          Apple_CoreStorage                         120.5 GB   disk0s2</span><br><span class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</span><br><span class="line">/dev/disk1</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:                  Apple_HFS Macintosh HD           *120.1 GB   disk1</span><br><span class="line">                                 Logical Volume on disk0s2</span><br><span class="line">                                 90141AB8-C189-4966-AC2F-D97481F904DD</span><br><span class="line">                                 Unlocked Encrypted</span><br><span class="line">/dev/disk2</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:     FDisk_partition_scheme                        *7.9 GB     disk2</span><br><span class="line">   1:             Windows_FAT_32 boot                    58.7 MB    disk2s1</span><br><span class="line">   2:                      Linux                         7.9 GB     disk2s2</span><br></pre></td></tr></table></figure>
 <p>使用dd命令将系统镜像写入，需要特别特别注意disk后的数字，不能搞错！</p>
 <p>（说明：/dev/disk2s1是分区，/dev/disk2是块设备）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:Downloads gejw$ sudo dd bs=4m if=2015-05-05-raspbian-wheezy.img of=/dev/disk2</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:Downloads gejw$ sudo dd bs=4m if=2015-05-05-raspbian-wheezy.img of=/dev/disk2</span><br></pre></td></tr></table></figure>
 <p>经过几分钟的等待，出现下面的提示，说明SD卡刷好了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">462+1 records in</div><div class="line">462+1 records out</div><div class="line">1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">462+1 records in</span><br><span class="line">462+1 records out</span><br><span class="line">1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)</span><br></pre></td></tr></table></figure>
 <p>用diskutil unmountDisk卸载设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:Downloads gejw$ diskutil unmountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk1 was successful</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:Downloads gejw$ diskutil unmountDisk /dev/disk2</span><br><span class="line">Unmount of all volumes on disk1 was successful</span><br></pre></td></tr></table></figure>
 <p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
 
       
@@ -741,6 +497,232 @@ password:用来加密的密码
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/raspbian/">raspbian</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-在Swift中使用DEBUG宏的方法" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/在Swift中使用DEBUG宏的方法/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/在Swift中使用DEBUG宏的方法/">在Swift中使用DEBUG宏的方法</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>来源于: <a href="http://qiita.com/qmihara/items/a6b88b74fe64e1e05ca4" target="_blank" rel="noopener">Qiita</a></p>
+<p>在Objective-C开发中  我们可以使用下面的方法来区分Debug和Release方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">   // ...</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+<p>但是到了swift之后  却不生效了<br>so  找了好几个文章  找到解决办法</p>
+<blockquote>
+<p>Xcode -&gt; Build Settings -&gt; Swift Compiler - Custom Flags -&gt; Other Swift Flags</p>
+</blockquote>
+<p>选择Debug 添加 </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-D DEBUG</span><br></pre></td></tr></table></figure>
+<p>so  你就可以愉快的在swift中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br></pre></td></tr></table></figure></p>
+<hr>
+<p><img src="https://qiita-image-store.s3.amazonaws.com/0/36383/4531e06e-1ad3-174a-e719-8736211a6abf.png" alt=""></p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/">iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1、定位服务"><a href="#1、定位服务" class="headerlink" title="1、定位服务"></a>1、定位服务</h2><p>相关框架</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;CoreLocation/CoreLocation&gt;</span><br></pre></td></tr></table></figure>
+<p> 检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (CLAuthorizationStatus)authorizationStatus</span><br></pre></td></tr></table></figure>
+<p>相关返回参数</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">//用户尚未做出选择</span><br><span class="line">kCLAuthorizationStatusNotDetermined = 0,</span><br><span class="line">// 未授权，且用户无法更新，如家长控制情况下</span><br><span class="line">kCLAuthorizationStatusRestricted,</span><br><span class="line">// 用户拒绝App使用</span><br><span class="line">kCLAuthorizationStatusDenied,</span><br><span class="line">// 总是使用</span><br><span class="line">kCLAuthorizationStatusAuthorizedAlways NS_ENUM_AVAILABLE(NA, 8_0),</span><br><span class="line">// 按需使用</span><br><span class="line">kCLAuthorizationStatusAuthorizedWhenInUse NS_ENUM_AVAILABLE(NA, 8_0),</span><br><span class="line">// 已授权</span><br><span class="line">kCLAuthorizationStatusAuthorized</span><br></pre></td></tr></table></figure>
+<p> 参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkLocationAuth)(void) = ^&#123;</span><br><span class="line">    CLAuthorizationStatus authStatus = [CLLocationManager  authorizationStatus];</span><br><span class="line">     </span><br><span class="line">    if (CLAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkLocationAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkLocationAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="2、通讯录"><a href="#2、通讯录" class="headerlink" title="2、通讯录"></a>2、通讯录</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;AddressBook/AddressBook.h&gt;</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ABAuthorizationStatus ABAddressBookGetAuthorizationStatus(void)</span><br></pre></td></tr></table></figure>
+<p> 授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">kABAuthorizationStatusNotDetermined = 0,    // 未进行授权选择&lt;br&gt;</span><br><span class="line">kABAuthorizationStatusRestricted,           // 未授权，且用户无法更新，如家长控制情况下&lt;br&gt;</span><br><span class="line">kABAuthorizationStatusDenied,               // 用户拒绝App使用&lt;br&gt;</span><br><span class="line">kABAuthorizationStatusAuthorized            // 已授权，可使用&lt;br&gt;</span><br></pre></td></tr></table></figure>
+<p> 参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkAddressBookAuth)(void) = ^&#123;</span><br><span class="line">    ABAuthorizationStatus authStatus = ABAddressBookGetAuthorizationStatus();</span><br><span class="line">     </span><br><span class="line">    if (kABAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkAddressBookAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkAddressBookAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="3、日历-提醒事项授权"><a href="#3、日历-提醒事项授权" class="headerlink" title="3、日历/提醒事项授权"></a>3、日历/提醒事项授权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;EventKit/EventKit.h&gt;</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (EKAuthorizationStatus)authorizationStatusForEntityType:(EKEntityType)entityType</span><br></pre></td></tr></table></figure>
+<p>参数类型</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">EKEntityTypeEvent,  //事件</span><br><span class="line">EKEntityTypeReminder//提醒</span><br></pre></td></tr></table></figure>
+<p>授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">EKAuthorizationStatusNotDetermined = 0,// 未进行授权选择</span><br><span class="line">EKAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</span><br><span class="line">EKAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</span><br><span class="line">EKAuthorizationStatusAuthorized,　　　　// 已授权，可使用</span><br></pre></td></tr></table></figure>
+<p> 参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkCalanderAuth)(void) = ^&#123;</span><br><span class="line">    EKAuthorizationStatus authStatus = [EKAuthorizationStatus authorizationStatusForEntityType:EKEntityTypeEvent];</span><br><span class="line">     </span><br><span class="line">    if (EKAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkCalanderAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkCalanderAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="4、照片库授权"><a href="#4、照片库授权" class="headerlink" title="4、照片库授权"></a>4、照片库授权</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;ALAssetsLibrary/ALAssetsLibrary.h&gt;</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (ALAuthorizationStatus)authorizationStatus;</span><br></pre></td></tr></table></figure>
+<p>授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">ALAuthorizationStatusNotDetermined = 0,// 未进行授权选择</span><br><span class="line">ALAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</span><br><span class="line">ALAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</span><br><span class="line">ALAuthorizationStatusAuthorized,　　　　// 已授权，可使用</span><br></pre></td></tr></table></figure>
+<p>参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkAssetLibraryAuth)(void) = ^&#123;</span><br><span class="line">    ALAuthorizationStatus authStatus = [ALAuthorizationStatus authorizationStatus];</span><br><span class="line">     </span><br><span class="line">    if (ALAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkAssetLibraryAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkAssetLibraryAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="5、蓝牙授权状态检测"><a href="#5、蓝牙授权状态检测" class="headerlink" title="5、蓝牙授权状态检测"></a>5、蓝牙授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;CoreBluetooth/CoreBluetooth.h&gt;</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (CBPeripheralManagerAuthorizationStatus)authorizationStatus;</span><br></pre></td></tr></table></figure>
+<p>授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">CBPeripheralManagerAuthorizationStatusNotDetermined = 0,// 未进行授权选择</span><br><span class="line">CBPeripheralManagerAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</span><br><span class="line">CBPeripheralManagerAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</span><br><span class="line">CBPeripheralManagerAuthorizationStatusAuthorized,　　　　// 已授权，可使用</span><br></pre></td></tr></table></figure>
+<p>参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkPeripheralAuth)(void) = ^&#123;</span><br><span class="line">    CBPeripheralManagerAuthorizationStatus authStatus = [CBPeripheralManagerAuthorizationStatus authorizationStatus];</span><br><span class="line">     </span><br><span class="line">    if (CBPeripheralManagerAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkPeripheralAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkPeripheralAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="6、摄像头授权状态检测"><a href="#6、摄像头授权状态检测" class="headerlink" title="6、摄像头授权状态检测"></a>6、摄像头授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;AVFoundation/AVFoundation.h&gt;</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">+ (AVAuthorizationStatus)authorizationStatusForMediaType:(NSString *)mediaType;</span><br></pre></td></tr></table></figure>
+<p>授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">AVAuthorizationStatusNotDetermined = 0,// 未进行授权选择</span><br><span class="line">AVAuthorizationStatusRestricted,　　　　// 未授权，且用户无法更新，如家长控制情况下</span><br><span class="line">AVAuthorizationStatusDenied,　　　　　　 // 用户拒绝App使用</span><br><span class="line">AVAuthorizationStatusAuthorized,　　　　// 已授权，可使用</span><br></pre></td></tr></table></figure>
+<p>参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkCameraAuth)(void) = ^&#123;</span><br><span class="line">    AVAuthorizationStatus authStatus = [AVAuthorizationStatus authorizationStatusForMediaType:AVMediaTypeVideo];</span><br><span class="line">     </span><br><span class="line">    if (AVAuthorizationStatusAuthorized == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkCameraAuth();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkCameraAuth();</span><br></pre></td></tr></table></figure>
+<h2 id="7、麦克风授权状态检测"><a href="#7、麦克风授权状态检测" class="headerlink" title="7、麦克风授权状态检测"></a>7、麦克风授权状态检测</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#import &lt;AVFoundation/AVFoundation.h</span><br></pre></td></tr></table></figure>
+<p>检测方法</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">- (AVAudioSessionRecordPermission)recordPermission;</span><br></pre></td></tr></table></figure>
+<p>授权状态</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">AVAudioSessionRecordPermissionUndetermined,　　　　// 用户尚未被请求许可。</span><br><span class="line">AVAudioSessionRecordPermissionDenied,　　　　　　 // 用户已被要求并已拒绝许可。</span><br><span class="line">AVAudioSessionRecordPermissionGranted,　　　　// 用户已被要求并已授予权限。</span><br></pre></td></tr></table></figure>
+<p>参考代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">__block void (^checkRecordPermission)(void) = ^&#123;</span><br><span class="line">    AVAudioSessionRecordPermission authStatus = [[AVAudioSession sharedInstance] recordPermission];</span><br><span class="line">     </span><br><span class="line">    if (AVAudioSessionRecordPermissionGranted == authStatus) &#123;</span><br><span class="line">        //授权成功，执行后续操作</span><br><span class="line">    &#125;else &#123;</span><br><span class="line">        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(0.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^&#123;</span><br><span class="line">            checkRecordPermission();</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br><span class="line">checkRecordPermission();</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-获取当前的wifi SSID" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/09/02/获取当前的wifi SSID/" class="article-date">
+  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/09/02/获取当前的wifi SSID/">获取当前的wifi SSID</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>version: swift 2.0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">extension UIDevice &#123;</span><br><span class="line">    </span><br><span class="line">    /// wifi SSID</span><br><span class="line">    static var WIFISSID: String &#123;</span><br><span class="line">        let interfaces: CFArray? = CNCopySupportedInterfaces()</span><br><span class="line">        if interfaces == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        let if0: UnsafePointer&lt;Void&gt;? = CFArrayGetValueAtIndex(interfaces, 0)</span><br><span class="line">        if if0 == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        let interfaceName: CFStringRef = unsafeBitCast(if0!, CFStringRef.self)</span><br><span class="line">        let dictionary = CNCopyCurrentNetworkInfo(interfaceName) as NSDictionary?</span><br><span class="line">        if dictionary == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        if let SSID = dictionary?[kCNNetworkInfoKeySSID as String] as? String &#123;</span><br><span class="line">            return SSID</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
 	</div>
 
       
@@ -789,7 +771,7 @@ password:用来加密的密码
         <p>Apple的iOS人机交互设计指南中指出，按钮点击热区应不小于44x44pt，否则这个按钮就会让用户觉得“很难用”，因为明明点击上去了，却没有任何响应。</p>
 <p>但我们有时做自定义Button的时候，设计图上的给出按钮尺寸明显要小于这个数。例如我之前做过的自定义Slider上的Thumb只有12x12pt，做出来后我发现自己根本点不到按钮……</p>
 <p>这个问题在WWDC 2012 Session 216视频中提到了一种解决方式。它重写了按钮中的pointInside方法，使得按钮热区不够44×44大小的先自动缩放到44×44，再判断触摸点是否在新的热区内。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//官方在视频中给出的示例源码</div><div class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)withEvent</div><div class="line">&#123;</div><div class="line">    CGFloat widthDelta = 44.0 - bounds.size.width;</div><div class="line">    CGFloat heightDelta = 44.0 - bounds.size.height;</div><div class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</div><div class="line">    return CGRectContainsPoint(bounds, point);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//官方在视频中给出的示例源码</span><br><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)withEvent</span><br><span class="line">&#123;</span><br><span class="line">    CGFloat widthDelta = 44.0 - bounds.size.width;</span><br><span class="line">    CGFloat heightDelta = 44.0 - bounds.size.height;</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>###不过这里有两个小问题.</p>
 <ul>
@@ -798,7 +780,7 @@ password:用来加密的密码
 </ul>
 </blockquote>
 <p>修正后的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</div><div class="line">&#123;</div><div class="line">    CGRect bounds = self.bounds;</div><div class="line">    //若原热区小于44x44，则放大热区，否则保持原大小不变</div><div class="line">    CGFloat widthDelta = MAX(44.0 - bounds.size.width, 0);</div><div class="line">    CGFloat heightDelta = MAX(44.0 - bounds.size.height, 0);</div><div class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</div><div class="line">    return CGRectContainsPoint(bounds, point);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</span><br><span class="line">&#123;</span><br><span class="line">    CGRect bounds = self.bounds;</span><br><span class="line">    //若原热区小于44x44，则放大热区，否则保持原大小不变</span><br><span class="line">    CGFloat widthDelta = MAX(44.0 - bounds.size.width, 0);</span><br><span class="line">    CGFloat heightDelta = MAX(44.0 - bounds.size.height, 0);</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -826,10 +808,10 @@ password:用来加密的密码
 
 
   
-    <article id="post-提升效率的Android开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-获取顶层UIViewController" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/02/提升效率的Android开源库推荐/" class="article-date">
+      <a href="/2015/09/02/获取顶层UIViewController/" class="article-date">
   	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
 </a>
     </div>
@@ -843,7 +825,7 @@ password:用来加密的密码
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/提升效率的Android开源库推荐/">提升效率的Android开源库推荐</a>
+      <a class="article-title" href="/2015/09/02/获取顶层UIViewController/">如何获取顶层UIViewController</a>
     </h1>
   
 
@@ -852,37 +834,10 @@ password:用来加密的密码
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="FlycoTabLayout"><a href="#FlycoTabLayout" class="headerlink" title="FlycoTabLayout"></a><a href="https://github.com/H07000223/FlycoTabLayout" target="_blank" rel="external">FlycoTabLayout</a></h3><p>一个Android TabLayout库,目前有两个TabLayout</p>
-<ul>
-<li>SlidingTabLayout:    参照<a href="https://github.com/jpardogo/PagerSlidingTabStrip" target="_blank" rel="external">PagerSlidingTabStrip</a>进行大量修改</li>
-<li>CommonTabLayout:    不同于SlidingTabLayout对ViewPager依赖,它是一个不依赖ViewPager可以与其他控件自由搭配使用的TabLayout</li>
-</ul>
-<p><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_1.gif" alt=""><br><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_2.gif" alt=""></p>
-<hr>
-<h3 id="sweet-alert-dialog"><a href="#sweet-alert-dialog" class="headerlink" title="sweet-alert-dialog"></a><a href="https://github.com/pedant/sweet-alert-dialog" target="_blank" rel="external">sweet-alert-dialog</a></h3><p>Android版的SweetAlert，清新文艺，快意灵动的甜心弹框</p>
-<p>灵感来源于JS版SweetAlert</p>
-<p><img src="https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif" alt=""></p>
-<hr>
-<h3 id="CircleImageView"><a href="#CircleImageView" class="headerlink" title="CircleImageView"></a><a href="https://github.com/hdodenhof/CircleImageView" target="_blank" rel="external">CircleImageView</a></h3><p>Android上快速实现圆形图片</p>
-<p><img src="https://camo.githubusercontent.com/e17a2a83e3e205a822d27172cb3736d4f441344d/68747470733a2f2f7261772e6769746875622e636f6d2f68646f64656e686f662f436972636c65496d616765566965772f6d61737465722f73637265656e73686f742e706e67" alt=""></p>
-<hr>
-<h3 id="SwitchButton"><a href="#SwitchButton" class="headerlink" title="SwitchButton"></a><a href="https://github.com/kyleduo/SwitchButton" target="_blank" rel="external">SwitchButton</a></h3><p>状态切换的 Button，类似 iOS，拥有良好的用户界面</p>
-<p><img src="https://raw.githubusercontent.com/kyleduo/SwitchButton/master/preview/demo_131.jpg" alt=""></p>
-<hr>
-<h3 id="Cube"><a href="#Cube" class="headerlink" title="Cube"></a><a href="http://cube-sdk.liaohuqiu.net/cn/" target="_blank" rel="external">Cube</a></h3><p>一个Android开发包, 可极大提高你的开发效率。</p>
-<blockquote>
-<ul>
-<li>图片加载</li>
-<li>简化接口请求</li>
-<li>等等等等功能</li>
-</ul>
-</blockquote>
-<hr>
-<h3 id="android-Ultra-Pull-To-Refresh"><a href="#android-Ultra-Pull-To-Refresh" class="headerlink" title="android-Ultra-Pull-To-Refresh"></a><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh" target="_blank" rel="external">android-Ultra-Pull-To-Refresh</a></h3><p>纯粹的一个下拉刷新库</p>
-<p><img src="https://camo.githubusercontent.com/588a2ef2cdcfb6c71e88437df486226dd15605b3/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672d61727261792e676966" alt=""><br><img src="https://camo.githubusercontent.com/d3fbe757c87fddc94e998ebdd08ac55956aed1cf/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672e676966" alt=""></p>
-<hr>
-<h3 id="GridViewWithHeaderAndFooter"><a href="#GridViewWithHeaderAndFooter" class="headerlink" title="GridViewWithHeaderAndFooter"></a><a href="https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter" target="_blank" rel="external">GridViewWithHeaderAndFooter</a></h3><p>可以addFooterView() 和 addHeaderView() 的 GridView</p>
-
+        <p>Objective-c版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (UIViewController *)appRootViewController&#123;</span><br><span class="line">    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;</span><br><span class="line">    UIViewController *topVC = appRootVC;</span><br><span class="line">    while (topVC.presentedViewController) &#123;</span><br><span class="line">        topVC = topVC.presentedViewController;</span><br><span class="line">    &#125;</span><br><span class="line">    return topVC;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>swift 2.0版本: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extension UIApplication &#123;</span><br><span class="line">    </span><br><span class="line">    /// 顶层VC</span><br><span class="line">    static var appRootViewController: UIViewController? &#123;</span><br><span class="line">        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController</span><br><span class="line">        while topVC?.presentedViewController != nil &#123;</span><br><span class="line">            topVC = topVC?.presentedViewController</span><br><span class="line">        &#125;</span><br><span class="line">        return topVC</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -890,72 +845,7 @@ password:用来加密的密码
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-AndroidStudio小技巧--依赖库" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/AndroidStudio小技巧--依赖库/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/AndroidStudio小技巧--依赖库/">AndroidStudio小技巧--依赖库</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="配置依赖项目"><a href="#配置依赖项目" class="headerlink" title="配置依赖项目"></a>配置依赖项目</h3><p>有时候我们会开发一些平台库项目，我自己写了一个Library的Android库，用于后面不需要重复造轮子，现在我有另外一个项目Demo，也想开始依赖于Library，怎么做比较合适。</p>
-<p>先来看以一下目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">Library</div><div class="line">	|-library</div><div class="line">DemoProject</div><div class="line">	|-app</div><div class="line">	|-library</div></pre></td></tr></table></figure>
-<p>直接copy一份到Demo肯定是不行的，因为这样就存在两个副本要维护。</p>
-<p>解决办法就是手动配置依赖库的位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">include &apos;:app&apos;, &apos;:library&apos;</div><div class="line">project(&apos;:library&apos;).projectDir = new File(rootDir, &quot;../Library/library&quot;)</div></pre></td></tr></table></figure>
-<p>打开setting.gradle，包含Library，然后指定其项目位置，我这里用的是相对路径。<br>剩下的就是在app的build.gradle里配置依赖了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">compile project(&apos;:library&apos;)</div></pre></td></tr></table></figure>
-<p>最后同步一下gradle，Library会出现在左侧的导航面板中，就可以正常使用Library中的资源了。</p>
-<hr>
-<p>小结<br>这个方法相对来说既简单又实用，关键在于配置Library的路径，这和Eclipse中的操作其实是类似的，只不过AndroidStudio目前并有有可视化的方法来添加目录并不在项目之内的库，所以需要自己手动配置。</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
 	</div>
 
       

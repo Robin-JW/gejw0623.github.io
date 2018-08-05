@@ -19,7 +19,7 @@
 <meta name="keywords" content="raspbian">
 <meta property="og:type" content="article">
 <meta property="og:title" content="OSX下给树莓派安装Raspbian系统">
-<meta property="og:url" content="http://yoursite.com/2015/09/02/OSX下给树莓派安装Raspbian系统/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2015/09/02/OSX下给树莓派安装Raspbian系统/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="从树莓派官网下载镜像 插入SD卡，用df命令查看当前已挂载的卷 1234567JiaWeiGedeMBP:book gejw$ df -hFilesystem      Size   Used  Avail Capacity  iused   ifree %iused  Mounted on/dev/disk1     112Gi   80Gi   31Gi    72% 21068699 825">
 <meta property="og:locale" content="default">
@@ -174,21 +174,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>从<a href="https://www.raspberrypi.org" target="_blank" rel="external">树莓派</a>官网下载镜像</p>
+        <p>从<a href="https://www.raspberrypi.org" target="_blank" rel="noopener">树莓派</a>官网下载镜像</p>
 <p>插入SD卡，用df命令查看当前已挂载的卷</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ df -h</div><div class="line">Filesystem      Size   Used  Avail Capacity  iused   ifree %iused  Mounted on</div><div class="line">/dev/disk1     112Gi   80Gi   31Gi    72% 21068699 8254563   72%   /</div><div class="line">devfs          187Ki  187Ki    0Bi   100%      646       0  100%   /dev</div><div class="line">map -hosts       0Bi    0Bi    0Bi   100%        0       0  100%   /net</div><div class="line">map auto_home    0Bi    0Bi    0Bi   100%        0       0  100%   /home</div><div class="line">/dev/disk2s1    56Mi   19Mi   37Mi    34%      512       0  100%   /Volumes/boot</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ df -h</span><br><span class="line">Filesystem      Size   Used  Avail Capacity  iused   ifree %iused  Mounted on</span><br><span class="line">/dev/disk1     112Gi   80Gi   31Gi    72% 21068699 8254563   72%   /</span><br><span class="line">devfs          187Ki  187Ki    0Bi   100%      646       0  100%   /dev</span><br><span class="line">map -hosts       0Bi    0Bi    0Bi   100%        0       0  100%   /net</span><br><span class="line">map auto_home    0Bi    0Bi    0Bi   100%        0       0  100%   /home</span><br><span class="line">/dev/disk2s1    56Mi   19Mi   37Mi    34%      512       0  100%   /Volumes/boot</span><br></pre></td></tr></table></figure>
 <p>对比Size和Name可以找到SD卡的分区在系统里对应的设备文件（这里是/dev/disk2s1），如果你有多个分区，可能还会有disk1s2之类的。</p>
 <p>使用diskutil unmount将这些分区卸载：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ diskutil unmount /dev/disk2s1</div><div class="line">Volume boot on disk2s1 unmounted</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ diskutil unmount /dev/disk2s1</span><br><span class="line">Volume boot on disk2s1 unmounted</span><br></pre></td></tr></table></figure>
 <p>通过diskutil list来确认设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:book gejw$ diskutil list</div><div class="line">/dev/disk0</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</div><div class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</div><div class="line">   2:          Apple_CoreStorage                         120.5 GB   disk0s2</div><div class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</div><div class="line">/dev/disk1</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:                  Apple_HFS Macintosh HD           *120.1 GB   disk1</div><div class="line">                                 Logical Volume on disk0s2</div><div class="line">                                 90141AB8-C189-4966-AC2F-D97481F904DD</div><div class="line">                                 Unlocked Encrypted</div><div class="line">/dev/disk2</div><div class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</div><div class="line">   0:     FDisk_partition_scheme                        *7.9 GB     disk2</div><div class="line">   1:             Windows_FAT_32 boot                    58.7 MB    disk2s1</div><div class="line">   2:                      Linux                         7.9 GB     disk2s2</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:book gejw$ diskutil list</span><br><span class="line">/dev/disk0</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:      GUID_partition_scheme                        *121.3 GB   disk0</span><br><span class="line">   1:                        EFI EFI                     209.7 MB   disk0s1</span><br><span class="line">   2:          Apple_CoreStorage                         120.5 GB   disk0s2</span><br><span class="line">   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3</span><br><span class="line">/dev/disk1</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:                  Apple_HFS Macintosh HD           *120.1 GB   disk1</span><br><span class="line">                                 Logical Volume on disk0s2</span><br><span class="line">                                 90141AB8-C189-4966-AC2F-D97481F904DD</span><br><span class="line">                                 Unlocked Encrypted</span><br><span class="line">/dev/disk2</span><br><span class="line">   #:                       TYPE NAME                    SIZE       IDENTIFIER</span><br><span class="line">   0:     FDisk_partition_scheme                        *7.9 GB     disk2</span><br><span class="line">   1:             Windows_FAT_32 boot                    58.7 MB    disk2s1</span><br><span class="line">   2:                      Linux                         7.9 GB     disk2s2</span><br></pre></td></tr></table></figure>
 <p>使用dd命令将系统镜像写入，需要特别特别注意disk后的数字，不能搞错！</p>
 <p>（说明：/dev/disk2s1是分区，/dev/disk2是块设备）</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:Downloads gejw$ sudo dd bs=4m if=2015-05-05-raspbian-wheezy.img of=/dev/disk2</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:Downloads gejw$ sudo dd bs=4m if=2015-05-05-raspbian-wheezy.img of=/dev/disk2</span><br></pre></td></tr></table></figure>
 <p>经过几分钟的等待，出现下面的提示，说明SD卡刷好了：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">462+1 records in</div><div class="line">462+1 records out</div><div class="line">1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">462+1 records in</span><br><span class="line">462+1 records out</span><br><span class="line">1939865600 bytes transferred in 163.133220 secs (11891297 bytes/sec)</span><br></pre></td></tr></table></figure>
 <p>用diskutil unmountDisk卸载设备：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">JiaWeiGedeMBP:Downloads gejw$ diskutil unmountDisk /dev/disk2</div><div class="line">Unmount of all volumes on disk1 was successful</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JiaWeiGedeMBP:Downloads gejw$ diskutil unmountDisk /dev/disk2</span><br><span class="line">Unmount of all volumes on disk1 was successful</span><br></pre></td></tr></table></figure>
 <p>现在就可以拔下SD卡，插到树莓派上启动系统了。</p>
 
       
@@ -199,18 +199,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/02/CentOS安装ShadowSocks服务端/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/04/使用一个包含category的静态库/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          CentOS安装ShadowSocks服务端
+          使用一个包含category的静态库
         
       </div>
     </a>
   
   
-    <a href="/2015/09/02/iOS 如何放大按钮点击热区/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">iOS 如何放大按钮点击热区</div>
+    <a href="/2015/09/02/在Swift中使用DEBUG宏的方法/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">在Swift中使用DEBUG宏的方法</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -239,7 +239,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="OSX下给树莓派安装Raspbian系统" data-title="OSX下给树莓派安装Raspbian系统" data-url="http://yoursite.com/2015/09/02/OSX下给树莓派安装Raspbian系统/"></div>
+	<div class="ds-thread" data-thread-key="OSX下给树莓派安装Raspbian系统" data-title="OSX下给树莓派安装Raspbian系统" data-url="http://blog.gejw.cn/2015/09/02/OSX下给树莓派安装Raspbian系统/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

@@ -15,18 +15,18 @@
   
   <title>Swift代码规范--自用型 | Robin灬桑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+  <meta name="description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行：   1·两个方法之间  2·两个类之间  3·方法内的局部变量和方法的第一条语句之间  4·块注释或单行注释之前  5·一个方法内的两个逻辑段之间，用以提高可读性  6·文件结尾  7·import上方和下方  8· ......   /*------import上方空一行------*/ import UIKit import CoreB">
 <meta name="keywords" content="swift">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Swift代码规范--自用型">
-<meta property="og:url" content="http://yoursite.com/2016/04/09/Swift代码规范-自用型/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2016/04/09/Swift代码规范-自用型/index.html">
 <meta property="og:site_name" content="Robin灬桑">
-<meta property="og:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+<meta property="og:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行：   1·两个方法之间  2·两个类之间  3·方法内的局部变量和方法的第一条语句之间  4·块注释或单行注释之前  5·一个方法内的两个逻辑段之间，用以提高可读性  6·文件结尾  7·import上方和下方  8· ......   /*------import上方空一行------*/ import UIKit import CoreB">
 <meta property="og:locale" content="default">
 <meta property="og:updated_time" content="2016-04-09T07:08:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Swift代码规范--自用型">
-<meta name="twitter:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行： 1·两个方法之间 2·两个类之间 3·方法内的局部变量和方法的第一条语句之间 4·块注释或单行注释之前 5·一个方法内的两个逻辑段之间，用以提高可读性 6·文件结尾 7·import上方和下方 8· ......  /*------import上方空一行------*/ import UIKit import CoreBluetooth /">
+<meta name="twitter:description" content="空行 不多空行 不少空行 下列情况应该总是使用一个空行：   1·两个方法之间  2·两个类之间  3·方法内的局部变量和方法的第一条语句之间  4·块注释或单行注释之前  5·一个方法内的两个逻辑段之间，用以提高可读性  6·文件结尾  7·import上方和下方  8· ......   /*------import上方空一行------*/ import UIKit import CoreB">
   
     <link rel="alternative" href="/atom.xml" title="Robin灬桑" type="application/atom+xml">
   
@@ -177,16 +177,18 @@
         <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><blockquote>
 <p>不多空行 不少空行</p>
 <p>下列情况应该总是使用一个空行：</p>
-<pre><code>1·两个方法之间
-2·两个类之间
-3·方法内的局部变量和方法的第一条语句之间
-4·块注释或单行注释之前
-5·一个方法内的两个逻辑段之间，用以提高可读性
-6·文件结尾
-7·import上方和下方
-8· ......
-</code></pre></blockquote>
-<pre><code>/*------import上方空一行------*/
+</blockquote>
+<pre><code> 1·两个方法之间
+ 2·两个类之间
+ 3·方法内的局部变量和方法的第一条语句之间
+ 4·块注释或单行注释之前
+ 5·一个方法内的两个逻辑段之间，用以提高可读性
+ 6·文件结尾
+ 7·import上方和下方
+ 8· ......
+
+
+/*------import上方空一行------*/
 import UIKit
 import CoreBluetooth
 /*------import下方空一行------*/
@@ -231,13 +233,15 @@ func function(param: String) {
 }
 </code></pre><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><blockquote>
 <p>下列情况应该总是使用一个空格：</p>
-<pre><code>1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
-2·逗号之后 (元组, 多参数 等等情况下)
-3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
-4.方法返回值
-5.冒号定义(遵循上面冒号)
-</code></pre></blockquote>
-<pre><code>class ClassName: ParentClass {
+</blockquote>
+<pre><code> 1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
+ 2·逗号之后 (元组, 多参数 等等情况下)
+ 3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
+ 4.方法返回值
+ 5.冒号定义(遵循上面冒号)
+
+
+class ClassName: ParentClass {
 
 }
     class ClassName:[空格]ParentClass[空格]{
@@ -367,7 +371,7 @@ dialog.setConformButton(NSLocalizedString(&quot;PUSH_CHECK&quot;, comment: &quot
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Swift代码规范-自用型" data-title="Swift代码规范--自用型" data-url="http://yoursite.com/2016/04/09/Swift代码规范-自用型/"></div>
+	<div class="ds-thread" data-thread-key="Swift代码规范-自用型" data-title="Swift代码规范--自用型" data-url="http://blog.gejw.cn/2016/04/09/Swift代码规范-自用型/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

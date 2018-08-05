@@ -17,7 +17,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta property="og:type" content="website">
 <meta property="og:title" content="Robin灬桑">
-<meta property="og:url" content="http://yoursite.com/page/2/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/page/2/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:locale" content="default">
 <meta name="twitter:card" content="summary">
@@ -375,16 +375,18 @@ s.osx.xxx = &apos;&apos;
         <h2 id="空行"><a href="#空行" class="headerlink" title="空行"></a>空行</h2><blockquote>
 <p>不多空行 不少空行</p>
 <p>下列情况应该总是使用一个空行：</p>
-<pre><code>1·两个方法之间
-2·两个类之间
-3·方法内的局部变量和方法的第一条语句之间
-4·块注释或单行注释之前
-5·一个方法内的两个逻辑段之间，用以提高可读性
-6·文件结尾
-7·import上方和下方
-8· ......
-</code></pre></blockquote>
-<pre><code>/*------import上方空一行------*/
+</blockquote>
+<pre><code> 1·两个方法之间
+ 2·两个类之间
+ 3·方法内的局部变量和方法的第一条语句之间
+ 4·块注释或单行注释之前
+ 5·一个方法内的两个逻辑段之间，用以提高可读性
+ 6·文件结尾
+ 7·import上方和下方
+ 8· ......
+
+
+/*------import上方空一行------*/
 import UIKit
 import CoreBluetooth
 /*------import下方空一行------*/
@@ -429,13 +431,15 @@ func function(param: String) {
 }
 </code></pre><h2 id="空格"><a href="#空格" class="headerlink" title="空格"></a>空格</h2><blockquote>
 <p>下列情况应该总是使用一个空格：</p>
-<pre><code>1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
-2·逗号之后 (元组, 多参数 等等情况下)
-3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
-4.方法返回值
-5.冒号定义(遵循上面冒号)
-</code></pre></blockquote>
-<pre><code>class ClassName: ParentClass {
+</blockquote>
+<pre><code> 1·花括号前 (类定义, 方法定义, for循环, if语句 等等 &lt;花括号遵循同行规则时&gt;)
+ 2·逗号之后 (元组, 多参数 等等情况下)
+ 3·所有的二元运算符，除了&quot;.&quot;，应该使用空格将之与操作数分开
+ 4.方法返回值
+ 5.冒号定义(遵循上面冒号)
+
+
+class ClassName: ParentClass {
 
 }
     class ClassName:[空格]ParentClass[空格]{
@@ -718,26 +722,26 @@ print(&quot;\(coor1.distanceFromCoor2(coor2))&quot;)
       
         <h2 id="环境需求"><a href="#环境需求" class="headerlink" title="环境需求"></a>环境需求</h2><ol>
 <li>OS X - 本向导假设您的操作系统是OS X，因为这是开发iOS应用所必须的。</li>
-<li>推荐使用<a href="http://brew.sh" target="_blank" rel="external">Homebrew</a> 来安装Watchman和Flow</li>
-<li>安装<a href="http://nodejs.org/" target="_blank" rel="external">Node.js</a> 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用<code>brew install node</code>安装即可，不必按照下面的nvm的安装步骤)<ul>
-<li>安装 <strong>nvm</strong>（安装向导在<a href="https://github.com/creationix/nvm#installation" target="_blank" rel="external">这里</a>）。然后运行<code>nvm install node &amp;&amp; nvm alias default node</code>，这将会默认安装最新版本的Node.js并且设置好命令行的环境变量，这样你可以输入<code>node</code>命令来启动Node.js环境。nvm使你可以同时安装多个版本的Node.js，并且在这些版本之间轻松切换。</li>
-<li>如果你从未接触过npm，推荐阅读<a href="https://docs.npmjs.com/" target="_blank" rel="external">npm的文档</a></li>
+<li>推荐使用<a href="http://brew.sh" target="_blank" rel="noopener">Homebrew</a> 来安装Watchman和Flow</li>
+<li>安装<a href="http://nodejs.org/" target="_blank" rel="noopener">Node.js</a> 4.0或更高版本(译注：如果你并不使用Node.js开发网站，只是用于React Native的开发，那么请先安装homebrew，然后直接使用<code>brew install node</code>安装即可，不必按照下面的nvm的安装步骤)<ul>
+<li>安装 <strong>nvm</strong>（安装向导在<a href="https://github.com/creationix/nvm#installation" target="_blank" rel="noopener">这里</a>）。然后运行<code>nvm install node &amp;&amp; nvm alias default node</code>，这将会默认安装最新版本的Node.js并且设置好命令行的环境变量，这样你可以输入<code>node</code>命令来启动Node.js环境。nvm使你可以同时安装多个版本的Node.js，并且在这些版本之间轻松切换。</li>
+<li>如果你从未接触过npm，推荐阅读<a href="https://docs.npmjs.com/" target="_blank" rel="noopener">npm的文档</a></li>
 </ul>
 </li>
-<li>在命令行中输入<code>brew install watchman</code>，我们推荐安装<a href="https://facebook.github.io/watchman/docs/install.html" target="_blank" rel="external">watchman</a>，否则你可能会遇到一个Node.js监视文件系统的BUG。</li>
-<li>如果你希望使用<a href="http://www.flowtype.org/" target="_blank" rel="external">flow</a>来为js代码加上类型检查，那么在命令行中输入<code>brew install flow</code>来安装flow。（译注：新手可以跳过这一步）</li>
+<li>在命令行中输入<code>brew install watchman</code>，我们推荐安装<a href="https://facebook.github.io/watchman/docs/install.html" target="_blank" rel="noopener">watchman</a>，否则你可能会遇到一个Node.js监视文件系统的BUG。</li>
+<li>如果你希望使用<a href="http://www.flowtype.org/" target="_blank" rel="noopener">flow</a>来为js代码加上类型检查，那么在命令行中输入<code>brew install flow</code>来安装flow。（译注：新手可以跳过这一步）</li>
 </ol>
 <p>我们推荐您定期运行<code>brew update &amp;&amp; brew upgrade</code>来保持上述几个程序为最新版本。</p>
-<h2 id="iOS开发环境准备"><a href="#iOS开发环境准备" class="headerlink" title="iOS开发环境准备"></a>iOS开发环境准备</h2><p>你需要安装<a href="https://developer.apple.com/xcode/downloads/" target="_blank" rel="external">Xcode</a> 7.0或者更高版本。你可以在App Store中找到并安装Xcode。</p>
+<h2 id="iOS开发环境准备"><a href="#iOS开发环境准备" class="headerlink" title="iOS开发环境准备"></a>iOS开发环境准备</h2><p>你需要安装<a href="https://developer.apple.com/xcode/downloads/" target="_blank" rel="noopener">Xcode</a> 7.0或者更高版本。你可以在App Store中找到并安装Xcode。</p>
 <p><em>译注：如果您选择从第三方网站/镜像下载Xcode，请务必从正规镜像网站下载验证文件Hash以防止类似XcodeGhost的安全风险发生，不要信任论坛、百度空间等分享渠道</em></p>
 <h2 id="Android开发环境准备"><a href="#Android开发环境准备" class="headerlink" title="Android开发环境准备"></a>Android开发环境准备</h2><p>要使React Native应用支持Android，首先需要安装Android SDK (如果你不想连接安卓设备，那么还需要一个安卓模拟器)。</p>
-<p><em>译注：</em> Windows用户可以参考<a href="http://bbs.reactnative.cn/topic/10" target="_blank" rel="external">这个帖子</a>来搭建环境。</p>
+<p><em>译注：</em> Windows用户可以参考<a href="http://bbs.reactnative.cn/topic/10" target="_blank" rel="noopener">这个帖子</a>来搭建环境。</p>
 <h2 id="快速开始"><a href="#快速开始" class="headerlink" title="快速开始"></a>快速开始</h2><pre><code>$ npm install -g react-native-cli
 $ react-native init AwesomeProject
 </code></pre><p>译注：由于众所周知的网络原因，react-native命令行从npm官方源拖代码时会遇上麻烦。请将npm仓库源替换为国内镜像：  </p>
 <pre><code>npm config set registry https://registry.npm.taobao.org
 npm config set disturl https://npm.taobao.org/dist
-</code></pre><p>另，执行init时切记不要在前面加上sudo（否则新项目的目录所有者会变为root而不是当前用户，导致一系列权限问题，请使用chown修复）。<br>本站论坛区提供了<a href="http://bbs.reactnative.cn/topic/11" target="_blank" rel="external">完整的绿色纯净新项目包</a>。完整打包全部iOS和Android的第三方依赖，只要环境配置正确，无需科学上网漫长等待，解压即可直接运行。</p>
+</code></pre><p>另，执行init时切记不要在前面加上sudo（否则新项目的目录所有者会变为root而不是当前用户，导致一系列权限问题，请使用chown修复）。<br>本站论坛区提供了<a href="http://bbs.reactnative.cn/topic/11" target="_blank" rel="noopener">完整的绿色纯净新项目包</a>。完整打包全部iOS和Android的第三方依赖，只要环境配置正确，无需科学上网漫长等待，解压即可直接运行。</p>
 <p><strong>运行iOS应用</strong></p>
 <ul>
 <li><code>$ cd AwesomeProject</code></li>
@@ -754,10 +758,10 @@ npm config set disturl https://npm.taobao.org/dist
 <li>在终端下运行<code>adb logcat *:S ReactNative:V ReactNativeJS:V</code>可以看到你的应用的日志。</li>
 </ul>
 <p>恭喜！现在你已经成功运行并修改了你的第一个React Native应用！</p>
-<p><em>如果你在以上过程中遇到了任何问题，可以看看论坛里总结的<a href="http://bbs.reactnative.cn/topic/130" target="_blank" rel="external">常见问题</a>。</em></p>
+<p><em>如果你在以上过程中遇到了任何问题，可以看看论坛里总结的<a href="http://bbs.reactnative.cn/topic/130" target="_blank" rel="noopener">常见问题</a>。</em></p>
 <h2 id="为已有的React-Native工程添加Android支持"><a href="#为已有的React-Native工程添加Android支持" class="headerlink" title="为已有的React Native工程添加Android支持"></a>为已有的React Native工程添加Android支持</h2><p>如果你已经有了一个只有iOS版本的React Native工程，并且希望添加Android支持，你需要在你的工程目录下运行以下命令：</p>
 <ol>
-<li>打开<code>package.json</code>文件，在dependencies项中找到<code>react-native</code>，并将其后的版本号修改为<a href="https://www.npmjs.com/package/react-native" target="_blank" rel="external">最新版本</a>。</li>
+<li>打开<code>package.json</code>文件，在dependencies项中找到<code>react-native</code>，并将其后的版本号修改为<a href="https://www.npmjs.com/package/react-native" target="_blank" rel="noopener">最新版本</a>。</li>
 <li><code>$ npm install</code></li>
 <li><code>$ react-native android</code></li>
 </ol>
@@ -816,9 +820,9 @@ npm config set disturl https://npm.taobao.org/dist
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="external">https://github.com/Artwalk/swift-style-guide</a></p>
+<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="noopener">https://github.com/Artwalk/swift-style-guide</a></p>
 </blockquote>
-<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="external">原版</a> 戳这里  </p>
+<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="noopener">原版</a> 戳这里  </p>
 <p>哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）<br>感激不尽~~~  </p>
 <p>如果没能及时更新，可能比较忙，或者比较懒 →_→<br>可以 <code>Email</code> 或 翻译后，<code>pull request</code></p>
 <hr>
@@ -1021,7 +1025,7 @@ struct Car: Vehicle {
 </code></pre><p><em>Rationale:</em> Value types are simpler, easier to reason about, and behave as expected with the <code>let</code> keyword.</p>
 <p><em>理由:</em> 值的类型更简单，容易辨别，并且通过<code>let</code>关键字可猜测行为。</p>
 <h4 id="Make-classes-final-by-default"><a href="#Make-classes-final-by-default" class="headerlink" title="Make classes final by default"></a>Make classes <code>final</code> by default</h4><h4 id="默认-classes-为-final"><a href="#默认-classes-为-final" class="headerlink" title="默认 classes 为 final"></a>默认 <code>classes</code> 为 <code>final</code></h4><p>Classes should start as <code>final</code>, and only be changed to allow subclassing if a valid need for inheritance has been identified. Even in that case, as many definitions as possible <em>within</em> the class should be <code>final</code> as well, following the same rules.</p>
-<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting <em>in</em> to inheritance hopefully means that more thought will be put into the decision.</p>
+<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting _in_ to inheritance hopefully means that more thought will be put into the decision.</p>
 <p><code>Classes</code> 应该作为基类，只能被子类已识别正当的继承（and only be changed to allow subclassing if a valid need for inheritance has been identified.）。即使这种例子，根据同样的规则，类中的定义也要尽可能的用 <code>final</code> 标注上</p>
 <p><em>理由:</em> 组合通常比继承更合适，而且不用 继承意味着考虑的更多（and opting in to inheritance hopefully means that more thought will be put into the decision.）。</p>
 <h4 id="Omit-type-parameters-where-possible"><a href="#Omit-type-parameters-where-possible" class="headerlink" title="Omit type parameters where possible"></a>Omit type parameters where possible</h4><h4 id="能不写类型参数的就别写了"><a href="#能不写类型参数的就别写了" class="headerlink" title="能不写类型参数的就别写了"></a>能不写类型参数的就别写了</h4><p>Methods of parameterized types can omit type parameters on the receiving type when they’re identical to the receiver’s. For example:</p>
@@ -1260,7 +1264,9 @@ override func prepareForDragOperation(sender: NSDraggingInfo) -&gt; Bool {
 #chmod a+x vpn_centos6.sh
 </code></pre><p>安装Centos6.2PPTPVPN脚本</p>
 <pre><code>#bash vpn_centos6.sh
-</code></pre><p>执行完后有1、2、3种英文，对应如下中文意思。<br>&gt;</p>
+</code></pre><p>执行完后有1、2、3种英文，对应如下中文意思。</p>
+<blockquote>
+</blockquote>
 <ol>
 <li>安装VPN服务</li>
 <li>修复VPN</li>

@@ -16,10 +16,10 @@
   <title>在Swift中使用DEBUG宏的方法 | Robin灬桑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="来源于: Qiita 在Objective-C开发中  我们可以使用下面的方法来区分Debug和Release方法 123#if DEBUG   // ...#endif 但是到了swift之后  却不生效了so  找了好几个文章  找到解决办法  Xcode -&amp;gt; Build Settings -&amp;gt; Swift Compiler - Custom Flags -&amp;gt; Other">
-<meta name="keywords" content="ios,swift">
+<meta name="keywords" content="swift,ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在Swift中使用DEBUG宏的方法">
-<meta property="og:url" content="http://yoursite.com/2015/09/02/在Swift中使用DEBUG宏的方法/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2015/09/02/在Swift中使用DEBUG宏的方法/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="来源于: Qiita 在Objective-C开发中  我们可以使用下面的方法来区分Debug和Release方法 123#if DEBUG   // ...#endif 但是到了swift之后  却不生效了so  找了好几个文章  找到解决办法  Xcode -&amp;gt; Build Settings -&amp;gt; Swift Compiler - Custom Flags -&amp;gt; Other">
 <meta property="og:locale" content="default">
@@ -176,16 +176,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>来源于: <a href="http://qiita.com/qmihara/items/a6b88b74fe64e1e05ca4" target="_blank" rel="external">Qiita</a></p>
+        <p>来源于: <a href="http://qiita.com/qmihara/items/a6b88b74fe64e1e05ca4" target="_blank" rel="noopener">Qiita</a></p>
 <p>在Objective-C开发中  我们可以使用下面的方法来区分Debug和Release方法</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#if DEBUG</div><div class="line">   // ...</div><div class="line">#endif</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br><span class="line">   // ...</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
 <p>但是到了swift之后  却不生效了<br>so  找了好几个文章  找到解决办法</p>
 <blockquote>
 <p>Xcode -&gt; Build Settings -&gt; Swift Compiler - Custom Flags -&gt; Other Swift Flags</p>
 </blockquote>
 <p>选择Debug 添加 </p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">-D DEBUG</div></pre></td></tr></table></figure>
-<p>so  你就可以愉快的在swift中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#if DEBUG</div></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">-D DEBUG</span><br></pre></td></tr></table></figure>
+<p>so  你就可以愉快的在swift中使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">#if DEBUG</span><br></pre></td></tr></table></figure></p>
 <hr>
 <p><img src="https://qiita-image-store.s3.amazonaws.com/0/36383/4531e06e-1ad3-174a-e719-8736211a6abf.png" alt=""></p>
 
@@ -197,18 +197,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/02/设计师也要学物理学/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/02/OSX下给树莓派安装Raspbian系统/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          设计师也要学物理学
+          OSX下给树莓派安装Raspbian系统
         
       </div>
     </a>
   
   
-    <a href="/2015/09/02/调用私有方法开启关闭蓝牙/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">调用私有方法开启关闭蓝牙</div>
+    <a href="/2015/09/02/iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">iOS 定位服务、通讯录、日历、提醒事项、照片、蓝牙共享、麦克风、相机等授权检测</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -237,7 +237,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="在Swift中使用DEBUG宏的方法" data-title="在Swift中使用DEBUG宏的方法" data-url="http://yoursite.com/2015/09/02/在Swift中使用DEBUG宏的方法/"></div>
+	<div class="ds-thread" data-thread-key="在Swift中使用DEBUG宏的方法" data-title="在Swift中使用DEBUG宏的方法" data-url="http://blog.gejw.cn/2015/09/02/在Swift中使用DEBUG宏的方法/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

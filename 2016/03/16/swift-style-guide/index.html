@@ -16,10 +16,10 @@
   <title>swift-style-guide | Robin灬桑</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="转自 https://github.com/Artwalk/swift-style-guide  ##原版 戳这里   哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）感激不尽~~~   如果没能及时更新，可能比较忙，或者比较懒 →_→可以 Email 或 翻译后，pull request  #Swift 编码规范  A guide to our Swift s">
-<meta name="keywords" content="ios,swift,osx">
+<meta name="keywords" content="osx,swift,ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="swift-style-guide">
-<meta property="og:url" content="http://yoursite.com/2016/03/16/swift-style-guide/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2016/03/16/swift-style-guide/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="转自 https://github.com/Artwalk/swift-style-guide  ##原版 戳这里   哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）感激不尽~~~   如果没能及时更新，可能比较忙，或者比较懒 →_→可以 Email 或 翻译后，pull request  #Swift 编码规范  A guide to our Swift s">
 <meta property="og:locale" content="default">
@@ -175,9 +175,9 @@
     <div class="article-entry" itemprop="articleBody">
       
         <blockquote>
-<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="external">https://github.com/Artwalk/swift-style-guide</a></p>
+<p>转自 <a href="https://github.com/Artwalk/swift-style-guide" target="_blank" rel="noopener">https://github.com/Artwalk/swift-style-guide</a></p>
 </blockquote>
-<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="external">原版</a> 戳这里  </p>
+<p>##<a href="https://github.com/github/swift-style-guide" target="_blank" rel="noopener">原版</a> 戳这里  </p>
 <p>哪里不对或者不准确的，若能指出（我把原文贴上来了，用来对照 2015-12-13）<br>感激不尽~~~  </p>
 <p>如果没能及时更新，可能比较忙，或者比较懒 →_→<br>可以 <code>Email</code> 或 翻译后，<code>pull request</code></p>
 <hr>
@@ -380,7 +380,7 @@ struct Car: Vehicle {
 </code></pre><p><em>Rationale:</em> Value types are simpler, easier to reason about, and behave as expected with the <code>let</code> keyword.</p>
 <p><em>理由:</em> 值的类型更简单，容易辨别，并且通过<code>let</code>关键字可猜测行为。</p>
 <h4 id="Make-classes-final-by-default"><a href="#Make-classes-final-by-default" class="headerlink" title="Make classes final by default"></a>Make classes <code>final</code> by default</h4><h4 id="默认-classes-为-final"><a href="#默认-classes-为-final" class="headerlink" title="默认 classes 为 final"></a>默认 <code>classes</code> 为 <code>final</code></h4><p>Classes should start as <code>final</code>, and only be changed to allow subclassing if a valid need for inheritance has been identified. Even in that case, as many definitions as possible <em>within</em> the class should be <code>final</code> as well, following the same rules.</p>
-<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting <em>in</em> to inheritance hopefully means that more thought will be put into the decision.</p>
+<p><em>Rationale:</em> Composition is usually preferable to inheritance, and opting _in_ to inheritance hopefully means that more thought will be put into the decision.</p>
 <p><code>Classes</code> 应该作为基类，只能被子类已识别正当的继承（and only be changed to allow subclassing if a valid need for inheritance has been identified.）。即使这种例子，根据同样的规则，类中的定义也要尽可能的用 <code>final</code> 标注上</p>
 <p><em>理由:</em> 组合通常比继承更合适，而且不用 继承意味着考虑的更多（and opting in to inheritance hopefully means that more thought will be put into the decision.）。</p>
 <h4 id="Omit-type-parameters-where-possible"><a href="#Omit-type-parameters-where-possible" class="headerlink" title="Omit type parameters where possible"></a>Omit type parameters where possible</h4><h4 id="能不写类型参数的就别写了"><a href="#能不写类型参数的就别写了" class="headerlink" title="能不写类型参数的就别写了"></a>能不写类型参数的就别写了</h4><p>Methods of parameterized types can omit type parameters on the receiving type when they’re identical to the receiver’s. For example:</p>
@@ -458,7 +458,7 @@ func &lt;|&lt; &lt;A&gt;(lhs: A, rhs: A) -&gt; A
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="swift-style-guide" data-title="swift-style-guide" data-url="http://yoursite.com/2016/03/16/swift-style-guide/"></div>
+	<div class="ds-thread" data-thread-key="swift-style-guide" data-title="swift-style-guide" data-url="http://blog.gejw.cn/2016/03/16/swift-style-guide/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

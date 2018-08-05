@@ -19,7 +19,7 @@
 <meta name="keywords" content="ios">
 <meta property="og:type" content="article">
 <meta property="og:title" content="iOS 如何放大按钮点击热区">
-<meta property="og:url" content="http://yoursite.com/2015/09/02/iOS 如何放大按钮点击热区/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2015/09/02/iOS 如何放大按钮点击热区/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="Apple的iOS人机交互设计指南中指出，按钮点击热区应不小于44x44pt，否则这个按钮就会让用户觉得“很难用”，因为明明点击上去了，却没有任何响应。 但我们有时做自定义Button的时候，设计图上的给出按钮尺寸明显要小于这个数。例如我之前做过的自定义Slider上的Thumb只有12x12pt，做出来后我发现自己根本点不到按钮…… 这个问题在WWDC 2012 Session 216视频中提到">
 <meta property="og:locale" content="default">
@@ -177,7 +177,7 @@
         <p>Apple的iOS人机交互设计指南中指出，按钮点击热区应不小于44x44pt，否则这个按钮就会让用户觉得“很难用”，因为明明点击上去了，却没有任何响应。</p>
 <p>但我们有时做自定义Button的时候，设计图上的给出按钮尺寸明显要小于这个数。例如我之前做过的自定义Slider上的Thumb只有12x12pt，做出来后我发现自己根本点不到按钮……</p>
 <p>这个问题在WWDC 2012 Session 216视频中提到了一种解决方式。它重写了按钮中的pointInside方法，使得按钮热区不够44×44大小的先自动缩放到44×44，再判断触摸点是否在新的热区内。</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">//官方在视频中给出的示例源码</div><div class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)withEvent</div><div class="line">&#123;</div><div class="line">    CGFloat widthDelta = 44.0 - bounds.size.width;</div><div class="line">    CGFloat heightDelta = 44.0 - bounds.size.height;</div><div class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</div><div class="line">    return CGRectContainsPoint(bounds, point);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//官方在视频中给出的示例源码</span><br><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)withEvent</span><br><span class="line">&#123;</span><br><span class="line">    CGFloat widthDelta = 44.0 - bounds.size.width;</span><br><span class="line">    CGFloat heightDelta = 44.0 - bounds.size.height;</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>###不过这里有两个小问题.</p>
 <ul>
@@ -186,7 +186,7 @@
 </ul>
 </blockquote>
 <p>修正后的代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</div><div class="line">&#123;</div><div class="line">    CGRect bounds = self.bounds;</div><div class="line">    //若原热区小于44x44，则放大热区，否则保持原大小不变</div><div class="line">    CGFloat widthDelta = MAX(44.0 - bounds.size.width, 0);</div><div class="line">    CGFloat heightDelta = MAX(44.0 - bounds.size.height, 0);</div><div class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</div><div class="line">    return CGRectContainsPoint(bounds, point);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</span><br><span class="line">&#123;</span><br><span class="line">    CGRect bounds = self.bounds;</span><br><span class="line">    //若原热区小于44x44，则放大热区，否则保持原大小不变</span><br><span class="line">    CGFloat widthDelta = MAX(44.0 - bounds.size.width, 0);</span><br><span class="line">    CGFloat heightDelta = MAX(44.0 - bounds.size.height, 0);</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -195,18 +195,18 @@
     
 <nav id="article-nav">
   
-    <a href="/2015/09/02/OSX下给树莓派安装Raspbian系统/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2015/09/02/获取当前的wifi SSID/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          OSX下给树莓派安装Raspbian系统
+          获取当前的wifi SSID
         
       </div>
     </a>
   
   
-    <a href="/2015/09/02/提升效率的Android开源库推荐/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">提升效率的Android开源库推荐</div>
+    <a href="/2015/09/02/获取顶层UIViewController/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">如何获取顶层UIViewController</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -235,7 +235,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="iOS 如何放大按钮点击热区" data-title="iOS 如何放大按钮点击热区" data-url="http://yoursite.com/2015/09/02/iOS 如何放大按钮点击热区/"></div>
+	<div class="ds-thread" data-thread-key="iOS 如何放大按钮点击热区" data-title="iOS 如何放大按钮点击热区" data-url="http://blog.gejw.cn/2015/09/02/iOS 如何放大按钮点击热区/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">

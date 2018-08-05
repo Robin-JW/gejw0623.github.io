@@ -19,7 +19,7 @@
 <meta name="keywords" content="macos">
 <meta property="og:type" content="article">
 <meta property="og:title" content="macOS开发-如何实现自定义文件后缀的关联">
-<meta property="og:url" content="http://yoursite.com/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/index.html">
+<meta property="og:url" content="http://blog.gejw.cn/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/index.html">
 <meta property="og:site_name" content="Robin灬桑">
 <meta property="og:description" content="在mac APP开发中，有时候需要定义一个自己的文件后缀名(比如开发编辑器，就需要一个自己的文件格式)，方便用户能够双击文件就能打开程序，接下来就讲解下，如何实现文件关联，实现文件图标的修改 1. 在Info.plist中添加下面的文件&amp;lt;key&amp;gt;CFBundleDocumentTypes&amp;lt;/key&amp;gt; &amp;lt;array&amp;gt;     &amp;lt;dict&amp;gt;">
 <meta property="og:locale" content="default">
@@ -200,7 +200,7 @@
 </code></pre><h2 id="2-文件图标"><a href="#2-文件图标" class="headerlink" title="2. 文件图标"></a>2. 文件图标</h2><blockquote>
 <p>之前一直绕在png图标上，然后一直不显示，后来把png转成icns格式后，就实现了</p>
 </blockquote>
-<p><a href="https://iconverticons.com/online/" target="_blank" rel="external">点我在线转换icns</a></p>
+<p><a href="https://iconverticons.com/online/" target="_blank" rel="noopener">点我在线转换icns</a></p>
 <h2 id="3-重启Finder"><a href="#3-重启Finder" class="headerlink" title="3. 重启Finder"></a>3. 重启Finder</h2><p>由于缓存的关系，可能在更改<strong>CFBundleDocumentTypes</strong>字段内容后，没有变化，所以需要重启下Finder</p>
 <pre><code>sudo killall Finder
 </code></pre>
@@ -243,7 +243,7 @@
 
 <div class="duoshuo">
 	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="macOS开发-如何实现自定义文件后缀的关联" data-title="macOS开发-如何实现自定义文件后缀的关联" data-url="http://yoursite.com/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/"></div>
+	<div class="ds-thread" data-thread-key="macOS开发-如何实现自定义文件后缀的关联" data-title="macOS开发-如何实现自定义文件后缀的关联" data-url="http://blog.gejw.cn/2017/01/30/macOS开发-如何实现自定义文件后缀的关联/"></div>
 	<!-- 多说评论框 end -->
 	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
 	<script type="text/javascript">
