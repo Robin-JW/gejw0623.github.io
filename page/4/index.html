@@ -134,11 +134,11 @@
 </nav>
       <div class="body-wrap">
   
-    <article id="post-提升效率的Android开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-iOS 如何放大按钮点击热区" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/02/提升效率的Android开源库推荐/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+      <a href="/2015/11/25/iOS 如何放大按钮点击热区/" class="article-date">
+  	<time datetime="2015-11-24T19:52:59.000Z" itemprop="datePublished">2015-11-25</time>
 </a>
     </div>
   
@@ -151,7 +151,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/提升效率的Android开源库推荐/">提升效率的Android开源库推荐</a>
+      <a class="article-title" href="/2015/11/25/iOS 如何放大按钮点击热区/">iOS 如何放大按钮点击热区</a>
     </h1>
   
 
@@ -160,97 +160,19 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="FlycoTabLayout"><a href="#FlycoTabLayout" class="headerlink" title="FlycoTabLayout"></a><a href="https://github.com/H07000223/FlycoTabLayout" target="_blank" rel="noopener">FlycoTabLayout</a></h3><p>一个Android TabLayout库,目前有两个TabLayout</p>
-<ul>
-<li>SlidingTabLayout:    参照<a href="https://github.com/jpardogo/PagerSlidingTabStrip" target="_blank" rel="noopener">PagerSlidingTabStrip</a>进行大量修改</li>
-<li>CommonTabLayout:    不同于SlidingTabLayout对ViewPager依赖,它是一个不依赖ViewPager可以与其他控件自由搭配使用的TabLayout</li>
-</ul>
-<p><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_1.gif" alt=""><br><img src="https://github.com/H07000223/FlycoTabLayout/raw/master/preview_2.gif" alt=""></p>
-<hr>
-<h3 id="sweet-alert-dialog"><a href="#sweet-alert-dialog" class="headerlink" title="sweet-alert-dialog"></a><a href="https://github.com/pedant/sweet-alert-dialog" target="_blank" rel="noopener">sweet-alert-dialog</a></h3><p>Android版的SweetAlert，清新文艺，快意灵动的甜心弹框</p>
-<p>灵感来源于JS版SweetAlert</p>
-<p><img src="https://github.com/pedant/sweet-alert-dialog/raw/master/change_type.gif" alt=""></p>
-<hr>
-<h3 id="CircleImageView"><a href="#CircleImageView" class="headerlink" title="CircleImageView"></a><a href="https://github.com/hdodenhof/CircleImageView" target="_blank" rel="noopener">CircleImageView</a></h3><p>Android上快速实现圆形图片</p>
-<p><img src="https://camo.githubusercontent.com/e17a2a83e3e205a822d27172cb3736d4f441344d/68747470733a2f2f7261772e6769746875622e636f6d2f68646f64656e686f662f436972636c65496d616765566965772f6d61737465722f73637265656e73686f742e706e67" alt=""></p>
-<hr>
-<h3 id="SwitchButton"><a href="#SwitchButton" class="headerlink" title="SwitchButton"></a><a href="https://github.com/kyleduo/SwitchButton" target="_blank" rel="noopener">SwitchButton</a></h3><p>状态切换的 Button，类似 iOS，拥有良好的用户界面</p>
-<p><img src="https://raw.githubusercontent.com/kyleduo/SwitchButton/master/preview/demo_131.jpg" alt=""></p>
-<hr>
-<h3 id="Cube"><a href="#Cube" class="headerlink" title="Cube"></a><a href="http://cube-sdk.liaohuqiu.net/cn/" target="_blank" rel="noopener">Cube</a></h3><p>一个Android开发包, 可极大提高你的开发效率。</p>
+        <p>Apple的iOS人机交互设计指南中指出，按钮点击热区应不小于44x44pt，否则这个按钮就会让用户觉得“很难用”，因为明明点击上去了，却没有任何响应。</p>
+<p>但我们有时做自定义Button的时候，设计图上的给出按钮尺寸明显要小于这个数。例如我之前做过的自定义Slider上的Thumb只有12x12pt，做出来后我发现自己根本点不到按钮……</p>
+<p>这个问题在WWDC 2012 Session 216视频中提到了一种解决方式。它重写了按钮中的pointInside方法，使得按钮热区不够44×44大小的先自动缩放到44×44，再判断触摸点是否在新的热区内。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">//官方在视频中给出的示例源码</span><br><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)withEvent</span><br><span class="line">&#123;</span><br><span class="line">    CGFloat widthDelta = 44.0 - bounds.size.width;</span><br><span class="line">    CGFloat heightDelta = 44.0 - bounds.size.height;</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
+<p>###不过这里有两个小问题.</p>
 <ul>
-<li>图片加载</li>
-<li>简化接口请求</li>
-<li>等等等等功能</li>
+<li>当定义的Button.frame大于44×44时，这里仍然会将热区缩小至44×44，从而导致超过44×44的按钮热区失去响应。</li>
+<li>bounds变量未定义</li>
 </ul>
 </blockquote>
-<hr>
-<h3 id="android-Ultra-Pull-To-Refresh"><a href="#android-Ultra-Pull-To-Refresh" class="headerlink" title="android-Ultra-Pull-To-Refresh"></a><a href="https://github.com/liaohuqiu/android-Ultra-Pull-To-Refresh" target="_blank" rel="noopener">android-Ultra-Pull-To-Refresh</a></h3><p>纯粹的一个下拉刷新库</p>
-<p><img src="https://camo.githubusercontent.com/588a2ef2cdcfb6c71e88437df486226dd15605b3/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672d61727261792e676966" alt=""><br><img src="https://camo.githubusercontent.com/d3fbe757c87fddc94e998ebdd08ac55956aed1cf/687474703a2f2f737261696e2d6769746875622e71696e6975646e2e636f6d2f756c7472612d7074722f73746f72652d686f7573652d737472696e672e676966" alt=""></p>
-<hr>
-<h3 id="GridViewWithHeaderAndFooter"><a href="#GridViewWithHeaderAndFooter" class="headerlink" title="GridViewWithHeaderAndFooter"></a><a href="https://github.com/liaohuqiu/android-GridViewWithHeaderAndFooter" target="_blank" rel="noopener">GridViewWithHeaderAndFooter</a></h3><p>可以addFooterView() 和 addHeaderView() 的 GridView</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-蓝牙BLE后台自动重连" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/蓝牙BLE后台自动重连/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/蓝牙BLE后台自动重连/">蓝牙BLE后台自动重连</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关于ios BLE在后台自动重连的问题 </p>
-<p>找到一个国外网站是这么描述的</p>
-<blockquote>
-<p>Re: How to make the BTLE APP to auto connect with BTLE device when iPhone4S power on </p>
-<p>When backgrounding, you can still scan and connect to a LE peripheral.  You can scan for peripherals using scanForPeripheralsWithSerives by stating what service you are looking for in a Peripheral.  You cannot do a general scan without stating at least one service in the passed dictionary.  If you have a CFUUIDRef from a previous connection, you can call retrievePeripherals with the CFUUIDRef.  Your delegate will receive a call to didRetrievePeripherals with a CBPeripheral.  With the CBPeripheral you can then connect using connectPeripheral.</p>
-</blockquote>
-
+<p>修正后的代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">- (BOOL)pointInside:(CGPoint)point withEvent:(UIEvent*)event</span><br><span class="line">&#123;</span><br><span class="line">    CGRect bounds = self.bounds;</span><br><span class="line">    //若原热区小于44x44，则放大热区，否则保持原大小不变</span><br><span class="line">    CGFloat widthDelta = MAX(44.0 - bounds.size.width, 0);</span><br><span class="line">    CGFloat heightDelta = MAX(44.0 - bounds.size.height, 0);</span><br><span class="line">    bounds = CGRectInset(bounds, -0.5 * widthDelta, -0.5 * heightDelta);</span><br><span class="line">    return CGRectContainsPoint(bounds, point);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -278,258 +200,11 @@
 
 
   
-    <article id="post-调用私有方法开启关闭蓝牙" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/调用私有方法开启关闭蓝牙/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/调用私有方法开启关闭蓝牙/">调用私有方法开启关闭蓝牙</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>先导入IOBluetooth.framework</p>
-<p>然后调用我写的方法</p>
-<p><strong>MTBluetooth.h</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@interface MTBluetooth : NSObject</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  蓝牙是否可用</span><br><span class="line"> *</span><br><span class="line"> *  @return</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isAvaliable;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  是否开启</span><br><span class="line"> *</span><br><span class="line"> *  @return &lt;#return value description#&gt;</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isPower;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  开启蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)openBluetooth;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  关闭蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)closeBluetooth;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-<p><strong>MTBluetooth.m</strong></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MTBluetooth.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// private methods</span><br><span class="line">int IOBluetoothPreferencesAvailable();</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetControllerPowerState();</span><br><span class="line">void IOBluetoothPreferenceSetControllerPowerState(int state);</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetDiscoverableState();</span><br><span class="line">void IOBluetoothPreferenceSetDiscoverableState(int state);</span><br><span class="line"></span><br><span class="line">// dry</span><br><span class="line">int BTSetParamState(int state, int (*getter)(), void (*setter)(int)) &#123;</span><br><span class="line">    if (state == getter()) &#123;</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        setter(state);</span><br><span class="line">        </span><br><span class="line">        usleep(1000000); // Just wait, checking getter even in 10 seconds gives old result</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// short names</span><br><span class="line">typedef int (*getterFunc)();</span><br><span class="line">typedef int (*setterFunc)(int);</span><br><span class="line"></span><br><span class="line">#define BTAvaliable IOBluetoothPreferencesAvailable</span><br><span class="line"></span><br><span class="line">#define BTPowerState IOBluetoothPreferenceGetControllerPowerState</span><br><span class="line">int BTSetPowerState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTPowerState, IOBluetoothPreferenceSetControllerPowerState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#define BTDiscoverableState IOBluetoothPreferenceGetDiscoverableState</span><br><span class="line">int BTSetDiscoverableState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTDiscoverableState, IOBluetoothPreferenceSetDiscoverableState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@implementation MTBluetooth</span><br><span class="line"></span><br><span class="line">+ (BOOL)isAvaliable &#123;</span><br><span class="line">    return BTAvaliable();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (BOOL)isPower &#123;</span><br><span class="line">    if ([self isAvaliable]) &#123;</span><br><span class="line">        return BTPowerState() == 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)openBluetooth &#123;</span><br><span class="line">    BTSetPowerState(1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)closeBluetooth &#123;</span><br><span class="line">    BTSetPowerState(0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-设计师也要学物理学" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/设计师也要学物理学/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/设计师也要学物理学/">设计师也要学物理学</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>####<a href="http://www.ui.cn/detail/62012.html" target="_blank" rel="noopener"><strong><em>本文转自UI.CN</em></strong></a><br>我们会把从小到大对这个世界的认识映射到屏幕世界中。所以从事物原理的角度出发，探究一下运动曲线。</p>
-<p>本文并不深入物理定律的本身，只讲述运动曲线的运用，曾经上课睡觉的同学也不必担心。<br><img src="http://img.ui.cn/data/file/8/2/3/305328.png?imageView2/2/w/900/q/90" alt=""><br>先引用下百科神马是物理：物理学是研究物质运动最一般规律和物质基本结构的学科。作为自然科学的带头学科，物理学研究大至宇宙，小至基本粒子等一切物质最基本的运动形式和规律，因此成为其他各自然科学学科的研究基础。它的理论结构充分地运用数学作为自己的工作语言，以实验作为检验理论正确性的唯一标准，它是当今最精密的一门自然科学学科。（猜你们也没仔细看，总之就是物理是一门非常牛逼的学科。）</p>
-<p>我一直认为动效设计的本身是人机交互中非常重要的环节，并且我们会把从小到大对这个世界的认识映射到屏幕世界中。比如最常见的抓、扔、移动等操作，都是婴儿时期就习得到的基本本能，那么这些动作经常会被我们本能的运用到长大后接触到的屏幕操作中。</p>
-<p>上一篇中已经提到了一些动效设计的原则（传送门：<a href="http://www.ui.cn/detail/54562.html" target="_blank" rel="noopener">UI中国</a> ），以及简单的写到了动效设计怎么样的表达让用户更加舒适。恩，今天要深入这个话题，动效设计师如何运用物理理论来让动画曲线更加贴近现实世界，如何让你的动画效果更加的如烟花般炫丽。</p>
-<hr>
-<p>###一.牛顿第一定律 又称惯性定律 由牛顿在1687年提出</p>
-<p>任何物体都要保持匀速直线运动或静止状态，直到外力迫使它改变运动状态为止。</p>
-<p>什么是保持匀速直线运动：</p>
-<p><img src="http://img.ui.cn/data/file/5/3/3/305335.gif" alt=""></p>
-<p>可以感觉到，它的运动似乎有些无聊，因为我们生活的这个世界存在引力、空气阻力、摩擦力等等。那就看一下最常见的外力因素——摩擦力，现实世界中的大部分运动都有它的身影。</p>
-<p>1.摩擦力 F=μ×FN </p>
-<p>阻碍物体相对运动（或相对运动趋势）的力叫做摩擦力。</p>
-<p>摩擦力是个宜动宜静的乖宝宝~它有两种形态：</p>
-<p>A 静摩擦力：两个相互接触的物体，当其接触表面之间有相对滑动的趋势，但尚保持相对静止时，彼此作用着阻碍相对滑动的阻力，这种阻力称为静滑动摩擦力，简称静摩擦力。</p>
-<p><img src="http://img.ui.cn/data/file/6/3/3/305336.gif" alt=""></p>
-<p>摩擦力比较大的时候会发生，由于相对没动，所以保持和传送带一起运动。</p>
-<p>B 动摩擦力：两接触物体之间存在相对滑动时，其接触面上产生阻碍对方滑动的阻力称为动滑动摩擦力。</p>
-<p><img src="http://img.ui.cn/data/file/0/4/3/305340.gif" alt=""></p>
-<p>可以看到由于材质的不同，或者又加上制动等因素，只要记住物体表面粗糙及压力越大，摩擦力越大，结合下面的牛顿第二定律<br>就可以模拟出一些不同感觉的运动曲线了。</p>
-<hr>
-<p>###二.牛顿第二定律  F=ma 由牛顿在1687年提出</p>
-<p>物体加速度的大小跟作用力成正比，跟物体的质量成反比，且与物体质量的倒数成正比；加速度的方向跟作用力的方向相同。</p>
-<p>简单的说就是——物体越轻或者受到的力越大加速度越大：</p>
-<p><img src="http://img.ui.cn/data/file/7/3/3/305337.gif" alt=""></p>
-<hr>
-<p>###三.牛顿第三运动定律 F=-F’ 由牛顿在1687年提出 </p>
-<p>相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。</p>
-<p>常见的比如说弹撞击，拉、推重物等等。反正哪哪都有它，不要忘记它就好。<br><img src="http://img.ui.cn/data/file/8/3/3/305338.gif" alt=""></p>
-<p>既然提到牛三那就一定要提到一个它最重要的衍生定律了：</p>
-<p>1.动量守恒定律 m1v1+m2v2=m1v1′+m2v2′</p>
-<p>一个系统不受外力或所受外力之和为零，那么这个系统的总动量保持不变。</p>
-<p>动量守恒定律最初是牛顿第三定律的推论， 但后来发现它们的适用范围远远广于牛顿定律。简单的描述就是，两个速度不同的物体碰撞之后会产生速度上的『传递』，打台球的同学应该有更深的感触。</p>
-<p> <img src="http://img.ui.cn/data/file/9/3/3/305339.gif" alt=""></p>
-<hr>
-<p>###四.阿基米德定律 F＝γV</p>
-<p>浸入静止流体(气体或液体)中的物体受到一个浮力，其大小等于该物体所排开的流体重量，方向垂直向上并通过所排开流体的形心。</p>
-<p>所以水中物体弹出速度与物体的体积、质量成正比~而且会越靠近水面越快。看下曲线图：</p>
-<p><img src="http://img.ui.cn/data/file/1/4/3/305341.gif" alt=""></p>
-<p>可以发现浮起来的过程因为外力的方向不断变化以致有些类似弹性曲线，继而联想到了胡克（弹性）定律：</p>
-<hr>
-<p>###五.胡克定律  F=-k·x 又称弹性定律 由胡克在1678年提出</p>
-<p>弹簧在发生弹性形变时，弹簧的弹力F和弹簧的伸长量（或压缩量）x成正比，即F= k·x 。k是物质的弹性系数，它只由材料的性质所决定，与其他因素无关。负号表示弹簧所产生的弹力与其伸长（或压缩）的方向相反。</p>
-<p>那么由胡可定律结合牛顿第二定律F=ma，我们就可以得出弹性曲线来，这里的关键因素就是物体质量、弹性系数、伸长量来决定。</p>
-<p><img src="http://img.ui.cn/data/file/2/4/3/305342.gif" alt=""></p>
-<p>*『制作』：描述弹性曲线通常的三个关键参数分别是：频率、过量、持续时间。</p>
-<hr>
-<p>###六.表面张力</p>
-<p>液体表面任意二相邻部分之间垂直于它们的单位长度分界线相互作用的拉力。表面张力的形成同处在液体表面薄层内的分子的特殊受力状态密切相关。</p>
-<p>表面张力是动效设计中和阿基米德定律一样容易遇到的流体力学里的知识。算式比较复杂，不再深究。张力的运用很广泛，那么我们做动效最常遇到的通常是融合效果：</p>
-<p><img src="http://img.ui.cn/data/file/3/4/3/305343.gif" alt=""></p>
-<p>总结</p>
-<p>物理的运用基本上在我们生活的世界中并没有理想状态，所以了解原理的同时，设计狮们请一定要愉快的观察我们身边的世界，真实世界才是最好的学习案例。</p>
-<p>最后的最后如果文中对科学道理的阐述有什么错误的地方，希望学霸同学们可以指出~</p>
-<p>附一：压箱底的缓动函数曲线 <a href="http://easings.net/zh-cn（如打不开，请使用科学上网法）" target="_blank" rel="noopener">http://easings.net/zh-cn（如打不开，请使用科学上网法）</a></p>
-<p>附二：写的过程中也看到阿里U一点的文章——动效设计的物理法则，重点的写了牛顿第一第二定律，感兴趣的的同学们可以点过去拜读下~</p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计/">设计</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-CentOS安装ShadowSocks服务端" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2015/09/02/CentOS安装ShadowSocks服务端/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/CentOS安装ShadowSocks服务端/">CentOS安装ShadowSocks服务端</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="1-查看系统"><a href="#1-查看系统" class="headerlink" title="1.查看系统"></a>1.查看系统</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# cat /etc/issue</span><br><span class="line">CentOS release 6.6 (Final)</span><br><span class="line">[root@localhost ~]# uname -a</span><br><span class="line">Linux localhost.localdomain 2.6.32-042stab106.6 #1 SMP Mon Apr 20 14:48:47 MSK 2015 x86_64 x86_64 x86_64 GNU/Linux</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="2-安装ShadowSocks"><a href="#2-安装ShadowSocks" class="headerlink" title="2.安装ShadowSocks"></a>2.安装ShadowSocks</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># yum install python-setuptools &amp;&amp; easy_install pip</span><br><span class="line"># pip install shadowsocks</span><br></pre></td></tr></table></figure>
-<hr>
-<h3 id="3-创建配置文件-etc-shadowsocks-json"><a href="#3-创建配置文件-etc-shadowsocks-json" class="headerlink" title="3.创建配置文件/etc/shadowsocks.json"></a>3.创建配置文件/etc/shadowsocks.json</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# touch /etc/shadowsocks.json</span><br><span class="line">[root@localhost /]# vi /etc/shadowsocks.json</span><br><span class="line">&#123;</span><br><span class="line">	&quot;server&quot;:&quot;你的服务器ip&quot;,</span><br><span class="line">	&quot;server_port&quot;:443,</span><br><span class="line">	&quot;local_address&quot;: &quot;127.0.0.1&quot;,</span><br><span class="line">	&quot;local_port&quot;:1080,</span><br><span class="line">	&quot;password&quot;:&quot;登陆密码&quot;,</span><br><span class="line">	&quot;timeout&quot;:600,</span><br><span class="line">	&quot;method&quot;:&quot;rc4-md5&quot;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>如果需要多账号的话  可以使用这个格式</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    &quot;timeout&quot;: 600,</span><br><span class="line">    &quot;method&quot;: &quot;aes-256-cfb&quot;,</span><br><span class="line">    &quot;port_password&quot;:</span><br><span class="line">    &#123;</span><br><span class="line">        &quot;40001&quot;: &quot;password1&quot;,</span><br><span class="line">        &quot;40002&quot;: &quot;password2&quot;,</span><br><span class="line">        &quot;40003&quot;: &quot;password3&quot;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>备注：加密方式官方默认使用aes-256-cfb，推荐使用rc4-md5，因为 RC4比AES速度快好几倍。</p>
-<p>各字段说明：</p>
-<pre><code> server:服务器IP
- server_port:服务器端口
- local_port:本地端端口
-password:用来加密的密码
- timeout:超时时间（秒）
- method:加密方法，可选择 “bf-cfb”, “aes-256-cfb”, “des-cfb”, “rc4″等
-</code></pre></blockquote>
-<hr>
-<h3 id="4-使用配置文件在后台运行shadowsocks服务"><a href="#4-使用配置文件在后台运行shadowsocks服务" class="headerlink" title="4.使用配置文件在后台运行shadowsocks服务"></a>4.使用配置文件在后台运行shadowsocks服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d start</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>备注：若无配置文件，在后台可以使用一下命令运行：</p>
-</blockquote>
-<pre><code>[root@localhost /]# ssserver -p 443 -k MyPass -m rc4-md5 -d start
-</code></pre><hr>
-<h3 id="5-停止服务"><a href="#5-停止服务" class="headerlink" title="5.停止服务"></a>5.停止服务</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost /]# ssserver -c /etc/shadowsocks.json -d stop</span><br></pre></td></tr></table></figure>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/shadowsocks/">shadowsocks</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
     <article id="post-27个提升效率的iOS开源库推荐" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/02/27个提升效率的iOS开源库推荐/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+      <a href="/2015/11/25/27个提升效率的iOS开源库推荐/" class="article-date">
+  	<time datetime="2015-11-24T19:52:47.000Z" itemprop="datePublished">2015-11-25</time>
 </a>
     </div>
   
@@ -542,7 +217,7 @@ password:用来加密的密码
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/27个提升效率的iOS开源库推荐/">27个提升效率的iOS开源库推荐</a>
+      <a class="article-title" href="/2015/11/25/27个提升效率的iOS开源库推荐/">27个提升效率的iOS开源库推荐</a>
     </h1>
   
 
@@ -691,11 +366,11 @@ password:用来加密的密码
 
 
   
-    <article id="post-AndroidStudio小技巧--依赖库" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-调用私有方法开启关闭蓝牙" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2015/09/02/AndroidStudio小技巧--依赖库/" class="article-date">
-  	<time datetime="2015-09-02T13:06:49.000Z" itemprop="datePublished">2015-09-02</time>
+      <a href="/2015/11/25/调用私有方法开启关闭蓝牙/" class="article-date">
+  	<time datetime="2015-11-24T19:52:45.000Z" itemprop="datePublished">2015-11-25</time>
 </a>
     </div>
   
@@ -708,7 +383,7 @@ password:用来加密的密码
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2015/09/02/AndroidStudio小技巧--依赖库/">AndroidStudio小技巧--依赖库</a>
+      <a class="article-title" href="/2015/11/25/调用私有方法开启关闭蓝牙/">调用私有方法开启关闭蓝牙</a>
     </h1>
   
 
@@ -717,17 +392,12 @@ password:用来加密的密码
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="配置依赖项目"><a href="#配置依赖项目" class="headerlink" title="配置依赖项目"></a>配置依赖项目</h3><p>有时候我们会开发一些平台库项目，我自己写了一个Library的Android库，用于后面不需要重复造轮子，现在我有另外一个项目Demo，也想开始依赖于Library，怎么做比较合适。</p>
-<p>先来看以一下目录结构：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Library</span><br><span class="line">	|-library</span><br><span class="line">DemoProject</span><br><span class="line">	|-app</span><br><span class="line">	|-library</span><br></pre></td></tr></table></figure>
-<p>直接copy一份到Demo肯定是不行的，因为这样就存在两个副本要维护。</p>
-<p>解决办法就是手动配置依赖库的位置：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">include &apos;:app&apos;, &apos;:library&apos;</span><br><span class="line">project(&apos;:library&apos;).projectDir = new File(rootDir, &quot;../Library/library&quot;)</span><br></pre></td></tr></table></figure>
-<p>打开setting.gradle，包含Library，然后指定其项目位置，我这里用的是相对路径。<br>剩下的就是在app的build.gradle里配置依赖了</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">compile project(&apos;:library&apos;)</span><br></pre></td></tr></table></figure>
-<p>最后同步一下gradle，Library会出现在左侧的导航面板中，就可以正常使用Library中的资源了。</p>
-<hr>
-<p>小结<br>这个方法相对来说既简单又实用，关键在于配置Library的路径，这和Eclipse中的操作其实是类似的，只不过AndroidStudio目前并有有可视化的方法来添加目录并不在项目之内的库，所以需要自己手动配置。</p>
+        <p>先导入IOBluetooth.framework</p>
+<p>然后调用我写的方法</p>
+<p><strong>MTBluetooth.h</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">@interface MTBluetooth : NSObject</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  蓝牙是否可用</span><br><span class="line"> *</span><br><span class="line"> *  @return</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isAvaliable;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  是否开启</span><br><span class="line"> *</span><br><span class="line"> *  @return &lt;#return value description#&gt;</span><br><span class="line"> */</span><br><span class="line">+ (BOOL)isPower;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  开启蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)openBluetooth;</span><br><span class="line"></span><br><span class="line">/**</span><br><span class="line"> *  关闭蓝牙</span><br><span class="line"> */</span><br><span class="line">+ (void)closeBluetooth;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p><strong>MTBluetooth.m</strong></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br></pre></td><td class="code"><pre><span class="line">#import &quot;MTBluetooth.h&quot;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">// private methods</span><br><span class="line">int IOBluetoothPreferencesAvailable();</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetControllerPowerState();</span><br><span class="line">void IOBluetoothPreferenceSetControllerPowerState(int state);</span><br><span class="line"></span><br><span class="line">int IOBluetoothPreferenceGetDiscoverableState();</span><br><span class="line">void IOBluetoothPreferenceSetDiscoverableState(int state);</span><br><span class="line"></span><br><span class="line">// dry</span><br><span class="line">int BTSetParamState(int state, int (*getter)(), void (*setter)(int)) &#123;</span><br><span class="line">    if (state == getter()) &#123;</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        setter(state);</span><br><span class="line">        </span><br><span class="line">        usleep(1000000); // Just wait, checking getter even in 10 seconds gives old result</span><br><span class="line">        return EXIT_SUCCESS;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">// short names</span><br><span class="line">typedef int (*getterFunc)();</span><br><span class="line">typedef int (*setterFunc)(int);</span><br><span class="line"></span><br><span class="line">#define BTAvaliable IOBluetoothPreferencesAvailable</span><br><span class="line"></span><br><span class="line">#define BTPowerState IOBluetoothPreferenceGetControllerPowerState</span><br><span class="line">int BTSetPowerState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTPowerState, IOBluetoothPreferenceSetControllerPowerState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">#define BTDiscoverableState IOBluetoothPreferenceGetDiscoverableState</span><br><span class="line">int BTSetDiscoverableState(int state) &#123;</span><br><span class="line">    return BTSetParamState(state, BTDiscoverableState, IOBluetoothPreferenceSetDiscoverableState);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@implementation MTBluetooth</span><br><span class="line"></span><br><span class="line">+ (BOOL)isAvaliable &#123;</span><br><span class="line">    return BTAvaliable();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (BOOL)isPower &#123;</span><br><span class="line">    if ([self isAvaliable]) &#123;</span><br><span class="line">        return BTPowerState() == 1;</span><br><span class="line">    &#125;</span><br><span class="line">    return NO;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)openBluetooth &#123;</span><br><span class="line">    BTSetPowerState(1);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+ (void)closeBluetooth &#123;</span><br><span class="line">    BTSetPowerState(0);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -736,7 +406,288 @@ password:用来加密的密码
       
       
 	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/android/">android</a></li></ul>
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-设计师也要学物理学" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/设计师也要学物理学/" class="article-date">
+  	<time datetime="2015-11-24T19:52:42.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/25/设计师也要学物理学/">设计师也要学物理学</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>####<a href="http://www.ui.cn/detail/62012.html" target="_blank" rel="noopener"><strong><em>本文转自UI.CN</em></strong></a><br>我们会把从小到大对这个世界的认识映射到屏幕世界中。所以从事物原理的角度出发，探究一下运动曲线。</p>
+<p>本文并不深入物理定律的本身，只讲述运动曲线的运用，曾经上课睡觉的同学也不必担心。<br><img src="http://img.ui.cn/data/file/8/2/3/305328.png?imageView2/2/w/900/q/90" alt=""><br>先引用下百科神马是物理：物理学是研究物质运动最一般规律和物质基本结构的学科。作为自然科学的带头学科，物理学研究大至宇宙，小至基本粒子等一切物质最基本的运动形式和规律，因此成为其他各自然科学学科的研究基础。它的理论结构充分地运用数学作为自己的工作语言，以实验作为检验理论正确性的唯一标准，它是当今最精密的一门自然科学学科。（猜你们也没仔细看，总之就是物理是一门非常牛逼的学科。）</p>
+<p>我一直认为动效设计的本身是人机交互中非常重要的环节，并且我们会把从小到大对这个世界的认识映射到屏幕世界中。比如最常见的抓、扔、移动等操作，都是婴儿时期就习得到的基本本能，那么这些动作经常会被我们本能的运用到长大后接触到的屏幕操作中。</p>
+<p>上一篇中已经提到了一些动效设计的原则（传送门：<a href="http://www.ui.cn/detail/54562.html" target="_blank" rel="noopener">UI中国</a> ），以及简单的写到了动效设计怎么样的表达让用户更加舒适。恩，今天要深入这个话题，动效设计师如何运用物理理论来让动画曲线更加贴近现实世界，如何让你的动画效果更加的如烟花般炫丽。</p>
+<hr>
+<p>###一.牛顿第一定律 又称惯性定律 由牛顿在1687年提出</p>
+<p>任何物体都要保持匀速直线运动或静止状态，直到外力迫使它改变运动状态为止。</p>
+<p>什么是保持匀速直线运动：</p>
+<p><img src="http://img.ui.cn/data/file/5/3/3/305335.gif" alt=""></p>
+<p>可以感觉到，它的运动似乎有些无聊，因为我们生活的这个世界存在引力、空气阻力、摩擦力等等。那就看一下最常见的外力因素——摩擦力，现实世界中的大部分运动都有它的身影。</p>
+<p>1.摩擦力 F=μ×FN </p>
+<p>阻碍物体相对运动（或相对运动趋势）的力叫做摩擦力。</p>
+<p>摩擦力是个宜动宜静的乖宝宝~它有两种形态：</p>
+<p>A 静摩擦力：两个相互接触的物体，当其接触表面之间有相对滑动的趋势，但尚保持相对静止时，彼此作用着阻碍相对滑动的阻力，这种阻力称为静滑动摩擦力，简称静摩擦力。</p>
+<p><img src="http://img.ui.cn/data/file/6/3/3/305336.gif" alt=""></p>
+<p>摩擦力比较大的时候会发生，由于相对没动，所以保持和传送带一起运动。</p>
+<p>B 动摩擦力：两接触物体之间存在相对滑动时，其接触面上产生阻碍对方滑动的阻力称为动滑动摩擦力。</p>
+<p><img src="http://img.ui.cn/data/file/0/4/3/305340.gif" alt=""></p>
+<p>可以看到由于材质的不同，或者又加上制动等因素，只要记住物体表面粗糙及压力越大，摩擦力越大，结合下面的牛顿第二定律<br>就可以模拟出一些不同感觉的运动曲线了。</p>
+<hr>
+<p>###二.牛顿第二定律  F=ma 由牛顿在1687年提出</p>
+<p>物体加速度的大小跟作用力成正比，跟物体的质量成反比，且与物体质量的倒数成正比；加速度的方向跟作用力的方向相同。</p>
+<p>简单的说就是——物体越轻或者受到的力越大加速度越大：</p>
+<p><img src="http://img.ui.cn/data/file/7/3/3/305337.gif" alt=""></p>
+<hr>
+<p>###三.牛顿第三运动定律 F=-F’ 由牛顿在1687年提出 </p>
+<p>相互作用的两个物体之间的作用力和反作用力总是大小相等，方向相反，作用在同一条直线上。</p>
+<p>常见的比如说弹撞击，拉、推重物等等。反正哪哪都有它，不要忘记它就好。<br><img src="http://img.ui.cn/data/file/8/3/3/305338.gif" alt=""></p>
+<p>既然提到牛三那就一定要提到一个它最重要的衍生定律了：</p>
+<p>1.动量守恒定律 m1v1+m2v2=m1v1′+m2v2′</p>
+<p>一个系统不受外力或所受外力之和为零，那么这个系统的总动量保持不变。</p>
+<p>动量守恒定律最初是牛顿第三定律的推论， 但后来发现它们的适用范围远远广于牛顿定律。简单的描述就是，两个速度不同的物体碰撞之后会产生速度上的『传递』，打台球的同学应该有更深的感触。</p>
+<p> <img src="http://img.ui.cn/data/file/9/3/3/305339.gif" alt=""></p>
+<hr>
+<p>###四.阿基米德定律 F＝γV</p>
+<p>浸入静止流体(气体或液体)中的物体受到一个浮力，其大小等于该物体所排开的流体重量，方向垂直向上并通过所排开流体的形心。</p>
+<p>所以水中物体弹出速度与物体的体积、质量成正比~而且会越靠近水面越快。看下曲线图：</p>
+<p><img src="http://img.ui.cn/data/file/1/4/3/305341.gif" alt=""></p>
+<p>可以发现浮起来的过程因为外力的方向不断变化以致有些类似弹性曲线，继而联想到了胡克（弹性）定律：</p>
+<hr>
+<p>###五.胡克定律  F=-k·x 又称弹性定律 由胡克在1678年提出</p>
+<p>弹簧在发生弹性形变时，弹簧的弹力F和弹簧的伸长量（或压缩量）x成正比，即F= k·x 。k是物质的弹性系数，它只由材料的性质所决定，与其他因素无关。负号表示弹簧所产生的弹力与其伸长（或压缩）的方向相反。</p>
+<p>那么由胡可定律结合牛顿第二定律F=ma，我们就可以得出弹性曲线来，这里的关键因素就是物体质量、弹性系数、伸长量来决定。</p>
+<p><img src="http://img.ui.cn/data/file/2/4/3/305342.gif" alt=""></p>
+<p>*『制作』：描述弹性曲线通常的三个关键参数分别是：频率、过量、持续时间。</p>
+<hr>
+<p>###六.表面张力</p>
+<p>液体表面任意二相邻部分之间垂直于它们的单位长度分界线相互作用的拉力。表面张力的形成同处在液体表面薄层内的分子的特殊受力状态密切相关。</p>
+<p>表面张力是动效设计中和阿基米德定律一样容易遇到的流体力学里的知识。算式比较复杂，不再深究。张力的运用很广泛，那么我们做动效最常遇到的通常是融合效果：</p>
+<p><img src="http://img.ui.cn/data/file/3/4/3/305343.gif" alt=""></p>
+<p>总结</p>
+<p>物理的运用基本上在我们生活的世界中并没有理想状态，所以了解原理的同时，设计狮们请一定要愉快的观察我们身边的世界，真实世界才是最好的学习案例。</p>
+<p>最后的最后如果文中对科学道理的阐述有什么错误的地方，希望学霸同学们可以指出~</p>
+<p>附一：压箱底的缓动函数曲线 <a href="http://easings.net/zh-cn（如打不开，请使用科学上网法）" target="_blank" rel="noopener">http://easings.net/zh-cn（如打不开，请使用科学上网法）</a></p>
+<p>附二：写的过程中也看到阿里U一点的文章——动效设计的物理法则，重点的写了牛顿第一第二定律，感兴趣的的同学们可以点过去拜读下~</p>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/设计/">设计</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-蓝牙BLE后台自动重连" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/蓝牙BLE后台自动重连/" class="article-date">
+  	<time datetime="2015-11-24T19:52:37.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/25/蓝牙BLE后台自动重连/">蓝牙BLE后台自动重连</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>关于ios BLE在后台自动重连的问题 </p>
+<p>找到一个国外网站是这么描述的</p>
+<blockquote>
+<p>Re: How to make the BTLE APP to auto connect with BTLE device when iPhone4S power on </p>
+<p>When backgrounding, you can still scan and connect to a LE peripheral.  You can scan for peripherals using scanForPeripheralsWithSerives by stating what service you are looking for in a Peripheral.  You cannot do a general scan without stating at least one service in the passed dictionary.  If you have a CFUUIDRef from a previous connection, you can call retrievePeripherals with the CFUUIDRef.  Your delegate will receive a call to didRetrievePeripherals with a CBPeripheral.  With the CBPeripheral you can then connect using connectPeripheral.</p>
+</blockquote>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-获取顶层UIViewController" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/获取顶层UIViewController/" class="article-date">
+  	<time datetime="2015-11-24T19:52:35.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/25/获取顶层UIViewController/">如何获取顶层UIViewController</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>Objective-c版本：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">- (UIViewController *)appRootViewController&#123;</span><br><span class="line">    UIViewController *appRootVC = [UIApplication sharedApplication].keyWindow.rootViewController;</span><br><span class="line">    UIViewController *topVC = appRootVC;</span><br><span class="line">    while (topVC.presentedViewController) &#123;</span><br><span class="line">        topVC = topVC.presentedViewController;</span><br><span class="line">    &#125;</span><br><span class="line">    return topVC;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>swift 2.0版本: </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">extension UIApplication &#123;</span><br><span class="line">    </span><br><span class="line">    /// 顶层VC</span><br><span class="line">    static var appRootViewController: UIViewController? &#123;</span><br><span class="line">        var topVC = UIApplication.sharedApplication().keyWindow?.rootViewController</span><br><span class="line">        while topVC?.presentedViewController != nil &#123;</span><br><span class="line">            topVC = topVC?.presentedViewController</span><br><span class="line">        &#125;</span><br><span class="line">        return topVC</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-获取当前的wifi SSID" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2015/11/25/获取当前的wifi SSID/" class="article-date">
+  	<time datetime="2015-11-24T19:52:33.000Z" itemprop="datePublished">2015-11-25</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/11/25/获取当前的wifi SSID/">获取当前的wifi SSID</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>version: swift 2.0</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">extension UIDevice &#123;</span><br><span class="line">    </span><br><span class="line">    /// wifi SSID</span><br><span class="line">    static var WIFISSID: String &#123;</span><br><span class="line">        let interfaces: CFArray? = CNCopySupportedInterfaces()</span><br><span class="line">        if interfaces == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        let if0: UnsafePointer&lt;Void&gt;? = CFArrayGetValueAtIndex(interfaces, 0)</span><br><span class="line">        if if0 == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        let interfaceName: CFStringRef = unsafeBitCast(if0!, CFStringRef.self)</span><br><span class="line">        let dictionary = CNCopyCurrentNetworkInfo(interfaceName) as NSDictionary?</span><br><span class="line">        if dictionary == nil &#123; return &quot;&quot; &#125;</span><br><span class="line">        </span><br><span class="line">        if let SSID = dictionary?[kCNNetworkInfoKeySSID as String] as? String &#123;</span><br><span class="line">            return SSID</span><br><span class="line">        &#125;</span><br><span class="line">        return &quot;&quot;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
 	</div>
 
       

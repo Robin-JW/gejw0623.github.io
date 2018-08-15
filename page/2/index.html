@@ -134,6 +134,297 @@
 </nav>
       <div class="body-wrap">
   
+    <article id="post-Swift利用协议优化NSNotificationCenter之添加Block" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/06/06/Swift利用协议优化NSNotificationCenter之添加Block/" class="article-date">
+  	<time datetime="2016-06-06T07:19:33.000Z" itemprop="datePublished">2016-06-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/06/06/Swift利用协议优化NSNotificationCenter之添加Block/">Swift利用协议优化NSNotificationCenter之添加Block</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><a href="https://medium.com/swift-programming/swift-nsnotificationcenter-protocol-c527e67d93a1#.67xdekbrj" target="_blank" rel="noopener">代码参考! 下面的源码基于这个  添加了Block模式，方便调用</a></p>
+<h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><pre><code>private class STObserversManager: NSObject {
+
+    static let sharedInstance = STObserversManager()
+
+    private var _observers = [(AnyObject, String, NSObjectProtocol)]()
+
+    func add(observer: AnyObject, name: String, obj: NSObjectProtocol) {
+        let arr = _observers.filter({$0.0 === observer &amp;&amp; $0.1 == name})
+        if arr.count &gt; 0 {
+            return
+        }
+        _observers.append((observer, name, obj))
+    }
+
+    func exist(observer: AnyObject, name: String? = nil) -&gt; Bool {
+        return observers(observer, name: name).count &gt; 0
+    }
+
+    func observers(observer: AnyObject, name: String? = nil) -&gt; [(AnyObject, String, NSObjectProtocol)] {
+        return _observers.filter({name != nil ? $0.0 === observer &amp;&amp; $0.1 == name : $0.0 === observer})
+    }
+
+    func removeAll(observer: AnyObject) {
+        for i in (0..&lt;_observers.count).reverse() {
+            if _observers[i].0 === observer {
+                _observers.removeAtIndex(i)
+            }
+        }
+    }
+
+}
+
+public protocol STNotifier {
+
+    associatedtype NotificationKey: RawRepresentable
+
+}
+
+// MARK: - 定义MTNotifier的方法
+public extension STNotifier where NotificationKey.RawValue == String {
+
+    private static func nameFor(notification: NotificationKey) -&gt; String {
+        return &quot;\(self).\(notification.rawValue)&quot;
+    }
+
+    func postNotification(notification: NotificationKey, object: AnyObject? = nil) {
+        Self.postNotification(notification, object: object)
+    }
+
+    func postNotification(notification: NotificationKey, object: AnyObject? = nil, userInfo: [String : AnyObject]? = nil) {
+        Self.postNotification(notification, object: object, userInfo: userInfo)
+    }
+
+    static func postNotification(notification: NotificationKey, object: AnyObject? = nil, userInfo: [String : AnyObject]? = nil) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .postNotificationName(name, object: object, userInfo: userInfo)
+    }
+
+    static func addObserver(observer: AnyObject, notification: NotificationKey, block: (notification: NSNotification) -&gt; Void) {
+        let name = nameFor(notification)
+        if STObserversManager.sharedInstance.exist(observer, name: name) {
+            NSLog(&quot;observer is exist&quot;)
+        } else {
+            let obj = NSNotificationCenter.defaultCenter()
+                .addObserverForName(name, object: nil, queue: NSOperationQueue.mainQueue(), usingBlock: block)
+            STObserversManager.sharedInstance.add(observer, name: name, obj: obj)
+        }
+    }
+
+    static func addObserver(observer: AnyObject, selector: Selector, notification: NotificationKey) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .addObserver(observer, selector: selector, name: name, object: nil)
+    }
+
+    static func removeObserver(observer: AnyObject, notification: NotificationKey, object: AnyObject? = nil) {
+        let name = nameFor(notification)
+
+        NSNotificationCenter.defaultCenter()
+            .removeObserver(observer, name: name, object: object)
+    }
+
+    static func removeObservers(observer: AnyObject?) {
+        if let observer = observer {
+            for observer in STObserversManager.sharedInstance.observers(observer) {
+                NSNotificationCenter.defaultCenter().removeObserver(observer.2)
+            }
+            STObserversManager.sharedInstance.removeAll(observer)
+        }
+    }
+
+}
+</code></pre><hr>
+<p>##如何调用</p>
+<h3 id="创建对象"><a href="#创建对象" class="headerlink" title="创建对象"></a>创建对象</h3><p>首先继承<code>STNotifier</code></p>
+<pre><code>class MTMYNTNotifier: STNotifier {
+
+    enum NotificationKey: String {
+        case aaa
+        case bbb
+    }
+
+}
+</code></pre><h3 id="添加监听"><a href="#添加监听" class="headerlink" title="添加监听"></a>添加监听</h3><pre><code>MTMYNTNotifier.addObserver(self, notification: .aaa) { (notification) in
+  NSLog(&quot;....notification...aaa...&quot;)
+}
+</code></pre><h3 id="发送消息"><a href="#发送消息" class="headerlink" title="发送消息"></a>发送消息</h3><pre><code>MTMYNTNotifier.postNotification(.aaa)
+</code></pre><h3 id="移除监听"><a href="#移除监听" class="headerlink" title="移除监听"></a>移除监听</h3><pre><code>MTMYNTNotifier.removeObservers(self)
+</code></pre>
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
+    <article id="post-app-store提交截图分辨率" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/05/11/app-store提交截图分辨率/" class="article-date">
+  	<time datetime="2016-05-10T18:21:03.000Z" itemprop="datePublished">2016-05-11</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/11/app-store提交截图分辨率/">app store提交截图分辨率</a>
+    </h1>
+  
+
+      </header>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="iPhone"><a href="#iPhone" class="headerlink" title="iPhone"></a>iPhone</h2><h4 id="3-5"><a href="#3-5" class="headerlink" title="3.5"></a>3.5</h4><pre><code>640 x 920 pixels for hi-res portrait (without status bar) minimum
+640 x 960 pixels for hi-res portrait (full screen) maximum
+960 x 600 pixels for hi-res landscape (without status bar) minimum
+960 x 640 pixels for hi-res landscape (full screen) maximum
+</code></pre><h4 id="4-0"><a href="#4-0" class="headerlink" title="4.0"></a>4.0</h4><pre><code>640 x 1096 pixels for portrait (without status bar) minimum
+640 x 1136 pixels for portrait (full screen) maximum
+1136 x 600 pixels for landscape (without status bar) minimum
+1136 x 640 pixels for landscape (full screen) minimum
+</code></pre><h4 id="4-7"><a href="#4-7" class="headerlink" title="4.7"></a>4.7</h4><pre><code>750 x 1334 pixels for hi-res portrait
+1334 x 750 pixels for hi-res landscape
+</code></pre><h4 id="5-5"><a href="#5-5" class="headerlink" title="5.5"></a>5.5</h4><pre><code>1242 x 2208 pixels for hi-res portrait
+2208 x 1242 pixels for hi-res landscape
+</code></pre><h3 id="iPad"><a href="#iPad" class="headerlink" title="iPad"></a>iPad</h3><h4 id="iPad-1"><a href="#iPad-1" class="headerlink" title="iPad"></a>iPad</h4><pre><code>1024 x 748 pixels for landscape (without status bar) minimum
+1024 x 768 pixels for landscape (full screen) maximum
+2048 x 1496 pixels for hi-res (without status bar) minimum
+2048 x 1536 pixels for hi-res landscape (full screen) maximum
+768 x 1004 pixels for portrait (without status bar) minimum
+768 x 1024 pixels for portrait (full screen) maximum
+1536 x 2008 pixels for hi-res portrait (without status bar) minimum
+1536 x 2048 pixels for hi-res portrait (full screen) maximum
+</code></pre><h4 id="iPad-Pro"><a href="#iPad-Pro" class="headerlink" title="iPad Pro"></a>iPad Pro</h4><pre><code>2048 x 2732 pixels for hi-res portrait
+2732 x 2048 pixels for hi-res landscape
+</code></pre><h2 id="OSX"><a href="#OSX" class="headerlink" title="OSX"></a>OSX</h2><pre><code>1280 x 800 pixels
+1440 x 900 pixels
+2560 x 1600 pixels
+2880 x 1800 pixels
+</code></pre><h2 id="tvOS"><a href="#tvOS" class="headerlink" title="tvOS"></a>tvOS</h2><pre><code>1920 X 1080
+</code></pre><h2 id="Apple-Watch"><a href="#Apple-Watch" class="headerlink" title="Apple Watch"></a>Apple Watch</h2><pre><code>312 x 390
+</code></pre><hr>
+<h1 id="整理"><a href="#整理" class="headerlink" title="整理"></a>整理</h1><table>
+<thead>
+<tr>
+<th></th>
+<th style="text-align:center">原始</th>
+<th style="text-align:center">横向</th>
+<th style="text-align:center">纵向</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>5 Series</td>
+<td style="text-align:center">1136 x 640 (16:9)</td>
+<td style="text-align:center">1920 x 1080 or 1136 x 640</td>
+<td style="text-align:center">1080 x 1920 or 640 x 1136</td>
+</tr>
+<tr>
+<td>iPad and iPad Pro</td>
+<td style="text-align:center">2048 x 1536 (4:3)</td>
+<td style="text-align:center">1200 x 900</td>
+<td style="text-align:center">900 x 1200</td>
+</tr>
+<tr>
+<td>iPhone 6</td>
+<td style="text-align:center">1334 x 750</td>
+<td style="text-align:center">1334 x 750</td>
+<td style="text-align:center">750 x 1334</td>
+</tr>
+<tr>
+<td>iPhone 6 Plus</td>
+<td style="text-align:center">2208 x 1242 (Rendered Pixels) <br> 1920 x 1080 (Physical Pixels)</td>
+<td style="text-align:center">1920 x 1080</td>
+<td style="text-align:center">1920 x 1080</td>
+</tr>
+<tr>
+<td>AppleTV</td>
+<td style="text-align:center">1920 x 1080 (16:9)</td>
+<td style="text-align:center">1920 x 1080</td>
+<td style="text-align:center">n / a</td>
+</tr>
+</tbody>
+</table>
+
+      
+    </div>
+    
+    <div class="article-info article-info-index">
+      
+      
+	<div class="article-tag tagcloud">
+		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/apple/">apple</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/itunes-connect/">itunes connect</a></li></ul>
+	</div>
+
+      
+
+      
+      <div class="clearfix"></div>
+    </div>
+    
+  </div>
+  
+</article>
+
+
+
+
+
+
+
+  
     <article id="post-NSView上添加阴影" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
@@ -1125,179 +1416,6 @@ func &lt;|&lt; &lt;A&gt;(lhs: A, rhs: A) -&gt; A
       
 	<div class="article-tag tagcloud">
 		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-OSX开发之如何实现拖入文件" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/03/09/OSX开发之如何实现拖入文件/" class="article-date">
-  	<time datetime="2016-03-08T18:20:00.000Z" itemprop="datePublished">2016-03-09</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/09/OSX开发之如何实现拖入文件/">OSX开发之如何实现拖入文件</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h3 id="如何在app中实现将文件拖入的功能-Drag-amp-Drop"><a href="#如何在app中实现将文件拖入的功能-Drag-amp-Drop" class="headerlink" title="如何在app中实现将文件拖入的功能?  Drag &amp; Drop"></a>如何在app中实现将文件拖入的功能?  Drag &amp; Drop</h3><p><strong>NSView</strong> 的 <strong>registerForDraggedTypes</strong> 方法，用于声明Drag and Drop响应的文件类型</p>
-<pre><code>self.registerForDraggedTypes([NSFilenamesPboardType])
-</code></pre><p>当有文件拖入时就会调用<strong>draggingEntered</strong>方法，该方法中判断是不是要对拖动进行响应，<br>如果响应则继续进入<strong>performDragOperation</strong>方法，完成处理</p>
-<pre><code>override func draggingEntered(sender: NSDraggingInfo) -&gt; NSDragOperation {
-    let pasteboard = sender.draggingPasteboard()
-        // 在这可以判断是否是需要的文件类型 然后根据需要返回对应的值
-    return NSDragOperation.Copy
-}
-
-override func prepareForDragOperation(sender: NSDraggingInfo) -&gt; Bool {
-    let pasteboard = sender.draggingPasteboard()
-    if let list = pasteboard.propertyListForType(NSFilenamesPboardType) {
-        // 这里会获取文件路径列表
-        NSLog(&quot;list ==\n\(list)&quot;)
-    }
-    return true
-}
-</code></pre><hr>
-<p>ok  拖动文件功能实现了</p>
-<p>但是！！！如果你需要用到 <strong>mouseEntered</strong> &amp; <strong>mouseExited</strong>  或者其他的方法<br>你会发现响应会出现一些异常</p>
-<p>这时候  你需要重写 <strong>updateTrackingAreas</strong> 方法</p>
-<pre><code>override func updateTrackingAreas() {
-    let trackings = self.trackingAreas
-    for tracking in trackings {
-        self.removeTrackingArea(tracking)
-    }
-
-    let trackingArea = NSTrackingArea(rect: bounds, options:[.MouseEnteredAndExited, .ActiveAlways, .MouseMoved], owner: self, userInfo: nil)
-    self.addTrackingArea(trackingArea)
-}
-</code></pre><p>就像这样<del>~</del></p>
-
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mac/">mac</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swfit/">swfit</a></li></ul>
-	</div>
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-    
-  </div>
-  
-</article>
-
-
-
-
-
-
-
-  
-    <article id="post-CentOS 6.x 一键安装PPTP VPN脚本" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/02/02/CentOS 6.x 一键安装PPTP VPN脚本/" class="article-date">
-  	<time datetime="2016-02-02T05:37:26.000Z" itemprop="datePublished">2016-02-02</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/02/02/CentOS 6.x 一键安装PPTP VPN脚本/">CentOS 6.x 一键安装PPTP VPN脚本</a>
-    </h1>
-  
-
-      </header>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>环境</p>
-<p>CentOS 6.x 32位/64位</p>
-<p>XEN/KVM/OpenVZ</p>
-<p>步骤</p>
-<p>依次运行下列命令</p>
-<pre><code>#wget http://www.hi-vps.com/shell/vpn_centos6.sh
-#chmod a+x vpn_centos6.sh
-</code></pre><p>安装Centos6.2PPTPVPN脚本</p>
-<pre><code>#bash vpn_centos6.sh
-</code></pre><p>执行完后有1、2、3种英文，对应如下中文意思。</p>
-<blockquote>
-</blockquote>
-<ol>
-<li>安装VPN服务</li>
-<li>修复VPN</li>
-<li>添加VPN用户</li>
-</ol>
-<p>我们要安装PPTP vpn，当然输入1，然后enter键了。等待安装完成，就会出现账号和密码啦，默认账号是vpn，密码是一串随机数字，自己用的话就不用加账号和密码了，复制下来备用吧。</p>
-<p>安装完成如下：</p>
-<pre><code>DKMS: add Completed.
-Module build for the currently running kernel was skipped
-since the kernel source for this kernel does not seem to be
-installed.
-kernel_ppp_mppe-1.0.2-3dkms.noarch
-warning: ppp-2.4.5-17.0.rhel6.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 862acc42: NOKEY
-Preparing...                ########################################### [100%]
-   1:ppp                    ########################################### [100%]
-warning: pptpd-1.3.4-2.el6.x86_64.rpm: Header V3 DSA/SHA1 Signature, key ID 862acc42: NOKEY
-Preparing...                ########################################### [100%]
-   1:pptpd                  ########################################### [100%]
-mknod: &quot;/dev/ppp&quot;: 文件已存在
-iptables: Saving firewall rules to /etc/sysconfig/iptables:[  OK  ]
-Starting pptpd:                                            [  OK  ]
-VPN service is installed, your VPN username is vpn, VPN password is 7OXoJ0V1
-</code></pre>
-      
-    </div>
-    
-    <div class="article-info article-info-index">
-      
-      
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/centos/">centos</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vpn/">vpn</a></li></ul>
 	</div>
 
       
